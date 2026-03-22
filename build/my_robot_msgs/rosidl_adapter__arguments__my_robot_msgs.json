@@ -1,6 +1,0 @@
-{
-  "package_name": "my_robot_msgs",
-  "non_idl_tuples": [
-    "/home/duybuntu/carrierbot_ws/src/my_robot_msgs:msg/CanFrame.msg"
-  ]
-}
