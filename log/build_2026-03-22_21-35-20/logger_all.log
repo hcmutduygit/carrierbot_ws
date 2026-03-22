@@ -1,0 +1,498 @@
+[0.098s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.098s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x70ff7b0376d0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x70ff7b0371c0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x70ff7b0371c0>>, mixin_verb=('build',))
+[0.275s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.275s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.276s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.276s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.276s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.276s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.276s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/duybuntu/carrierbot_ws'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extensions ['ignore', 'ignore_ament_install']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extension 'ignore'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extension 'ignore_ament_install'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extensions ['colcon_pkg']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extension 'colcon_pkg'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extensions ['colcon_meta']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extension 'colcon_meta'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extensions ['ros']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extension 'ros'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extensions ['cmake', 'python']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extension 'cmake'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extension 'python'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extensions ['python_setup_py']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/config) by extension 'python_setup_py'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_base) by extensions ['ignore', 'ignore_ament_install']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_base) by extension 'ignore'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_base) by extension 'ignore_ament_install'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_base) by extensions ['colcon_pkg']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_base) by extension 'colcon_pkg'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_base) by extensions ['colcon_meta']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_base) by extension 'colcon_meta'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_base) by extensions ['ros']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_base) by extension 'ros'
+[0.292s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_base' with type 'ros.ament_cmake' and name 'my_robot_base'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extension 'ignore'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extension 'ignore_ament_install'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extensions ['colcon_pkg']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extension 'colcon_pkg'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extensions ['colcon_meta']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extension 'colcon_meta'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extensions ['ros']
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extension 'ros'
+[0.295s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_bringup' with type 'ros.ament_cmake' and name 'my_robot_bringup'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_communicate) by extensions ['ignore', 'ignore_ament_install']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_communicate) by extension 'ignore'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_communicate) by extension 'ignore_ament_install'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_communicate) by extensions ['colcon_pkg']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_communicate) by extension 'colcon_pkg'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_communicate) by extensions ['colcon_meta']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_communicate) by extension 'colcon_meta'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_communicate) by extensions ['ros']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_communicate) by extension 'ros'
+[0.296s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_communicate' with type 'ros.ament_python' and name 'my_robot_communicate'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extensions ['ignore', 'ignore_ament_install']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extension 'ignore'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extension 'ignore_ament_install'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extensions ['colcon_pkg']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extension 'colcon_pkg'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extensions ['colcon_meta']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extension 'colcon_meta'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extensions ['ros']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extension 'ros'
+[0.296s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_description' with type 'ros.ament_cmake' and name 'my_robot_description'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_localization) by extensions ['ignore', 'ignore_ament_install']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_localization) by extension 'ignore'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_localization) by extension 'ignore_ament_install'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_localization) by extensions ['colcon_pkg']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_localization) by extension 'colcon_pkg'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_localization) by extensions ['colcon_meta']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_localization) by extension 'colcon_meta'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_localization) by extensions ['ros']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_localization) by extension 'ros'
+[0.297s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_localization' with type 'ros.ament_cmake' and name 'my_robot_localization'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_navigation) by extensions ['ignore', 'ignore_ament_install']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_navigation) by extension 'ignore'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_navigation) by extension 'ignore_ament_install'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_navigation) by extensions ['colcon_pkg']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_navigation) by extension 'colcon_pkg'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_navigation) by extensions ['colcon_meta']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_navigation) by extension 'colcon_meta'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_navigation) by extensions ['ros']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_navigation) by extension 'ros'
+[0.298s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_navigation' with type 'ros.ament_cmake' and name 'my_robot_navigation'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_controller) by extension 'ignore'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_controller) by extension 'ignore_ament_install'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_controller) by extensions ['colcon_pkg']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_controller) by extension 'colcon_pkg'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_controller) by extensions ['colcon_meta']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_controller) by extension 'colcon_meta'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_controller) by extensions ['ros']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_controller) by extension 'ros'
+[0.299s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_controller' with type 'ros.ament_cmake' and name 'robot_controller'
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.335s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.335s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.337s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/duybuntu/ros2_ws_basic/install
+[0.338s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 10 installed packages in /home/duybuntu/deli_ws/install
+[0.339s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 12 installed packages in /home/duybuntu/turtlebot3_ws/install
+[0.339s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 7 installed packages in /home/duybuntu/carrierbot_ws/install
+[0.341s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 266 installed packages in /opt/ros/humble
+[0.342s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_base' build argument 'cmake_args' from command line to 'None'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_base' build argument 'cmake_target' from command line to 'None'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_base' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_base' build argument 'cmake_clean_cache' from command line to 'False'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_base' build argument 'cmake_clean_first' from command line to 'False'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_base' build argument 'cmake_force_configure' from command line to 'False'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_base' build argument 'ament_cmake_args' from command line to 'None'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_base' build argument 'catkin_cmake_args' from command line to 'None'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_base' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.378s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_base' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/duybuntu/carrierbot_ws/build/my_robot_base', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/duybuntu/carrierbot_ws/install/my_robot_base', 'merge_install': False, 'path': '/home/duybuntu/carrierbot_ws/src/my_robot_base', 'symlink_install': False, 'test_result_base': None}
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_bringup' build argument 'cmake_args' from command line to 'None'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_bringup' build argument 'cmake_target' from command line to 'None'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.378s] Level 5:colcon.colcon_core.verb:set package 'my_robot_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.378s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/duybuntu/carrierbot_ws/build/my_robot_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/duybuntu/carrierbot_ws/install/my_robot_bringup', 'merge_install': False, 'path': '/home/duybuntu/carrierbot_ws/src/my_robot_bringup', 'symlink_install': False, 'test_result_base': None}
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_communicate' build argument 'cmake_args' from command line to 'None'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_communicate' build argument 'cmake_target' from command line to 'None'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_communicate' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_communicate' build argument 'cmake_clean_cache' from command line to 'False'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_communicate' build argument 'cmake_clean_first' from command line to 'False'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_communicate' build argument 'cmake_force_configure' from command line to 'False'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_communicate' build argument 'ament_cmake_args' from command line to 'None'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_communicate' build argument 'catkin_cmake_args' from command line to 'None'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_communicate' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.379s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_communicate' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/duybuntu/carrierbot_ws/build/my_robot_communicate', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/duybuntu/carrierbot_ws/install/my_robot_communicate', 'merge_install': False, 'path': '/home/duybuntu/carrierbot_ws/src/my_robot_communicate', 'symlink_install': False, 'test_result_base': None}
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_description' build argument 'cmake_args' from command line to 'None'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_description' build argument 'cmake_target' from command line to 'None'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.379s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/duybuntu/carrierbot_ws/build/my_robot_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/duybuntu/carrierbot_ws/install/my_robot_description', 'merge_install': False, 'path': '/home/duybuntu/carrierbot_ws/src/my_robot_description', 'symlink_install': False, 'test_result_base': None}
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_localization' build argument 'cmake_args' from command line to 'None'
+[0.379s] Level 5:colcon.colcon_core.verb:set package 'my_robot_localization' build argument 'cmake_target' from command line to 'None'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_localization' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_localization' build argument 'cmake_clean_cache' from command line to 'False'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_localization' build argument 'cmake_clean_first' from command line to 'False'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_localization' build argument 'cmake_force_configure' from command line to 'False'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_localization' build argument 'ament_cmake_args' from command line to 'None'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_localization' build argument 'catkin_cmake_args' from command line to 'None'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_localization' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.380s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_localization' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/duybuntu/carrierbot_ws/build/my_robot_localization', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/duybuntu/carrierbot_ws/install/my_robot_localization', 'merge_install': False, 'path': '/home/duybuntu/carrierbot_ws/src/my_robot_localization', 'symlink_install': False, 'test_result_base': None}
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_navigation' build argument 'cmake_args' from command line to 'None'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_navigation' build argument 'cmake_target' from command line to 'None'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_navigation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_navigation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_navigation' build argument 'cmake_clean_first' from command line to 'False'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_navigation' build argument 'cmake_force_configure' from command line to 'False'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_navigation' build argument 'ament_cmake_args' from command line to 'None'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_navigation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'my_robot_navigation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.380s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_navigation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/duybuntu/carrierbot_ws/build/my_robot_navigation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/duybuntu/carrierbot_ws/install/my_robot_navigation', 'merge_install': False, 'path': '/home/duybuntu/carrierbot_ws/src/my_robot_navigation', 'symlink_install': False, 'test_result_base': None}
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'robot_controller' build argument 'cmake_args' from command line to 'None'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'robot_controller' build argument 'cmake_target' from command line to 'None'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'robot_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'robot_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'robot_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'robot_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'robot_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'robot_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.380s] Level 5:colcon.colcon_core.verb:set package 'robot_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.381s] DEBUG:colcon.colcon_core.verb:Building package 'robot_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/duybuntu/carrierbot_ws/build/robot_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/duybuntu/carrierbot_ws/install/robot_controller', 'merge_install': False, 'path': '/home/duybuntu/carrierbot_ws/src/robot_controller', 'symlink_install': False, 'test_result_base': None}
+[0.381s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.382s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.382s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/duybuntu/carrierbot_ws/src/my_robot_base' with build type 'ament_cmake'
+[0.382s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/duybuntu/carrierbot_ws/src/my_robot_base'
+[0.384s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.384s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.385s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.391s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/duybuntu/carrierbot_ws/src/my_robot_bringup' with build type 'ament_cmake'
+[0.391s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/duybuntu/carrierbot_ws/src/my_robot_bringup'
+[0.391s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.391s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.397s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/duybuntu/carrierbot_ws/src/my_robot_communicate' with build type 'ament_python'
+[0.397s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_communicate', 'ament_prefix_path')
+[0.397s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/share/my_robot_communicate/hook/ament_prefix_path.ps1'
+[0.398s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/share/my_robot_communicate/hook/ament_prefix_path.dsv'
+[0.398s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/share/my_robot_communicate/hook/ament_prefix_path.sh'
+[0.399s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.399s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.405s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/duybuntu/carrierbot_ws/src/my_robot_description' with build type 'ament_cmake'
+[0.406s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/duybuntu/carrierbot_ws/src/my_robot_description'
+[0.406s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.406s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.412s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/duybuntu/carrierbot_ws/src/my_robot_localization' with build type 'ament_cmake'
+[0.412s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/duybuntu/carrierbot_ws/src/my_robot_localization'
+[0.413s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.413s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.420s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/duybuntu/carrierbot_ws/src/my_robot_navigation' with build type 'ament_cmake'
+[0.420s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/duybuntu/carrierbot_ws/src/my_robot_navigation'
+[0.420s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.420s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.427s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/duybuntu/carrierbot_ws/src/robot_controller' with build type 'ament_cmake'
+[0.427s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/duybuntu/carrierbot_ws/src/robot_controller'
+[0.427s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.427s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.440s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_base -- -j12 -l12
+[0.444s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_bringup -- -j12 -l12
+[0.731s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/duybuntu/carrierbot_ws/src/my_robot_communicate'
+[0.731s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.731s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.740s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_description -- -j12 -l12
+[0.744s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_localization -- -j12 -l12
+[0.749s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_navigation -- -j12 -l12
+[0.758s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duybuntu/carrierbot_ws/build/robot_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/robot_controller -- -j12 -l12
+[0.758s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_bringup -- -j12 -l12
+[0.770s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_bringup
+[0.788s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_bringup)
+[0.788s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_bringup
+[0.791s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_bringup' for CMake module files
+[0.792s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_bringup' for CMake config files
+[0.792s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_bringup', 'cmake_prefix_path')
+[0.793s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/hook/cmake_prefix_path.ps1'
+[0.794s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/hook/cmake_prefix_path.dsv'
+[0.795s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/hook/cmake_prefix_path.sh'
+[0.797s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/bin'
+[0.797s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/lib/pkgconfig/my_robot_bringup.pc'
+[0.797s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/lib/python3.10/site-packages'
+[0.798s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/bin'
+[0.798s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/package.ps1'
+[0.799s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/package.dsv'
+[0.800s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/package.sh'
+[0.801s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/package.bash'
+[0.802s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/package.zsh'
+[0.802s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/colcon-core/packages/my_robot_bringup)
+[0.803s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_bringup)
+[0.803s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_bringup' for CMake module files
+[0.804s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_bringup' for CMake config files
+[0.804s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_bringup', 'cmake_prefix_path')
+[0.804s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/hook/cmake_prefix_path.ps1'
+[0.805s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/hook/cmake_prefix_path.dsv'
+[0.805s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/hook/cmake_prefix_path.sh'
+[0.806s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/bin'
+[0.806s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/lib/pkgconfig/my_robot_bringup.pc'
+[0.806s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/lib/python3.10/site-packages'
+[0.806s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/bin'
+[0.806s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/package.ps1'
+[0.807s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/package.dsv'
+[0.808s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/package.sh'
+[0.809s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/package.bash'
+[0.810s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/my_robot_bringup/package.zsh'
+[0.811s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duybuntu/carrierbot_ws/install/my_robot_bringup/share/colcon-core/packages/my_robot_bringup)
+[0.816s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_description -- -j12 -l12
+[0.816s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_description
+[0.817s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_navigation -- -j12 -l12
+[0.819s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_navigation
+[0.819s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duybuntu/carrierbot_ws/build/robot_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/robot_controller -- -j12 -l12
+[0.821s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duybuntu/carrierbot_ws/build/robot_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/robot_controller
+[0.823s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_localization -- -j12 -l12
+[0.827s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_localization
+[0.834s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_description)
+[0.834s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_description' for CMake module files
+[0.838s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_description' for CMake config files
+[0.840s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_description
+[0.843s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_description', 'cmake_prefix_path')
+[0.844s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/hook/cmake_prefix_path.ps1'
+[0.845s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/hook/cmake_prefix_path.dsv'
+[0.845s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/hook/cmake_prefix_path.sh'
+[0.846s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_description/bin'
+[0.846s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_description/lib/pkgconfig/my_robot_description.pc'
+[0.847s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_description/lib/python3.10/site-packages'
+[0.847s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_description/bin'
+[0.848s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/package.ps1'
+[0.848s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/package.dsv'
+[0.849s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/package.sh'
+[0.849s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/package.bash'
+[0.850s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/package.zsh'
+[0.850s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duybuntu/carrierbot_ws/install/my_robot_description/share/colcon-core/packages/my_robot_description)
+[0.851s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_description)
+[0.851s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_description' for CMake module files
+[0.851s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_description' for CMake config files
+[0.852s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_description', 'cmake_prefix_path')
+[0.852s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/hook/cmake_prefix_path.ps1'
+[0.853s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/hook/cmake_prefix_path.dsv'
+[0.853s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/hook/cmake_prefix_path.sh'
+[0.854s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_description/bin'
+[0.854s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_description/lib/pkgconfig/my_robot_description.pc'
+[0.854s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_description/lib/python3.10/site-packages'
+[0.855s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_description/bin'
+[0.855s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/package.ps1'
+[0.856s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/package.dsv'
+[0.856s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/package.sh'
+[0.857s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/package.bash'
+[0.858s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/package.zsh'
+[0.859s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duybuntu/carrierbot_ws/install/my_robot_description/share/colcon-core/packages/my_robot_description)
+[0.861s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_navigation)
+[0.862s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_navigation' for CMake module files
+[0.862s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_navigation
+[0.863s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_navigation' for CMake config files
+[0.863s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_navigation', 'cmake_prefix_path')
+[0.863s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/hook/cmake_prefix_path.ps1'
+[0.864s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/hook/cmake_prefix_path.dsv'
+[0.864s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/hook/cmake_prefix_path.sh'
+[0.865s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/bin'
+[0.865s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/lib/pkgconfig/my_robot_navigation.pc'
+[0.865s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/lib/python3.10/site-packages'
+[0.865s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/bin'
+[0.866s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/package.ps1'
+[0.866s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/package.dsv'
+[0.867s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/package.sh'
+[0.867s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/package.bash'
+[0.868s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/package.zsh'
+[0.868s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/colcon-core/packages/my_robot_navigation)
+[0.869s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_navigation)
+[0.870s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_navigation' for CMake module files
+[0.870s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_navigation' for CMake config files
+[0.871s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_navigation', 'cmake_prefix_path')
+[0.872s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/hook/cmake_prefix_path.ps1'
+[0.873s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/hook/cmake_prefix_path.dsv'
+[0.874s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/hook/cmake_prefix_path.sh'
+[0.876s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/bin'
+[0.876s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/lib/pkgconfig/my_robot_navigation.pc'
+[0.877s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/lib/python3.10/site-packages'
+[0.877s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/bin'
+[0.877s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/package.ps1'
+[0.878s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/package.dsv'
+[0.878s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/package.sh'
+[0.879s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/package.bash'
+[0.879s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/package.zsh'
+[0.880s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/colcon-core/packages/my_robot_navigation)
+[0.880s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_controller)
+[0.880s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/robot_controller' for CMake module files
+[0.881s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/robot_controller' for CMake config files
+[0.881s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duybuntu/carrierbot_ws/build/robot_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/robot_controller
+[0.882s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_controller', 'cmake_prefix_path')
+[0.882s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/hook/cmake_prefix_path.ps1'
+[0.883s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/hook/cmake_prefix_path.dsv'
+[0.883s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/hook/cmake_prefix_path.sh'
+[0.884s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/robot_controller/bin'
+[0.884s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/robot_controller/lib/pkgconfig/robot_controller.pc'
+[0.884s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/robot_controller/lib/python3.10/site-packages'
+[0.884s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/robot_controller/bin'
+[0.885s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/package.ps1'
+[0.886s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/package.dsv'
+[0.886s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/package.sh'
+[0.887s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/package.bash'
+[0.887s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/package.zsh'
+[0.888s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duybuntu/carrierbot_ws/install/robot_controller/share/colcon-core/packages/robot_controller)
+[0.888s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_controller)
+[0.889s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/robot_controller' for CMake module files
+[0.889s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/robot_controller' for CMake config files
+[0.889s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_controller', 'cmake_prefix_path')
+[0.890s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/hook/cmake_prefix_path.ps1'
+[0.891s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/hook/cmake_prefix_path.dsv'
+[0.892s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/hook/cmake_prefix_path.sh'
+[0.893s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/robot_controller/bin'
+[0.893s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/robot_controller/lib/pkgconfig/robot_controller.pc'
+[0.894s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/robot_controller/lib/python3.10/site-packages'
+[0.894s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/robot_controller/bin'
+[0.894s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/package.ps1'
+[0.895s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/package.dsv'
+[0.896s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/package.sh'
+[0.896s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/package.bash'
+[0.897s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/package.zsh'
+[0.897s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duybuntu/carrierbot_ws/install/robot_controller/share/colcon-core/packages/robot_controller)
+[0.897s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_localization)
+[0.898s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_localization' for CMake module files
+[0.898s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_localization' for CMake config files
+[0.899s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_localization
+[0.899s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_localization', 'cmake_prefix_path')
+[0.900s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/hook/cmake_prefix_path.ps1'
+[0.900s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/hook/cmake_prefix_path.dsv'
+[0.901s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/hook/cmake_prefix_path.sh'
+[0.902s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_localization/bin'
+[0.902s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_localization/lib/pkgconfig/my_robot_localization.pc'
+[0.902s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_localization/lib/python3.10/site-packages'
+[0.902s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_localization/bin'
+[0.902s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.ps1'
+[0.903s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.dsv'
+[0.904s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.sh'
+[0.904s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.bash'
+[0.905s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.zsh'
+[0.906s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/colcon-core/packages/my_robot_localization)
+[0.906s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_localization)
+[0.907s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_localization' for CMake module files
+[0.907s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_localization' for CMake config files
+[0.908s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_localization', 'cmake_prefix_path')
+[0.908s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/hook/cmake_prefix_path.ps1'
+[0.909s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/hook/cmake_prefix_path.dsv'
+[0.910s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/hook/cmake_prefix_path.sh'
+[0.911s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_localization/bin'
+[0.911s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_localization/lib/pkgconfig/my_robot_localization.pc'
+[0.911s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_localization/lib/python3.10/site-packages'
+[0.911s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_localization/bin'
+[0.912s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.ps1'
+[0.912s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.dsv'
+[0.913s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.sh'
+[0.913s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.bash'
+[0.914s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.zsh'
+[0.914s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/colcon-core/packages/my_robot_localization)
+[1.193s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duybuntu/carrierbot_ws/src/my_robot_communicate': PYTHONPATH=/home/duybuntu/carrierbot_ws/build/my_robot_communicate/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/duybuntu/carrierbot_ws/install/my_robot_communicate/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_robot_communicate build --build-base /home/duybuntu/carrierbot_ws/build/my_robot_communicate/build install --record /home/duybuntu/carrierbot_ws/build/my_robot_communicate/install.log --single-version-externally-managed install_data
+[1.521s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_communicate' for CMake module files
+[1.522s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duybuntu/carrierbot_ws/src/my_robot_communicate' returned '0': PYTHONPATH=/home/duybuntu/carrierbot_ws/build/my_robot_communicate/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/duybuntu/carrierbot_ws/install/my_robot_communicate/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_robot_communicate build --build-base /home/duybuntu/carrierbot_ws/build/my_robot_communicate/build install --record /home/duybuntu/carrierbot_ws/build/my_robot_communicate/install.log --single-version-externally-managed install_data
+[1.522s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_communicate' for CMake config files
+[1.523s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/lib'
+[1.524s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/bin'
+[1.524s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/lib/pkgconfig/my_robot_communicate.pc'
+[1.524s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/lib/python3.10/site-packages'
+[1.525s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_communicate', 'pythonpath')
+[1.525s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/share/my_robot_communicate/hook/pythonpath.ps1'
+[1.526s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/share/my_robot_communicate/hook/pythonpath.dsv'
+[1.527s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/share/my_robot_communicate/hook/pythonpath.sh'
+[1.527s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/bin'
+[1.527s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_communicate)
+[1.528s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/share/my_robot_communicate/package.ps1'
+[1.529s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/share/my_robot_communicate/package.dsv'
+[1.529s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/share/my_robot_communicate/package.sh'
+[1.530s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/share/my_robot_communicate/package.bash'
+[1.531s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/share/my_robot_communicate/package.zsh'
+[1.531s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duybuntu/carrierbot_ws/install/my_robot_communicate/share/colcon-core/packages/my_robot_communicate)
+[3.381s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_base' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_base -- -j12 -l12
+[3.381s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_base)
+[3.382s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_base' for CMake module files
+[3.382s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_base' for CMake config files
+[3.382s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_base', 'cmake_prefix_path')
+[3.382s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/hook/cmake_prefix_path.ps1'
+[3.383s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/hook/cmake_prefix_path.dsv'
+[3.383s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/hook/cmake_prefix_path.sh'
+[3.384s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_base/lib'
+[3.384s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_base/bin'
+[3.384s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_base/lib/pkgconfig/my_robot_base.pc'
+[3.384s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_base/lib/python3.10/site-packages'
+[3.384s] Level 1:colcon.colcon_core.environment:checking '/home/duybuntu/carrierbot_ws/install/my_robot_base/bin'
+[3.384s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/package.ps1'
+[3.385s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/package.dsv'
+[3.385s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/package.sh'
+[3.385s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/package.bash'
+[3.386s] INFO:colcon.colcon_core.shell:Creating package script '/home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/package.zsh'
+[3.386s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duybuntu/carrierbot_ws/install/my_robot_base/share/colcon-core/packages/my_robot_base)
+[3.396s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.397s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.397s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[3.397s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.403s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.403s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.403s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.413s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.414s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/duybuntu/carrierbot_ws/install/local_setup.ps1'
+[3.415s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/duybuntu/carrierbot_ws/install/_local_setup_util_ps1.py'
+[3.416s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/duybuntu/carrierbot_ws/install/setup.ps1'
+[3.418s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/duybuntu/carrierbot_ws/install/local_setup.sh'
+[3.419s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/duybuntu/carrierbot_ws/install/_local_setup_util_sh.py'
+[3.420s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/duybuntu/carrierbot_ws/install/setup.sh'
+[3.421s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/duybuntu/carrierbot_ws/install/local_setup.bash'
+[3.422s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/duybuntu/carrierbot_ws/install/setup.bash'
+[3.424s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/duybuntu/carrierbot_ws/install/local_setup.zsh'
+[3.425s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/duybuntu/carrierbot_ws/install/setup.zsh'

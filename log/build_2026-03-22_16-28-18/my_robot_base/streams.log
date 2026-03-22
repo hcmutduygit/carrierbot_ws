@@ -1,0 +1,37 @@
+[0.015s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_base -- -j12 -l12
+[0.049s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.199s] -- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)
+[0.234s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.237s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.244s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.255s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.269s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.302s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.304s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.461s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.511s] -- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+[0.549s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.637s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.637s] -- Configured cppcheck include dirs: 
+[0.637s] -- Configured cppcheck exclude dirs and/or files: 
+[0.638s] -- Added test 'lint_cmake' to check CMake code style
+[0.639s] -- Added test 'uncrustify' to check C / C++ code style
+[0.639s] -- Configured uncrustify additional arguments: 
+[0.639s] -- Added test 'xmllint' to check XML markup files
+[0.640s] -- Configuring done
+[0.647s] [31mCMake Error at CMakeLists.txt:34 (add_executable):
+[0.647s]   Cannot find source file:
+[0.647s] 
+[0.647s]     src/can_subscriber_node.cpp
+[0.647s] 
+[0.647s]   Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+[0.647s]   .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+[0.647s] 
+[0.647s] [0m
+[0.648s] [31mCMake Error at CMakeLists.txt:34 (add_executable):
+[0.648s]   No SOURCES given to target: can_subscriber_node
+[0.648s] 
+[0.648s] [0m
+[0.648s] [0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+[0.656s] gmake: *** [Makefile:308: cmake_check_build_system] Error 1
+[0.661s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_base' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_base -- -j12 -l12

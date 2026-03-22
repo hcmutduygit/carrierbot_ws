@@ -1,0 +1,73 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target"
+		],
+		"files" : 
+		[
+			"/home/duybuntu/carrierbot_ws/build/my_robot_msgs/my_robot_msgs__rs/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 35,
+				"parent" : 0
+			}
+		]
+	},
+	"id" : "my_robot_msgs__rs::@111cd5302186d3acd4fa",
+	"name" : "my_robot_msgs__rs",
+	"paths" : 
+	{
+		"build" : "my_robot_msgs__rs",
+		"source" : "/home/duybuntu/carrierbot_ws/build/my_robot_msgs/my_robot_msgs__rs"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "/home/duybuntu/carrierbot_ws/build/my_robot_msgs/my_robot_msgs__rs/CMakeFiles/my_robot_msgs__rs",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/duybuntu/carrierbot_ws/build/my_robot_msgs/my_robot_msgs__rs/CMakeFiles/my_robot_msgs__rs.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/duybuntu/carrierbot_ws/build/my_robot_msgs/rosidl_generator_rs/my_robot_msgs/rust/src/lib.rs.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

@@ -1,0 +1,4 @@
+[35m[1mConsolidate compiler generated dependencies of target can_subscriber[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o[0m
+[ 50%] Built target robot_news_station
+[ 83%] Built target smartphone

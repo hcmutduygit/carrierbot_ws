@@ -1,0 +1,61 @@
+[0.302s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/duybuntu/carrierbot_ws/src/my_robot_localization -DCMAKE_INSTALL_PREFIX=/home/duybuntu/carrierbot_ws/install/my_robot_localization
+[0.389s] -- The C compiler identification is GNU 11.4.0
+[0.482s] -- The CXX compiler identification is GNU 11.4.0
+[0.493s] -- Detecting C compiler ABI info
+[0.604s] -- Detecting C compiler ABI info - done
+[0.618s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.618s] -- Detecting C compile features
+[0.618s] -- Detecting C compile features - done
+[0.618s] -- Detecting CXX compiler ABI info
+[0.738s] -- Detecting CXX compiler ABI info - done
+[0.748s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.748s] -- Detecting CXX compile features
+[0.749s] -- Detecting CXX compile features - done
+[0.756s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.001s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.152s] -- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)
+[1.226s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.236s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.250s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.269s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.295s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.373s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.379s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.519s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.570s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.629s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.647s] -- Looking for pthread.h
+[1.730s] -- Looking for pthread.h - found
+[1.730s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.816s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.817s] -- Found Threads: TRUE  
+[1.877s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.911s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[1.933s] -- Found tf2_ros: 0.25.18 (/opt/ros/humble/share/tf2_ros/cmake)
+[2.088s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.185s] -- Added test 'lint_cmake' to check CMake code style
+[2.186s] -- Added test 'xmllint' to check XML markup files
+[2.188s] -- Configuring done
+[2.195s] -- Generating done
+[2.197s] -- Build files have been written to: /home/duybuntu/carrierbot_ws/build/my_robot_localization
+[2.210s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/duybuntu/carrierbot_ws/src/my_robot_localization -DCMAKE_INSTALL_PREFIX=/home/duybuntu/carrierbot_ws/install/my_robot_localization
+[2.212s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_localization -- -j12 -l12
+[2.257s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_localization -- -j12 -l12
+[2.259s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_localization
+[2.267s] -- Install configuration: ""
+[2.268s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/ament_index/resource_index/package_run_dependencies/my_robot_localization
+[2.268s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/ament_index/resource_index/parent_prefix_path/my_robot_localization
+[2.268s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/environment/ament_prefix_path.sh
+[2.268s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/environment/ament_prefix_path.dsv
+[2.269s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/environment/path.sh
+[2.269s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/environment/path.dsv
+[2.269s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/local_setup.bash
+[2.269s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/local_setup.sh
+[2.269s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/local_setup.zsh
+[2.269s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/local_setup.dsv
+[2.269s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.dsv
+[2.269s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/ament_index/resource_index/packages/my_robot_localization
+[2.269s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/cmake/my_robot_localizationConfig.cmake
+[2.269s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/cmake/my_robot_localizationConfig-version.cmake
+[2.270s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.xml
+[2.272s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_localization

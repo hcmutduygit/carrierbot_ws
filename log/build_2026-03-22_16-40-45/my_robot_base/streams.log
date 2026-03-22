@@ -1,0 +1,12 @@
+[0.017s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_base -- -j12 -l12
+[0.085s] [ 16%] [32mBuilding CXX object CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o[0m
+[0.088s] [ 50%] Built target robot_news_station
+[0.089s] [ 83%] Built target smartphone
+[0.096s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kcan_subscriber.hpp: No such file or directory
+[0.096s]     1 | #include [01;31m[K"can_subscriber.hpp"[m[K
+[0.096s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[0.097s] compilation terminated.
+[0.098s] gmake[2]: *** [CMakeFiles/can_subscriber.dir/build.make:76: CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o] Error 1
+[0.098s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/can_subscriber.dir/all] Error 2
+[0.098s] gmake: *** [Makefile:146: all] Error 2
+[0.101s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_base' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_base -- -j12 -l12

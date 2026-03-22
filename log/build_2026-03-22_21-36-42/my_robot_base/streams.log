@@ -1,0 +1,28 @@
+[0.051s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_base -- -j12 -l12
+[0.352s] [35m[1mConsolidate compiler generated dependencies of target can_subscriber[0m
+[0.353s] [ 50%] Built target can_publisher
+[0.354s] [ 50%] Built target smartphone
+[0.354s] [ 75%] Built target robot_news_station
+[0.354s] [ 87%] [32mBuilding CXX object CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o[0m
+[2.419s] In file included from [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:1[m[K:
+[2.419s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kvoid CanSubscriberNode::receive_can_frame()[m[K’:
+[2.419s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:76:21:[m[K [01;31m[Kerror: [m[K‘[01m[Khandle_can_0x100[m[K’ was not declared in this scope; did you mean ‘[01m[Khandle_can_0x200[m[K’?
+[2.419s]    76 |                     [01;31m[Khandle_can_0x100[m[K(frame);
+[2.419s]       |                     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.419s]       |                     [32m[Khandle_can_0x200[m[K
+[2.420s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kvoid CanSubscriberNode::handle_can_0x200(const can_frame&)[m[K’:
+[2.420s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:126:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kframe[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.420s]   126 |     void handle_can_0x200([01;35m[Kconst struct can_frame& frame[m[K) {
+[2.420s]       |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[2.420s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kvoid CanSubscriberNode::handle_can_0x300(const can_frame&)[m[K’:
+[2.420s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:132:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kframe[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.420s]   132 |     void handle_can_0x300([01;35m[Kconst struct can_frame& frame[m[K) {
+[2.420s]       |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[2.421s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kvoid CanSubscriberNode::handle_can_0x400(const can_frame&)[m[K’:
+[2.421s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:138:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kframe[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.421s]   138 |     void handle_can_0x400([01;35m[Kconst struct can_frame& frame[m[K) {
+[2.421s]       |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[2.869s] gmake[2]: *** [CMakeFiles/can_subscriber.dir/build.make:76: CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o] Error 1
+[2.869s] gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/can_subscriber.dir/all] Error 2
+[2.870s] gmake: *** [Makefile:146: all] Error 2
+[2.872s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_base' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_base -- -j12 -l12

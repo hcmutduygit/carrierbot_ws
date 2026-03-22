@@ -1,0 +1,32 @@
+[0.018s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_base -- -j12 -l12
+[0.078s] [35m[1mConsolidate compiler generated dependencies of target can_subscriber[0m
+[0.097s] [ 16%] [32mBuilding CXX object CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o[0m
+[0.101s] [ 50%] Built target smartphone
+[0.103s] [ 83%] Built target robot_news_station
+[0.113s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[0.113s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:4:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ has not been declared
+[0.113s]     4 |     [01;31m[Krclcpp[m[K::init(argc, argv);
+[0.113s]       |     [01;31m[K^~~~~~[m[K
+[0.113s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:5:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kmake_shared[m[K’ is not a member of ‘[01m[Kstd[m[K’
+[0.113s]     5 |     auto node = std::[01;31m[Kmake_shared[m[K<CanSubscriberNode>();
+[0.114s]       |                      [01;31m[K^~~~~~~~~~~[m[K
+[0.114s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:2:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::make_shared[m[K’ is defined in header ‘[01m[K<memory>[m[K’; did you forget to ‘[01m[K#include <memory>[m[K’?
+[0.114s]     1 | #include "my_robot_base/can_subscriber.hpp"
+[0.114s]   +++ |+[32m[K#include <memory>[m[K
+[0.114s]     2 | 
+[0.115s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:5:34:[m[K [01;31m[Kerror: [m[K‘[01m[KCanSubscriberNode[m[K’ was not declared in this scope
+[0.115s]     5 |     auto node = std::make_shared<[01;31m[KCanSubscriberNode[m[K>();
+[0.115s]       |                                  [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[0.115s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:5:53:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+[0.115s]     5 |     auto node = std::make_shared<CanSubscriberNode>([01;31m[K)[m[K;
+[0.115s]       |                                                     [01;31m[K^[m[K
+[0.115s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:6:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ has not been declared
+[0.115s]     6 |     [01;31m[Krclcpp[m[K::spin(node);
+[0.116s]       |     [01;31m[K^~~~~~[m[K
+[0.116s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:7:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ has not been declared
+[0.116s]     7 |     [01;31m[Krclcpp[m[K::shutdown();
+[0.116s]       |     [01;31m[K^~~~~~[m[K
+[0.117s] gmake[2]: *** [CMakeFiles/can_subscriber.dir/build.make:76: CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o] Error 1
+[0.117s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/can_subscriber.dir/all] Error 2
+[0.118s] gmake: *** [Makefile:146: all] Error 2
+[0.122s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_base' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_base -- -j12 -l12

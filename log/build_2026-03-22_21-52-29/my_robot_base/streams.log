@@ -1,0 +1,44 @@
+[0.062s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_base -- -j12 -l12
+[0.365s] [ 50%] Built target smartphone
+[0.365s] [ 50%] Built target robot_news_station
+[0.365s] [ 87%] Built target can_publisher
+[0.366s] [ 87%] [32mBuilding CXX object CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o[0m
+[2.572s] In file included from [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:1[m[K:
+[2.572s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kvoid CanSubscriberNode::handle_can_0x200(const can_frame&)[m[K’:
+[2.572s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:126:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kframe[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.572s]   126 |     void handle_can_0x200([01;35m[Kconst struct can_frame& frame[m[K) {
+[2.573s]       |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[2.573s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kvoid CanSubscriberNode::handle_can_0x300(const can_frame&)[m[K’:
+[2.573s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:132:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kframe[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.573s]   132 |     void handle_can_0x300([01;35m[Kconst struct can_frame& frame[m[K) {
+[2.573s]       |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[2.573s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kvoid CanSubscriberNode::handle_can_0x400(const can_frame&)[m[K’:
+[2.573s] [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:138:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kframe[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.573s]   138 |     void handle_can_0x400([01;35m[Kconst struct can_frame& frame[m[K) {
+[2.573s]       |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[3.261s] [100%] [32m[1mLinking CXX executable can_subscriber[0m
+[3.414s] [100%] Built target can_subscriber
+[3.430s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_base -- -j12 -l12
+[3.432s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_base
+[3.442s] -- Install configuration: ""
+[3.442s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/lib/my_robot_base/robot_news_station
+[3.442s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/lib/my_robot_base/smartphone
+[3.442s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_base/lib/my_robot_base/can_subscriber
+[3.443s] -- Set runtime path of "/home/duybuntu/carrierbot_ws/install/my_robot_base/lib/my_robot_base/can_subscriber" to ""
+[3.443s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/lib/my_robot_base/can_publisher
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/ament_index/resource_index/package_run_dependencies/my_robot_base
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/ament_index/resource_index/parent_prefix_path/my_robot_base
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/environment/ament_prefix_path.sh
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/environment/ament_prefix_path.dsv
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/environment/path.sh
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/environment/path.dsv
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/local_setup.bash
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/local_setup.sh
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/local_setup.zsh
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/local_setup.dsv
+[3.444s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/package.dsv
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/ament_index/resource_index/packages/my_robot_base
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/cmake/my_robot_baseConfig.cmake
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/cmake/my_robot_baseConfig-version.cmake
+[3.444s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_base/share/my_robot_base/package.xml
+[3.446s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_base

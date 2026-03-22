@@ -1,0 +1,229 @@
+[0.014s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_msgs -- -j12 -l12
+[0.038s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.164s] -- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.169s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.171s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.202s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.228s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.497s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.677s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.910s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.934s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[0.957s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.957s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[0.957s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.038s] -- Added test 'lint_cmake' to check CMake code style
+[1.038s] -- Added test 'xmllint' to check XML markup files
+[1.042s] -- Configuring done
+[1.070s] -- Generating done
+[1.081s] -- Build files have been written to: /home/duybuntu/carrierbot_ws/build/my_robot_msgs
+[1.109s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.121s] [  6%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[1.121s] [  9%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.134s] [  9%] Built target ament_cmake_python_copy_my_robot_msgs
+[1.370s] running egg_info
+[1.371s] writing my_robot_msgs.egg-info/PKG-INFO
+[1.371s] writing dependency_links to my_robot_msgs.egg-info/dependency_links.txt
+[1.371s] writing top-level names to my_robot_msgs.egg-info/top_level.txt
+[1.372s] [  9%] Built target my_robot_msgs__rs
+[1.374s] [35m[1mConsolidate compiler generated dependencies of target my_robot_msgs__rosidl_generator_c[0m
+[1.374s] reading manifest file 'my_robot_msgs.egg-info/SOURCES.txt'
+[1.375s] writing manifest file 'my_robot_msgs.egg-info/SOURCES.txt'
+[1.388s] [ 12%] [32mBuilding C object CMakeFiles/my_robot_msgs__rosidl_generator_c.dir/rosidl_generator_c/my_robot_msgs/msg/detail/can_frame__functions.c.o[0m
+[1.392s] [ 12%] Built target my_robot_msgs__cpp
+[1.404s] [ 21%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.404s] [ 21%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.404s] [ 21%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.414s] [ 21%] Built target ament_cmake_python_build_my_robot_msgs_egg
+[1.438s] [ 25%] [32m[1mLinking C shared library libmy_robot_msgs__rosidl_generator_c.so[0m
+[1.483s] [ 25%] Built target my_robot_msgs__rosidl_generator_c
+[1.495s] [ 31%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.495s] [ 31%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.496s] [ 34%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.639s] [35m[1mConsolidate compiler generated dependencies of target my_robot_msgs__rosidl_typesupport_cpp[0m
+[1.655s] [ 37%] [32mBuilding CXX object CMakeFiles/my_robot_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_msgs/msg/can_frame__type_support.cpp.o[0m
+[1.669s] [35m[1mConsolidate compiler generated dependencies of target my_robot_msgs__rosidl_typesupport_introspection_cpp[0m
+[1.669s] [35m[1mConsolidate compiler generated dependencies of target my_robot_msgs__rosidl_typesupport_fastrtps_cpp[0m
+[1.686s] [ 43%] [32mBuilding CXX object CMakeFiles/my_robot_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/my_robot_msgs/msg/detail/can_frame__type_support.cpp.o[0m
+[1.686s] [ 43%] [32mBuilding CXX object CMakeFiles/my_robot_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_msgs/msg/detail/dds_fastrtps/can_frame__type_support.cpp.o[0m
+[1.731s] [35m[1mConsolidate compiler generated dependencies of target my_robot_msgs__rosidl_typesupport_c[0m
+[1.744s] [ 46%] [32mBuilding CXX object CMakeFiles/my_robot_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/my_robot_msgs/msg/can_frame__type_support.cpp.o[0m
+[1.764s] [35m[1mConsolidate compiler generated dependencies of target my_robot_msgs__rosidl_typesupport_introspection_c[0m
+[1.778s] [ 50%] [32mBuilding C object CMakeFiles/my_robot_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_msgs/msg/detail/can_frame__type_support.c.o[0m
+[1.779s] [35m[1mConsolidate compiler generated dependencies of target my_robot_msgs__rosidl_typesupport_fastrtps_c[0m
+[1.782s] [ 53%] [32m[1mLinking CXX shared library libmy_robot_msgs__rosidl_typesupport_c.so[0m
+[1.796s] [ 56%] [32mBuilding CXX object CMakeFiles/my_robot_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/my_robot_msgs/msg/detail/can_frame__type_support_c.cpp.o[0m
+[1.823s] [ 59%] [32m[1mLinking C shared library libmy_robot_msgs__rosidl_typesupport_introspection_c.so[0m
+[1.838s] [ 59%] Built target my_robot_msgs__rosidl_typesupport_c
+[1.862s] [ 59%] Built target my_robot_msgs__rosidl_typesupport_introspection_c
+[1.912s] [ 62%] [32m[1mLinking CXX shared library libmy_robot_msgs__rosidl_typesupport_cpp.so[0m
+[1.960s] [ 62%] Built target my_robot_msgs__rosidl_typesupport_cpp
+[2.060s] [ 65%] [32m[1mLinking CXX shared library libmy_robot_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[2.096s] [ 68%] [32m[1mLinking CXX shared library libmy_robot_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[2.102s] [ 71%] [32m[1mLinking CXX shared library libmy_robot_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.185s] [ 71%] Built target my_robot_msgs__rosidl_typesupport_introspection_cpp
+[2.208s] [ 71%] Built target my_robot_msgs__rosidl_typesupport_fastrtps_c
+[2.209s] [ 71%] Built target my_robot_msgs__rosidl_typesupport_fastrtps_cpp
+[2.234s] [ 71%] Built target my_robot_msgs
+[2.257s] [ 75%] [34m[1mGenerating Python code for ROS interfaces[0m
+[2.558s] [ 75%] Built target my_robot_msgs__py
+[2.573s] [35m[1mConsolidate compiler generated dependencies of target my_robot_msgs__rosidl_generator_py[0m
+[2.587s] [ 78%] [32mBuilding C object CMakeFiles/my_robot_msgs__rosidl_generator_py.dir/rosidl_generator_py/my_robot_msgs/msg/_can_frame_s.c.o[0m
+[2.684s] [ 81%] [32m[1mLinking C shared library rosidl_generator_py/my_robot_msgs/libmy_robot_msgs__rosidl_generator_py.so[0m
+[2.734s] [ 81%] Built target my_robot_msgs__rosidl_generator_py
+[2.746s] [35m[1mConsolidate compiler generated dependencies of target my_robot_msgs__rosidl_typesupport_fastrtps_c__pyext[0m
+[2.746s] [35m[1mConsolidate compiler generated dependencies of target my_robot_msgs__rosidl_typesupport_c__pyext[0m
+[2.746s] [35m[1mConsolidate compiler generated dependencies of target my_robot_msgs__rosidl_typesupport_introspection_c__pyext[0m
+[2.760s] [ 87%] [32mBuilding C object CMakeFiles/my_robot_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/my_robot_msgs/_my_robot_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[2.760s] [ 87%] [32mBuilding C object CMakeFiles/my_robot_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/my_robot_msgs/_my_robot_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[2.760s] [ 90%] [32mBuilding C object CMakeFiles/my_robot_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/my_robot_msgs/_my_robot_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[2.848s] [ 93%] [32m[1mLinking C shared library rosidl_generator_py/my_robot_msgs/my_robot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.851s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/my_robot_msgs/my_robot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.853s] [100%] [32m[1mLinking C shared library rosidl_generator_py/my_robot_msgs/my_robot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.885s] [100%] Built target my_robot_msgs__rosidl_typesupport_c__pyext
+[2.887s] [100%] Built target my_robot_msgs__rosidl_typesupport_introspection_c__pyext
+[2.892s] [100%] Built target my_robot_msgs__rosidl_typesupport_fastrtps_c__pyext
+[2.907s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_msgs -- -j12 -l12
+[2.920s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_msgs
+[2.929s] -- Install configuration: ""
+[2.929s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/ament_index/resource_index/rosidl_interfaces/my_robot_msgs
+[2.929s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs
+[2.929s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg
+[2.930s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/rosidl_generator_c__visibility_control.h
+[2.930s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail
+[2.930s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__functions.h
+[2.930s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__functions.c
+[2.930s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__type_support.h
+[2.930s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__struct.h
+[2.930s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/can_frame.h
+[2.930s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/environment/library_path.sh
+[2.930s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/environment/library_path.dsv
+[2.930s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_generator_c.so
+[2.931s] -- Set runtime path of "/home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_generator_c.so" to ""
+[2.931s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs
+[2.931s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg
+[2.931s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[2.931s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail
+[2.931s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__rosidl_typesupport_fastrtps_c.h
+[2.931s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_typesupport_fastrtps_c.so
+[2.931s] -- Set runtime path of "/home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[2.932s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs
+[2.932s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg
+[2.932s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[2.932s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail
+[2.932s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__type_support.c
+[2.932s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__rosidl_typesupport_introspection_c.h
+[2.932s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_typesupport_introspection_c.so
+[2.932s] -- Set runtime path of "/home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_typesupport_introspection_c.so" to ""
+[2.933s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_typesupport_c.so
+[2.933s] -- Set runtime path of "/home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_typesupport_c.so" to ""
+[2.933s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs
+[2.933s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg
+[2.933s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[2.933s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail
+[2.933s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__type_support.hpp
+[2.934s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__struct.hpp
+[2.934s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__traits.hpp
+[2.934s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__builder.hpp
+[2.934s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/can_frame.hpp
+[2.934s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs
+[2.934s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg
+[2.934s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[2.934s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail
+[2.934s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/dds_fastrtps
+[2.934s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__rosidl_typesupport_fastrtps_cpp.hpp
+[2.935s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_typesupport_fastrtps_cpp.so
+[2.935s] -- Set runtime path of "/home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[2.935s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs
+[2.935s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg
+[2.935s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail
+[2.935s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__type_support.cpp
+[2.935s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/include/my_robot_msgs/my_robot_msgs/msg/detail/can_frame__rosidl_typesupport_introspection_cpp.hpp
+[2.936s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_typesupport_introspection_cpp.so
+[2.936s] -- Set runtime path of "/home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[2.936s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_typesupport_cpp.so
+[2.937s] -- Set runtime path of "/home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_typesupport_cpp.so" to ""
+[2.937s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/environment/pythonpath.sh
+[2.937s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/environment/pythonpath.dsv
+[2.937s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs-0.0.0-py3.10.egg-info
+[2.937s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[2.937s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[2.937s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[2.937s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[2.938s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs
+[2.938s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/_my_robot_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[2.938s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/my_robot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.938s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/my_robot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.938s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/_my_robot_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[2.938s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/my_robot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.939s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/libmy_robot_msgs__rosidl_generator_py.so
+[2.939s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/_my_robot_msgs_s.ep.rosidl_typesupport_c.c
+[2.939s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/__init__.py
+[2.939s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/msg
+[2.939s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/msg/_can_frame_s.c
+[2.939s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/msg/_can_frame.py
+[2.939s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/msg/__init__.py
+[2.972s] Listing '/home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs'...
+[2.972s] Compiling '/home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/__init__.py'...
+[2.972s] Listing '/home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/msg'...
+[2.972s] Compiling '/home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/msg/__init__.py'...
+[2.972s] Compiling '/home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/msg/_can_frame.py'...
+[2.977s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/my_robot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.978s] -- Set runtime path of "/home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/my_robot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[2.978s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/my_robot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.979s] -- Set runtime path of "/home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/my_robot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[2.979s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/my_robot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.980s] -- Set runtime path of "/home/duybuntu/carrierbot_ws/install/my_robot_msgs/local/lib/python3.10/dist-packages/my_robot_msgs/my_robot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[2.980s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_generator_py.so
+[2.980s] -- Set runtime path of "/home/duybuntu/carrierbot_ws/install/my_robot_msgs/lib/libmy_robot_msgs__rosidl_generator_py.so" to ""
+[2.981s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/ament_index/resource_index/rust_packages/my_robot_msgs
+[2.981s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/rust
+[2.981s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/rust/src
+[2.981s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/rust/src/lib.rs
+[2.981s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/rust/src/msg.rs
+[2.981s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/rust/src/msg
+[2.981s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/rust/src/msg/rmw.rs
+[2.981s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/rust/build.rs
+[2.981s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/rust/Cargo.toml
+[2.981s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/msg/CanFrame.idl
+[2.981s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/msg/CanFrame.msg
+[2.981s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/ament_index/resource_index/package_run_dependencies/my_robot_msgs
+[2.982s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/ament_index/resource_index/parent_prefix_path/my_robot_msgs
+[2.982s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/environment/ament_prefix_path.sh
+[2.982s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/environment/ament_prefix_path.dsv
+[2.982s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/environment/path.sh
+[2.982s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/environment/path.dsv
+[2.982s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/local_setup.bash
+[2.982s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/local_setup.sh
+[2.982s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/local_setup.zsh
+[2.982s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/local_setup.dsv
+[2.982s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/package.dsv
+[2.982s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/ament_index/resource_index/packages/my_robot_msgs
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/export_my_robot_msgs__rosidl_generator_cExport.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/export_my_robot_msgs__rosidl_generator_cExport-noconfig.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/export_my_robot_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/export_my_robot_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/my_robot_msgs__rosidl_typesupport_introspection_cExport.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/my_robot_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/my_robot_msgs__rosidl_typesupport_cExport.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/my_robot_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/export_my_robot_msgs__rosidl_generator_cppExport.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/export_my_robot_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/export_my_robot_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/my_robot_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/my_robot_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[2.983s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/my_robot_msgs__rosidl_typesupport_cppExport.cmake
+[2.984s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/my_robot_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[2.984s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/export_my_robot_msgs__rosidl_generator_pyExport.cmake
+[2.984s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/export_my_robot_msgs__rosidl_generator_pyExport-noconfig.cmake
+[2.984s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/rosidl_cmake-extras.cmake
+[2.984s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[2.984s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[2.984s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[2.984s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[2.984s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.984s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[2.984s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/my_robot_msgsConfig.cmake
+[2.984s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/cmake/my_robot_msgsConfig-version.cmake
+[2.984s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_msgs/share/my_robot_msgs/package.xml
+[2.987s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_msgs

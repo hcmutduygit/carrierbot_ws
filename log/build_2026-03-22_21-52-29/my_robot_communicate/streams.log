@@ -1,0 +1,20 @@
+[0.851s] Invoking command in '/home/duybuntu/carrierbot_ws/src/my_robot_communicate': PYTHONPATH=/home/duybuntu/carrierbot_ws/build/my_robot_communicate/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/duybuntu/carrierbot_ws/install/my_robot_communicate/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_robot_communicate build --build-base /home/duybuntu/carrierbot_ws/build/my_robot_communicate/build install --record /home/duybuntu/carrierbot_ws/build/my_robot_communicate/install.log --single-version-externally-managed install_data
+[1.085s] running egg_info
+[1.086s] writing ../../build/my_robot_communicate/my_robot_communicate.egg-info/PKG-INFO
+[1.086s] writing dependency_links to ../../build/my_robot_communicate/my_robot_communicate.egg-info/dependency_links.txt
+[1.086s] writing entry points to ../../build/my_robot_communicate/my_robot_communicate.egg-info/entry_points.txt
+[1.087s] writing requirements to ../../build/my_robot_communicate/my_robot_communicate.egg-info/requires.txt
+[1.087s] writing top-level names to ../../build/my_robot_communicate/my_robot_communicate.egg-info/top_level.txt
+[1.089s] reading manifest file '../../build/my_robot_communicate/my_robot_communicate.egg-info/SOURCES.txt'
+[1.090s] writing manifest file '../../build/my_robot_communicate/my_robot_communicate.egg-info/SOURCES.txt'
+[1.090s] running build
+[1.090s] running build_py
+[1.090s] running install
+[1.091s] running install_lib
+[1.092s] running install_data
+[1.092s] running install_egg_info
+[1.093s] removing '/home/duybuntu/carrierbot_ws/install/my_robot_communicate/lib/python3.10/site-packages/my_robot_communicate-0.0.0-py3.10.egg-info' (and everything under it)
+[1.094s] Copying ../../build/my_robot_communicate/my_robot_communicate.egg-info to /home/duybuntu/carrierbot_ws/install/my_robot_communicate/lib/python3.10/site-packages/my_robot_communicate-0.0.0-py3.10.egg-info
+[1.095s] running install_scripts
+[1.116s] writing list of installed files to '/home/duybuntu/carrierbot_ws/build/my_robot_communicate/install.log'
+[1.154s] Invoked command in '/home/duybuntu/carrierbot_ws/src/my_robot_communicate' returned '0': PYTHONPATH=/home/duybuntu/carrierbot_ws/build/my_robot_communicate/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/duybuntu/carrierbot_ws/install/my_robot_communicate/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_robot_communicate build --build-base /home/duybuntu/carrierbot_ws/build/my_robot_communicate/build install --record /home/duybuntu/carrierbot_ws/build/my_robot_communicate/install.log --single-version-externally-managed install_data

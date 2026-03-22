@@ -1,0 +1,26 @@
+/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp: In function ‘int main(int, char**)’:
+/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:4:5: error: ‘rclcpp’ has not been declared
+    4 |     rclcpp::init(argc, argv);
+      |     ^~~~~~
+/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:5:22: error: ‘make_shared’ is not a member of ‘std’
+    5 |     auto node = std::make_shared<CanSubscriberNode>();
+      |                      ^~~~~~~~~~~
+/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:2:1: note: ‘std::make_shared’ is defined in header ‘<memory>’; did you forget to ‘#include <memory>’?
+    1 | #include "my_robot_base/can_subscriber.hpp"
+  +++ |+#include <memory>
+    2 | 
+/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:5:34: error: ‘CanSubscriberNode’ was not declared in this scope
+    5 |     auto node = std::make_shared<CanSubscriberNode>();
+      |                                  ^~~~~~~~~~~~~~~~~
+/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:5:53: error: expected primary-expression before ‘)’ token
+    5 |     auto node = std::make_shared<CanSubscriberNode>();
+      |                                                     ^
+/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:6:5: error: ‘rclcpp’ has not been declared
+    6 |     rclcpp::spin(node);
+      |     ^~~~~~
+/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:7:5: error: ‘rclcpp’ has not been declared
+    7 |     rclcpp::shutdown();
+      |     ^~~~~~
+gmake[2]: *** [CMakeFiles/can_subscriber.dir/build.make:76: CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/can_subscriber.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

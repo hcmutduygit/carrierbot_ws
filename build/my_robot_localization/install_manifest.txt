@@ -1,0 +1,15 @@
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/ament_index/resource_index/package_run_dependencies/my_robot_localization
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/ament_index/resource_index/parent_prefix_path/my_robot_localization
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/environment/ament_prefix_path.sh
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/environment/ament_prefix_path.dsv
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/environment/path.sh
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/environment/path.dsv
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/local_setup.bash
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/local_setup.sh
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/local_setup.zsh
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/local_setup.dsv
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.dsv
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/ament_index/resource_index/packages/my_robot_localization
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/cmake/my_robot_localizationConfig.cmake
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/cmake/my_robot_localizationConfig-version.cmake
+/home/duybuntu/carrierbot_ws/install/my_robot_localization/share/my_robot_localization/package.xml

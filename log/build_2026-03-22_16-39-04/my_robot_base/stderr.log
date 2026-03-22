@@ -1,0 +1,27 @@
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:4:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ has not been declared
+    4 |     [01;31m[Krclcpp[m[K::init(argc, argv);
+      |     [01;31m[K^~~~~~[m[K
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:5:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kmake_shared[m[K’ is not a member of ‘[01m[Kstd[m[K’
+    5 |     auto node = std::[01;31m[Kmake_shared[m[K<CanSubscriberNode>();
+      |                      [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:2:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::make_shared[m[K’ is defined in header ‘[01m[K<memory>[m[K’; did you forget to ‘[01m[K#include <memory>[m[K’?
+    1 | #include "my_robot_base/can_subscriber.hpp"
+  +++ |+[32m[K#include <memory>[m[K
+    2 | 
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:5:34:[m[K [01;31m[Kerror: [m[K‘[01m[KCanSubscriberNode[m[K’ was not declared in this scope
+    5 |     auto node = std::make_shared<[01;31m[KCanSubscriberNode[m[K>();
+      |                                  [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:5:53:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+    5 |     auto node = std::make_shared<CanSubscriberNode>([01;31m[K)[m[K;
+      |                                                     [01;31m[K^[m[K
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:6:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ has not been declared
+    6 |     [01;31m[Krclcpp[m[K::spin(node);
+      |     [01;31m[K^~~~~~[m[K
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:7:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ has not been declared
+    7 |     [01;31m[Krclcpp[m[K::shutdown();
+      |     [01;31m[K^~~~~~[m[K
+gmake[2]: *** [CMakeFiles/can_subscriber.dir/build.make:76: CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/can_subscriber.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

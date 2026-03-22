@@ -1,0 +1,4 @@
+[ 25%] Built target can_subscriber
+[ 50%] Built target robot_news_station
+[ 75%] Built target smartphone
+[ 87%] [32mBuilding CXX object CMakeFiles/can_publisher.dir/src/can_publisher.cpp.o[0m

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "my_robot_msgs__py",
+		"source" : "/home/duybuntu/carrierbot_ws/build/my_robot_msgs/my_robot_msgs__py"
+	}
+}

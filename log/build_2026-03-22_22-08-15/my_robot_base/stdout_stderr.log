@@ -1,0 +1,12 @@
+[ 25%] Built target can_subscriber
+[ 50%] Built target robot_news_station
+[ 75%] Built target smartphone
+[ 87%] [32mBuilding CXX object CMakeFiles/can_publisher.dir/src/can_publisher.cpp.o[0m
+In file included from [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_publisher.cpp:1[m[K:
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_publisher.hpp:14:10:[m[K [01;31m[Kfatal error: [m[Kgeometry_msgs/msg/twist.hpp: No such file or directory
+   14 | #include [01;31m[K"geometry_msgs/msg/twist.hpp"[m[K  // Thay bằng message type của bạn
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/can_publisher.dir/build.make:76: CMakeFiles/can_publisher.dir/src/can_publisher.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:221: CMakeFiles/can_publisher.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

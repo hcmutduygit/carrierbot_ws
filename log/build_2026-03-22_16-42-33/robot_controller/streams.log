@@ -1,0 +1,24 @@
+[0.396s] Invoking command in '/home/duybuntu/carrierbot_ws/build/robot_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/robot_controller -- -j12 -l12
+[0.503s] Invoked command in '/home/duybuntu/carrierbot_ws/build/robot_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/robot_controller -- -j12 -l12
+[0.504s] Invoking command in '/home/duybuntu/carrierbot_ws/build/robot_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/robot_controller
+[0.526s] -- Install configuration: ""
+[0.526s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/config
+[0.526s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/config/robot_controller.yaml
+[0.526s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/launch
+[0.528s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/launch/controller.launch.py
+[0.528s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/ament_index/resource_index/package_run_dependencies/robot_controller
+[0.528s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/ament_index/resource_index/parent_prefix_path/robot_controller
+[0.528s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/environment/ament_prefix_path.sh
+[0.528s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/environment/ament_prefix_path.dsv
+[0.528s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/environment/path.sh
+[0.528s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/environment/path.dsv
+[0.530s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/local_setup.bash
+[0.530s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/local_setup.sh
+[0.530s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/local_setup.zsh
+[0.530s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/local_setup.dsv
+[0.530s] -- Installing: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/package.dsv
+[0.530s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/ament_index/resource_index/packages/robot_controller
+[0.530s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/cmake/robot_controllerConfig.cmake
+[0.530s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/cmake/robot_controllerConfig-version.cmake
+[0.531s] -- Up-to-date: /home/duybuntu/carrierbot_ws/install/robot_controller/share/robot_controller/package.xml
+[0.606s] Invoked command in '/home/duybuntu/carrierbot_ws/build/robot_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/carrierbot_ws/install/my_robot_communicate:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/robot_controller

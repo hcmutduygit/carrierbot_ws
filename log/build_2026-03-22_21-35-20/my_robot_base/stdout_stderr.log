@@ -1,0 +1,35 @@
+[35m[1mConsolidate compiler generated dependencies of target can_subscriber[0m
+[ 25%] Built target robot_news_station
+[ 50%] Built target smartphone
+[ 62%] [32mBuilding CXX object CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o[0m
+[ 87%] Built target can_publisher
+In file included from [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:1[m[K:
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kvoid CanSubscriberNode::receive_can_frame()[m[K’:
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:75:21:[m[K [01;31m[Kerror: [m[K‘[01m[Khandle_can_0x100[m[K’ was not declared in this scope; did you mean ‘[01m[Khandle_can_0x200[m[K’?
+   75 |                     [01;31m[Khandle_can_0x100[m[K(frame);
+      |                     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |                     [32m[Khandle_can_0x200[m[K
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kvoid CanSubscriberNode::handle_can_0x200(const can_frame&)[m[K’:
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:125:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kframe[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  125 |     void handle_can_0x200([01;35m[Kconst struct can_frame& frame[m[K) {
+      |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kvoid CanSubscriberNode::handle_can_0x300(const can_frame&)[m[K’:
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:131:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kframe[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  131 |     void handle_can_0x300([01;35m[Kconst struct can_frame& frame[m[K) {
+      |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kvoid CanSubscriberNode::handle_can_0x400(const can_frame&)[m[K’:
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:137:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kframe[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  137 |     void handle_can_0x400([01;35m[Kconst struct can_frame& frame[m[K) {
+      |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+In file included from [01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:1[m[K:
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kint CanSubscriberNode::ConvertPulse(float&)[m[K’:
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:147:80:[m[K [01;31m[Kerror: [m[K‘[01m[KPI[m[K’ was not declared in this scope
+  147 |     int pulse = static_cast<int>(pulse_per_revolution * velocity * 1000 / (2 * [01;31m[KPI[m[K * wheel_radius)); // Convert m/s to pulses
+      |                                                                                [01;31m[K^~[m[K
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:[m[K In member function ‘[01m[Kfloat CanSubscriberNode::ConvertVelocityFromPulse(int)[m[K’:
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/include/my_robot_base/can_subscriber.hpp:157:43:[m[K [01;31m[Kerror: [m[K‘[01m[KPI[m[K’ was not declared in this scope
+  157 |     const float circumference_mm = 2.0f * [01;31m[KPI[m[K * wheel_radius;
+      |                                           [01;31m[K^~[m[K
+gmake[2]: *** [CMakeFiles/can_subscriber.dir/build.make:76: CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/can_subscriber.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,57 @@
+[0.305s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/duybuntu/carrierbot_ws/src/my_robot_description -DCMAKE_INSTALL_PREFIX=/home/duybuntu/carrierbot_ws/install/my_robot_description
+[0.384s] -- The C compiler identification is GNU 11.4.0
+[0.480s] -- The CXX compiler identification is GNU 11.4.0
+[0.492s] -- Detecting C compiler ABI info
+[0.587s] -- Detecting C compiler ABI info - done
+[0.597s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.598s] -- Detecting C compile features
+[0.598s] -- Detecting C compile features - done
+[0.603s] -- Detecting CXX compiler ABI info
+[0.739s] -- Detecting CXX compiler ABI info - done
+[0.748s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.748s] -- Detecting CXX compile features
+[0.748s] -- Detecting CXX compile features - done
+[0.757s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.978s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.215s] -- Configuring done
+[1.218s] -- Generating done
+[1.220s] -- Build files have been written to: /home/duybuntu/carrierbot_ws/build/my_robot_description
+[1.225s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/duybuntu/carrierbot_ws/src/my_robot_description -DCMAKE_INSTALL_PREFIX=/home/duybuntu/carrierbot_ws/install/my_robot_description
+[1.227s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_description -- -j12 -l12
+[1.272s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_description -- -j12 -l12
+[1.274s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_description
+[1.282s] -- Install configuration: ""
+[1.282s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//urdf
+[1.282s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//urdf/mobile_base.xacro
+[1.282s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//urdf/my_robot.urdf.xacro
+[1.282s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//urdf/lidar.xacro
+[1.283s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//urdf/ros2_control.xacro
+[1.283s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//urdf/common_properties.xacro
+[1.283s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//urdf/mobile_base_gazebo.xacro
+[1.283s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//urdf/camera.xacro
+[1.283s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//launch
+[1.283s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//launch/display.launch.xml
+[1.283s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//launch/display.launch.py
+[1.284s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//rviz
+[1.284s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//rviz/urdf_config.rviz
+[1.284s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//meshes
+[1.284s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//meshes/wheels
+[1.284s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//meshes/wheels/wheel.stl
+[1.286s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//meshes/bases
+[1.286s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description//meshes/bases/base.stl
+[1.318s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/ament_index/resource_index/package_run_dependencies/my_robot_description
+[1.318s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/ament_index/resource_index/parent_prefix_path/my_robot_description
+[1.318s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/environment/ament_prefix_path.sh
+[1.319s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/environment/ament_prefix_path.dsv
+[1.319s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/environment/path.sh
+[1.319s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/environment/path.dsv
+[1.319s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/local_setup.bash
+[1.319s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/local_setup.sh
+[1.319s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/local_setup.zsh
+[1.319s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/local_setup.dsv
+[1.320s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/package.dsv
+[1.320s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/ament_index/resource_index/packages/my_robot_description
+[1.320s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/cmake/my_robot_descriptionConfig.cmake
+[1.320s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/cmake/my_robot_descriptionConfig-version.cmake
+[1.320s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_description/share/my_robot_description/package.xml
+[1.323s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_description

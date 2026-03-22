@@ -1,0 +1,11 @@
+[35m[1mConsolidate compiler generated dependencies of target can_subscriber[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o[0m
+[ 50%] Built target robot_news_station
+[ 83%] Built target smartphone
+[01m[K/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kcan_subscriber.hpp: No such file or directory
+    1 | #include [01;31m[K"can_subscriber.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/can_subscriber.dir/build.make:76: CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/can_subscriber.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

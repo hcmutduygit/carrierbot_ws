@@ -1,0 +1,7 @@
+/home/duybuntu/carrierbot_ws/src/my_robot_base/src/can_subscriber.cpp:1:10: fatal error: can_subscriber.hpp: No such file or directory
+    1 | #include "can_subscriber.hpp"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/can_subscriber.dir/build.make:76: CMakeFiles/can_subscriber.dir/src/can_subscriber.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/can_subscriber.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

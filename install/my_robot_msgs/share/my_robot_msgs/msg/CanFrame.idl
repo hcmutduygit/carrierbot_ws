@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from my_robot_msgs/msg/CanFrame.msg
+// generated code does not contain a copyright notice
+
+
+module my_robot_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "CAN Frame Message" "\n"
+      "Định nghĩa cấu trúc message để gửi dữ liệu CAN")
+    struct CanFrame {
+      @verbatim (language="comment", text=
+        "CAN ID (ví dụ: 0x123)")
+      uint32 can_id;
+
+      @verbatim (language="comment", text=
+        "Dữ liệu CAN (tối đa 8 bytes)")
+      sequence<uint8> data;
+    };
+  };
+};

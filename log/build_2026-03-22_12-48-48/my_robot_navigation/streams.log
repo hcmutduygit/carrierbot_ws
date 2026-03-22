@@ -1,0 +1,42 @@
+[0.299s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/duybuntu/carrierbot_ws/src/my_robot_navigation -DCMAKE_INSTALL_PREFIX=/home/duybuntu/carrierbot_ws/install/my_robot_navigation
+[0.378s] -- The C compiler identification is GNU 11.4.0
+[0.471s] -- The CXX compiler identification is GNU 11.4.0
+[0.479s] -- Detecting C compiler ABI info
+[0.604s] -- Detecting C compiler ABI info - done
+[0.615s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.615s] -- Detecting C compile features
+[0.615s] -- Detecting C compile features - done
+[0.621s] -- Detecting CXX compiler ABI info
+[0.752s] -- Detecting CXX compiler ABI info - done
+[0.763s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.763s] -- Detecting CXX compile features
+[0.763s] -- Detecting CXX compile features - done
+[0.772s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.987s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.147s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.260s] -- Added test 'lint_cmake' to check CMake code style
+[1.263s] -- Added test 'xmllint' to check XML markup files
+[1.264s] -- Configuring done
+[1.267s] -- Generating done
+[1.269s] -- Build files have been written to: /home/duybuntu/carrierbot_ws/build/my_robot_navigation
+[1.275s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/duybuntu/carrierbot_ws/src/my_robot_navigation -DCMAKE_INSTALL_PREFIX=/home/duybuntu/carrierbot_ws/install/my_robot_navigation
+[1.277s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_navigation -- -j12 -l12
+[1.342s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/duybuntu/carrierbot_ws/build/my_robot_navigation -- -j12 -l12
+[1.345s] Invoking command in '/home/duybuntu/carrierbot_ws/build/my_robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_navigation
+[1.353s] -- Install configuration: ""
+[1.353s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/ament_index/resource_index/package_run_dependencies/my_robot_navigation
+[1.353s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/ament_index/resource_index/parent_prefix_path/my_robot_navigation
+[1.354s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/environment/ament_prefix_path.sh
+[1.354s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/environment/ament_prefix_path.dsv
+[1.354s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/environment/path.sh
+[1.354s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/environment/path.dsv
+[1.354s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/local_setup.bash
+[1.354s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/local_setup.sh
+[1.355s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/local_setup.zsh
+[1.355s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/local_setup.dsv
+[1.355s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/package.dsv
+[1.355s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/ament_index/resource_index/packages/my_robot_navigation
+[1.355s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/cmake/my_robot_navigationConfig.cmake
+[1.356s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/cmake/my_robot_navigationConfig-version.cmake
+[1.356s] -- Installing: /home/duybuntu/carrierbot_ws/install/my_robot_navigation/share/my_robot_navigation/package.xml
+[1.359s] Invoked command in '/home/duybuntu/carrierbot_ws/build/my_robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duybuntu/ros2_ws_basic/install/my_py_pkg:/home/duybuntu/deli_ws/install/deli_logger:/home/duybuntu/deli_ws/install/mqtt:/home/duybuntu/deli_ws/install/localization:/home/duybuntu/turtlebot3_ws/install/turtlebot3_teleop:/home/duybuntu/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/duybuntu/carrierbot_ws/build/my_robot_navigation
