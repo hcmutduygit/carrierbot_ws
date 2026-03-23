@@ -24,7 +24,7 @@ public:
         }
 
         // 2. Locate the vcan0 interface
-        std::strcpy(ifr_.ifr_name, "vcan0");W
+        std::strcpy(ifr_.ifr_name, "vcan0");
         if (ioctl(can_socket_, SIOCGIFINDEX, &ifr_) < 0) {
             RCLCPP_ERROR(this->get_logger(), "Failed to find vcan0 interface!");
             return;

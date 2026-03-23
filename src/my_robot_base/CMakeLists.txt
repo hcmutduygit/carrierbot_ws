@@ -30,11 +30,10 @@ endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-add_executable(robot_news_station src/robot_news_station.cpp)
-ament_target_dependencies(robot_news_station rclcpp example_interfaces)
-  
-add_executable(smartphone src/smartphone.cpp)
-ament_target_dependencies(smartphone rclcpp example_interfaces) 
+add_executable(can_node src/can_node.cpp)
+target_include_directories(can_node PUBLIC 
+  ${CMAKE_CURRENT_SOURCE_DIR}/include)
+ament_target_dependencies(can_node rclcpp std_msgs my_robot_msgs)
 
 add_executable(can_subscriber src/can_subscriber.cpp)
 target_include_directories(can_subscriber PUBLIC 
@@ -47,8 +46,7 @@ target_include_directories(can_publisher PUBLIC
 ament_target_dependencies(can_publisher rclcpp std_msgs geometry_msgs my_robot_msgs)
 
   install(TARGETS 
-    robot_news_station
-    smartphone
+    can_node
     can_subscriber
     can_publisher
     DESTINATION lib/${PROJECT_NAME} #my_robot_base
