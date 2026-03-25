@@ -91,7 +91,8 @@ int main(int argc, char **argv) {
     while (rclcpp::ok() && !should_stop) {
         // Gửi vận tốc
         std::cout << "\n📍 Iteration " << (++count) << std::endl;
-        send_vel(can);
+        can.send(0x050, {1, 0, 0, 0, 0, 0, 0, 0}); // slave master - gửi trước
+        // send_vel(can);
         
         rclcpp::spin_some(node);
         loop_rate.sleep();

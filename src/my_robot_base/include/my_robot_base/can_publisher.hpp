@@ -3,61 +3,49 @@
 
 #include <iostream>
 #include <cstring>
-#include <unistd.h>
-#include <net/if.h>
-#include <sys/ioctl.h>
-#include <sys/socket.h>
-#include <linux/can.h>
-#include <linux/can/raw.h>
-
 #include "rclcpp/rclcpp.hpp"
-#include "my_robot_msgs/msg/can_frame.hpp"  // Include CanFrame message
+#include "my_robot_msgs/msg/can_frame.hpp"
+#include "my_robot_base/can_node.hpp"
 
 class CanPublisherNode : public rclcpp::Node {
 public:
-    CanPublisherNode() : Node("can_publisher_node") {
-        // 1. Create a socket for CAN communication
-        can_socket_ = socket(PF_CAN, SOCK_RAW, CAN_RAW);
-        if (can_socket_ < 0) {
-            RCLCPP_ERROR(this->get_logger(), "Socket creation failed!");
-            return;
+    CanPublisherNode() : Node("can_publisher_node"), can_("/dev/usbcan", 2000000, 2.0) {
+        try {
+            // Open CAN interface
+            RCLCPP_INFO(this->get_logger(), "Opening CAN interface...");
+            can_.open();
+            
+            RCLCPP_INFO(this->get_logger(), "CAN Publisher started on /dev/usbcan");
+
+            // Create a subscriber to listen to /can_frame topic
+            subscription_ = this->create_subscription<my_robot_msgs::msg::CanFrame>(
+                "/can_frame",
+                10,
+                std::bind(&CanPublisherNode::callback_can_frame, this, std::placeholders::_1)
+            );
+
+            RCLCPP_INFO(this->get_logger(), "Subscribed to /can_frame topic");
         }
-
-        // 2. Locate the vcan0 interface
-        std::strcpy(ifr_.ifr_name, "vcan0");
-        if (ioctl(can_socket_, SIOCGIFINDEX, &ifr_) < 0) {
-            RCLCPP_ERROR(this->get_logger(), "Failed to find vcan0 interface!");
-            return;
+        catch (const std::exception& e) {
+            RCLCPP_ERROR(this->get_logger(), "Error initializing CAN Publisher: %s", e.what());
         }
-
-        addr_.can_family = AF_CAN;
-        addr_.can_ifindex = ifr_.ifr_ifindex;
-
-        // 3. Bind the socket to the interface
-        if (bind(can_socket_, (struct sockaddr *)&addr_, sizeof(addr_)) < 0) {
-            RCLCPP_ERROR(this->get_logger(), "Socket bind failed!");
-            return;
-        }
-
-        RCLCPP_INFO(this->get_logger(), "CAN Publisher started on vcan0.");
-
-        // 4. Create a subscriber to listen to /can_frame topic
-        subscription_ = this->create_subscription<my_robot_msgs::msg::CanFrame>(
-            "/can_frame",
-            10,
-            std::bind(&CanPublisherNode::callback_velocity, this, std::placeholders::_1)
-        );
-
-        RCLCPP_INFO(this->get_logger(), "Subscribed to /can_frame topic");
     }
 
     ~CanPublisherNode() {
-        if (can_socket_ >= 0) close(can_socket_);
+        try {
+            can_.close();
+        }
+        catch (const std::exception& e) {
+            RCLCPP_ERROR(this->get_logger(), "Error closing CAN: %s", e.what());
+        }
     }
 
 private:
+    WaveshareCAN can_;
+    rclcpp::Subscription<my_robot_msgs::msg::CanFrame>::SharedPtr subscription_;
+
     // Callback function khi nhận được message từ topic
-    void callback_velocity(const my_robot_msgs::msg::CanFrame::SharedPtr msg) {
+    void callback_can_frame(const my_robot_msgs::msg::CanFrame::SharedPtr msg) {
         RCLCPP_INFO(this->get_logger(), "Received CAN Frame - ID: 0x%X, Data Length: %zu",
                     msg->can_id, msg->data.size());
         
@@ -66,30 +54,20 @@ private:
     }
 
     void send_can_frame(const my_robot_msgs::msg::CanFrame::SharedPtr msg) {
-        struct can_frame frame;
-
-        // Use CAN ID from message
-        frame.can_id = msg->can_id;
-        frame.can_dlc = msg->data.size();
-
-        // Copy data from message to CAN frame
-        for (size_t i = 0; i < msg->data.size() && i < 8; i++) {
-            frame.data[i] = msg->data[i];
+        try {
+            // Convert to std::vector<uint8_t>
+            std::vector<uint8_t> data(msg->data.begin(), msg->data.end());
+            
+            // Send CAN frame
+            can_.send(msg->can_id, data);
+            
+            RCLCPP_INFO(this->get_logger(), "Sent CAN Frame: ID 0x%X, Data Length: %zu",
+                       msg->can_id, data.size());
         }
-
-        // Send CAN frame
-        if (write(can_socket_, &frame, sizeof(struct can_frame)) != sizeof(struct can_frame)) {
-            RCLCPP_ERROR(this->get_logger(), "Failed to send CAN frame!");
-        } else {
-            RCLCPP_INFO(this->get_logger(), "Sent CAN Frame: ID 0x%X, DLC: %d",
-                       frame.can_id, frame.can_dlc);
+        catch (const std::exception& e) {
+            RCLCPP_ERROR(this->get_logger(), "Error sending CAN frame: %s", e.what());
         }
     }
-
-    int can_socket_;
-    struct sockaddr_can addr_;
-    struct ifreq ifr_;
-    rclcpp::Subscription<my_robot_msgs::msg::CanFrame>::SharedPtr subscription_;
 };
 
 #endif  // CAN_PUBLISHER_HPP_

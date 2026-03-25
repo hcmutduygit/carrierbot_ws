@@ -1,8 +1,7 @@
-#ifndef CAN_NODE_HPP
-#define CAN_NODE_HPP
+#ifndef CAN_NODE_HPP_
+#define CAN_NODE_HPP_
 
 #include <rclcpp/rclcpp.hpp>
-#include "my_robot_msgs/msg/can_frame.hpp"
 #include <fcntl.h>
 #include <unistd.h>
 #include <termios.h>
