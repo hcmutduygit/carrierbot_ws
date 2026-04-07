@@ -1,0 +1,11 @@
+<library path="my_robot_firmware">
+    <class name="carrierbot_firmware::CarrierbotInterface"
+        type="carrierbot_firmware::CarrierbotInterface"
+        base_class_type="hardware_interface::SystemInterface">
+        <description>
+            Carrierbot hardware interface
+        </description>
+    </class>
+
+
+</library>

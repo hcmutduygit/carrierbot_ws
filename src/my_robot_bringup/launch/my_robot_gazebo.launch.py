@@ -65,9 +65,7 @@ def generate_launch_description():
     ros_gz_bridge_node = Node(
         package="ros_gz_bridge",
         executable="parameter_bridge",
-        parameters=[{
-            'config_file': gazebo_config_path
-        }]
+        arguments=[gazebo_config_path]
     )
 
     # RViz2

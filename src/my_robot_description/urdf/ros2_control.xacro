@@ -1,17 +1,29 @@
 <?xml version="1.0"?>
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
     <ros2_control name="RobotSystem" type="system">
-        <xacro:if value="$(arg is_ignition)">
-            <hardware>
-               <plugin>ign_ros2_control/IgnitionSystem</plugin> 
-            </hardware>
+
+        <xacro:if value="$(arg is_sim)">
+            <xacro:if value="$(arg is_ignition)">
+                <hardware>
+                <plugin>ign_ros2_control/IgnitionSystem</plugin> 
+                </hardware>
+            </xacro:if>
+
+            <xacro:unless value="$(arg is_ignition)">
+                <hardware> 
+                <plugin>gz_ros2_control/GazeboSimSystem</plugin> 
+                </hardware>
+            </xacro:unless>
         </xacro:if>
 
-        <xacro:unless value="$(arg is_ignition)">
-            <hardware> 
-               <plugin>gz_ros2_control/GazeboSimSystem</plugin> 
+        <xacro:unless value="$(arg is_sim)">
+            <hardware>
+                <plugin>carrierbot_firmware::CarrierbotInterface</plugin>
+                <param name="port">/dev/ttyUSB0</param>
+                <param name="baud_rate">115200</param>
             </hardware>
         </xacro:unless>
+
 
         <joint name="base_right_wheel_joint">
             <command_interface name="velocity">
