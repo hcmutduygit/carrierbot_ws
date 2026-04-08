@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(robot_controller)
+project(carrierbot_controller)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -26,7 +26,7 @@ ament_target_dependencies(simple_controller
 
 install(
   DIRECTORY include
-  DESTINATION include
+  DESTINATION share/${PROJECT_NAME}
 )
 
 install(TARGETS 

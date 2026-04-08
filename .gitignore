@@ -1,3 +1,6 @@
 /build 
 /install
 /log
+.vscode/
+src/ros-imu-bno055/
+src/rplidar_ros/
