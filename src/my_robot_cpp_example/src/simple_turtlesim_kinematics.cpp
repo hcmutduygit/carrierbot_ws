@@ -10,14 +10,14 @@ SimpleTurtlesimKinematics::SimpleTurtlesimKinematics(const std::string &name) : 
         std::bind(&SimpleTurtlesimKinematics::turtle2PoseCallback, this, _1));
 }
 
-void SimpleTurtlesimKinematics::turtle1PoseCallback(const turtlesim::msg::Pose & pose)
+void SimpleTurtlesimKinematics::turtle1PoseCallback(const std::shared_ptr<const turtlesim::msg::Pose> pose)
 {
-    last_turtle1_pose_ = pose;
+    last_turtle1_pose_ = *pose;
 }
 
-void SimpleTurtlesimKinematics::turtle2PoseCallback(const turtlesim::msg::Pose & pose)
+void SimpleTurtlesimKinematics::turtle2PoseCallback(const std::shared_ptr<const turtlesim::msg::Pose> pose)
 {
-    last_turtle2_pose_ = pose;
+    last_turtle2_pose_ = *pose;
     float Tx = last_turtle2_pose_.x - last_turtle1_pose_.x;
     float Ty = last_turtle2_pose_.y - last_turtle1_pose_.y;
 

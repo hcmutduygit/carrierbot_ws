@@ -10,8 +10,8 @@ public:
     SimpleTurtlesimKinematics(const std::string &name);
 
 private:
-    void turtle1PoseCallback(const turtlesim::msg::Pose & pose);
-    void turtle2PoseCallback(const turtlesim::msg::Pose & pose);
+    void turtle1PoseCallback(const std::shared_ptr<const turtlesim::msg::Pose> pose);
+    void turtle2PoseCallback(const std::shared_ptr<const turtlesim::msg::Pose> pose);
 
     rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr turtle1_pose_sub_;
     rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr turtle2_pose_sub_;

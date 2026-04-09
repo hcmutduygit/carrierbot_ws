@@ -55,12 +55,12 @@ class SimpleLifecycleNode : public rclcpp_lifecycle::LifecycleNode
             return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
         }
 
-        void msgCallback(const std_msgs::msg::String & msg)
+        void msgCallback(const std::shared_ptr<const std_msgs::msg::String> msg)
         {
             auto state = get_current_state();
             if(state.label() == "active")
             {
-                RCLCPP_INFO_STREAM(get_logger(), "Lifecycle node heard: " << msg.data.c_str());
+                RCLCPP_INFO_STREAM(get_logger(), "Lifecycle node heard: " << msg->data.c_str());
             }
         }
     private:

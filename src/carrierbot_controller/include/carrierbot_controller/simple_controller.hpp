@@ -12,7 +12,7 @@ public:
     SimpleController(const std::string & name);
 
 private:
-    void velCallback(const geometry_msgs::msg::TwistStamped & msg);
+    void velCallback(const std::shared_ptr<const geometry_msgs::msg::TwistStamped> msg);
 
     rclcpp::Subscription<geometry_msgs::msg::TwistStamped>::SharedPtr vel_sub_;
     rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr wheel_cmd_pub_;

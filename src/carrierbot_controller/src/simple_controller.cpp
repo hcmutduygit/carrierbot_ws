@@ -24,9 +24,9 @@ SimpleController::SimpleController(const std::string & name)
     RCLCPP_INFO_STREAM(get_logger(), "The conversion matrix is \n" << speed_conversion_);
 }
 
-void SimpleController::velCallback(const geometry_msgs::msg::TwistStamped & msg)
+void SimpleController::velCallback(const std::shared_ptr<const geometry_msgs::msg::TwistStamped> msg)
 {
-    Eigen::Vector2d robot_speed(msg.twist.linear.x, msg.twist.angular.z);
+    Eigen::Vector2d robot_speed(msg->twist.linear.x, msg->twist.angular.z);
 
     Eigen::Vector2d wheel_speed = speed_conversion_.inverse() * robot_speed;
     std_msgs::msg::Float64MultiArray wheel_speed_msg;
