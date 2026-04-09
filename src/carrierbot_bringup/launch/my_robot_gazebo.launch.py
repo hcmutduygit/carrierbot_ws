@@ -16,9 +16,9 @@ def generate_launch_description():
     is_ignition = 'True' if ros_distro == "humble" else 'False'
 
     # Package paths
-    my_robot_description_dir = get_package_share_directory("my_robot_description")
-    my_robot_bringup_dir = get_package_share_directory("my_robot_bringup")
-    robot_controller_dir = get_package_share_directory("robot_controller")
+    my_robot_description_dir = get_package_share_directory("carrierbot_description")
+    my_robot_bringup_dir = get_package_share_directory("carrierbot_bringup")
+    robot_controller_dir = get_package_share_directory("carrierbot_controller"))
     ros_gz_sim_dir = get_package_share_directory("ros_gz_sim")
     
     # File paths

@@ -68,7 +68,7 @@ def generate_launch_description():
             ),
 
             Node(
-                package="robot_controller",
+                package="carrierbot_controller",
                 executable="simple_controller_py",
                 parameters=[{"wheel_radius": wheel_radius,
                             "wheel_seperation": wheel_seperation}],
@@ -76,7 +76,7 @@ def generate_launch_description():
             ),
 
             Node(
-                package="robot_controller",
+                package="carrierbot_controller",
                 executable="simple_controller",
                 parameters=[{"wheel_radius": wheel_radius,
                             "wheel_seperation": wheel_seperation}],

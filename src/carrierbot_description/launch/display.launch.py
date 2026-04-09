@@ -7,11 +7,11 @@ from ament_index_python.packages import get_package_share_path
 
 def generate_launch_description():
 
-    urdf_path = os.path.join(get_package_share_path('my_robot_description'), 
+    urdf_path = os.path.join(get_package_share_path('carrierbot_description'), 
                              'urdf', 'my_robot.urdf.xacro')
     
     # Assuming you have an RViz configuration file in the package
-    rviz_config_path = os.path.join(get_package_share_path('my_robot_description'), 
+    rviz_config_path = os.path.join(get_package_share_path('carrierbot_description'), 
                                     'rviz', 'urdf_config.rviz')
     
     robot_description = ParameterValue(Command(['xacro ', urdf_path]), value_type=str)

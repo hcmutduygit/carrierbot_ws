@@ -6,7 +6,7 @@ from launch.substitutions import Command
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
-    my_robot_description = get_package_share_directory("my_robot_description")
+    my_robot_description = get_package_share_directory("carrierbot_description")
 
     robot_description = ParameterValue(Command([
         "xacro ",
@@ -31,7 +31,7 @@ def generate_launch_description():
             'use_sim_time': False
             },
             os.path.join(
-                get_package_share_directory("robot_controller"),
+                get_package_share_directory("carrierbot_controller"),
                 "config",
                 "robot_controller.yaml"
             )
