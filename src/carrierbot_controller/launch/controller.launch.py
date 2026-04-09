@@ -1,6 +1,6 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import DeclareLaunchArgument, GroupAction, ExecuteProcess
+from launch.actions import DeclareLaunchArgument, GroupAction
 from launch.substitutions import LaunchConfiguration
 from launch.conditions import IfCondition, UnlessCondition
 
@@ -31,39 +31,24 @@ def generate_launch_description():
     wheel_seperation = LaunchConfiguration("wheel_seperation")
     use_simple_controller = LaunchConfiguration("use_simple_controller")
 
-    joint_state_broadcaster_spawner = ExecuteProcess(
-        cmd=["spawner", 
-             "joint_state_broadcaster",
-             "--controller-manager", 
-             "/controller_manager"],
-        output="screen"
-    )
-
-    wheel_controller_spawner = ExecuteProcess(
-        cmd=["spawner",
-             "carrierbot_controller",
-             "--controller-manager",
-             "/controller_manager"],
-        output="screen",
-        condition=UnlessCondition(use_simple_controller)
-    )
+    # NOTE: In ROS2 Foxy, spawner console scripts can't be found by ExecuteProcess
+    # Uncomment below if you can run spawners manually:
+    # ros2 control load_controller --controller-manager /controller_manager joint_state_broadcaster
+    # ros2 control load_controller --controller-manager /controller_manager simple_velocity_controller
+    # ros2 control set_controller_state joint_state_broadcaster active
+    # ros2 control set_controller_state simple_velocity_controller active
 
     simple_controller = GroupAction(
         actions=[
-            ExecuteProcess(
-                cmd=["spawner",
-                     "simple_velocity_controller",
-                     "--controller-manager",
-                     "/controller_manager"],
-                condition=IfCondition(use_simple_controller)
-            ),
+            # NOTE: simple_velocity_controller spawner skipped for Foxy compatibility
+            # Manually spawn with: ros2 control load_controller --controller-manager /controller_manager simple_velocity_controller
 
             Node(
                 package="carrierbot_controller",
                 executable="simple_controller_py",
                 parameters=[{"wheel_radius": wheel_radius,
                             "wheel_seperation": wheel_seperation}],
-            condition=IfCondition(use_python)
+                condition=IfCondition(use_python)
             ),
 
             Node(
@@ -71,19 +56,23 @@ def generate_launch_description():
                 executable="simple_controller",
                 parameters=[{"wheel_radius": wheel_radius,
                             "wheel_seperation": wheel_seperation}],
-            condition=IfCondition(use_simple_controller)
+                output="screen",
+                condition=IfCondition(use_simple_controller)
+            ),
+
+            Node(
+                package="carrierbot_controller",
+                executable="cmd_vel_relay",
+                output="screen",
+                condition=IfCondition(use_simple_controller)
             )
         ]
     )
 
-
-    
     return LaunchDescription([
         use_python_arg,
         wheel_radius_arg,
         wheel_seperation_arg,
         use_simple_controller_arg,
-        joint_state_broadcaster_spawner,
-        wheel_controller_spawner,
         simple_controller,
     ])
