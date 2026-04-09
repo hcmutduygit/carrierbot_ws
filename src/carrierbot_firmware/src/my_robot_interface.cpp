@@ -213,7 +213,7 @@ hardware_interface::return_type CarrierbotInterface::write()
         int32_t right_velocity = static_cast<int32_t>(velocity_command_.at(0) * 100);
         std::memcpy(&can_data[4], &right_velocity, sizeof(int32_t));
 
-        can_interface_->send(0x11, can_data);
+        // can_interface_->send(0x11, can_data);
 
         // std::vector<uint8_t> control_data(8, 0);
         // control_data[0] = 1;
