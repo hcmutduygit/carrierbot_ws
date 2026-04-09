@@ -1,6 +1,6 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import DeclareLaunchArgument, GroupAction
+from launch.actions import DeclareLaunchArgument, GroupAction, ExecuteProcess
 from launch.substitutions import LaunchConfiguration
 from launch.conditions import IfCondition, UnlessCondition
 
@@ -31,39 +31,30 @@ def generate_launch_description():
     wheel_seperation = LaunchConfiguration("wheel_seperation")
     use_simple_controller = LaunchConfiguration("use_simple_controller")
 
-    joint_state_broadcaster_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=[
-            "joint_state_broadcaster",
-            "--controller-manager",
-            "/controller_manager"
-        ],
+    joint_state_broadcaster_spawner = ExecuteProcess(
+        cmd=["spawner", 
+             "joint_state_broadcaster",
+             "--controller-manager", 
+             "/controller_manager"],
         output="screen"
     )
 
-    wheel_controller_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=[
-            "carrierbot_controller",
-            "--controller-manager",
-            "/controller_manager"
-        ],
+    wheel_controller_spawner = ExecuteProcess(
+        cmd=["spawner",
+             "carrierbot_controller",
+             "--controller-manager",
+             "/controller_manager"],
         output="screen",
         condition=UnlessCondition(use_simple_controller)
     )
 
     simple_controller = GroupAction(
         actions=[
-            Node(
-                package="controller_manager",
-                executable="spawner",
-                arguments=[
-                    "simple_velocity_controller",
-                    "--controller-manager",
-                    "/controller_manager"
-                ],
+            ExecuteProcess(
+                cmd=["spawner",
+                     "simple_velocity_controller",
+                     "--controller-manager",
+                     "/controller_manager"],
                 condition=IfCondition(use_simple_controller)
             ),
 

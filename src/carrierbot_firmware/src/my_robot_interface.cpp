@@ -215,9 +215,9 @@ hardware_interface::return_type CarrierbotInterface::write()
 
         can_interface_->send(0x11, can_data);
 
-        std::vector<uint8_t> control_data(8, 0);
-        control_data[0] = 1;
-        can_interface_->send(0x50, control_data);
+        // std::vector<uint8_t> control_data(8, 0);
+        // control_data[0] = 1;
+        // can_interface_->send(0x50, control_data);
     }
     catch (const std::exception &e)
     {

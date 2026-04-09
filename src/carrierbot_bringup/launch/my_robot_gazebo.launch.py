@@ -18,7 +18,7 @@ def generate_launch_description():
     # Package paths
     my_robot_description_dir = get_package_share_directory("carrierbot_description")
     my_robot_bringup_dir = get_package_share_directory("carrierbot_bringup")
-    robot_controller_dir = get_package_share_directory("carrierbot_controller"))
+    robot_controller_dir = get_package_share_directory("carrierbot_controller")
     ros_gz_sim_dir = get_package_share_directory("ros_gz_sim")
     
     # File paths
