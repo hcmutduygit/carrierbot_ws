@@ -296,27 +296,36 @@ namespace carrierbot_firmware
                 "WRITE: velocity_command_[0]=" << velocity_command_.at(0)
                 << " velocity_command_[1]=" << velocity_command_.at(1));
             
-            std::vector<uint8_t> can_data(8, 0);
+            std::vector<uint8_t> right_vel_data(8, 0);
+            std::vector<uint8_t> left_vel_data(8, 0);
 
-            int32_t left_velocity = static_cast<int32_t>(velocity_command_.at(1));
-            std::memcpy(&can_data[0], &left_velocity, sizeof(int32_t));
+            int left_velocity = static_cast<int>(velocity_command_.at(1));
+            std::memcpy(&left_vel_data[0], &left_velocity, sizeof(int));
 
-            int32_t right_velocity = static_cast<int32_t>(velocity_command_.at(0));
-            std::memcpy(&can_data[4], &right_velocity, sizeof(int32_t));
+            int right_velocity = static_cast<int>(velocity_command_.at(0));
+            std::memcpy(&right_vel_data[0], &right_velocity, sizeof(int));
 
-            can_interface_->send(0x11, can_data);
+            can_interface_->send(0x40, right_vel_data);
+            can_interface_->send(0x50, left_vel_data);
 
-            // Log CAN frame details
+            // Log right wheel CAN frame
             RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
-                "CAN Send: ID=0x11 | "
-                "Left Vel=" << velocity_command_.at(1) << " m/s | "
-                "Right Vel=" << velocity_command_.at(0) << " m/s | "
-                "LeftRaw=" << left_velocity << " RightRaw=" << right_velocity << " | "
+                "CAN Send Right: ID=0x40 | Right Vel=" << velocity_command_.at(0) << " m/s | "
+                "RightRaw=" << right_velocity << " | "
                 "Data=[" << std::hex 
-                << (int)can_data[0] << " " << (int)can_data[1] << " " 
-                << (int)can_data[2] << " " << (int)can_data[3] << " "
-                << (int)can_data[4] << " " << (int)can_data[5] << " " 
-                << (int)can_data[6] << " " << (int)can_data[7] << std::dec << "]");
+                << (int)right_vel_data[0] << " " << (int)right_vel_data[1] << " " 
+                << (int)right_vel_data[2] << " " << (int)right_vel_data[3] << " "
+                << (int)right_vel_data[4] << " " << (int)right_vel_data[5] << " " 
+                << (int)right_vel_data[6] << " " << (int)right_vel_data[7] << std::dec << "]");
+            // Log left wheel CAN frame
+            RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
+                "CAN Send Left: ID=0x50 | Left Vel=" << velocity_command_.at(1) << " m/s | "
+                "LeftRaw=" << left_velocity << " | "
+                "Data=[" << std::hex 
+                << (int)left_vel_data[0] << " " << (int)left_vel_data[1] << " " 
+                << (int)left_vel_data[2] << " " << (int)left_vel_data[3] << " "
+                << (int)left_vel_data[4] << " " << (int)left_vel_data[5] << " " 
+                << (int)left_vel_data[6] << " " << (int)left_vel_data[7] << std::dec << "]");
         }
         catch (const std::exception &e)
         {
