@@ -354,16 +354,16 @@ namespace carrierbot_firmware
         velocity_state_.at(0) = right_velocity_float;
         position_state_.at(0) += velocity_state_.at(0) * dt;
 
-        // Log encoder data
-        RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
-            "CAN Recv Encoder 0x80: "
-            "[" << std::hex << std::setw(2) << std::setfill('0')
-            << (int)data[0] << " " << (int)data[1] << " " 
-            << (int)data[2] << " " << (int)data[3] << " "
-            << (int)data[4] << " " << (int)data[5] << " " 
-            << (int)data[6] << " " << (int)data[7] << std::dec << "] | "
-            "Left: " << std::fixed << std::setprecision(1) << left_velocity_float/10.0 << " RPS | "
-            "Right: " << std::fixed << std::setprecision(1) << right_velocity_float/10.0 << " RPS");
+        // // Log encoder data
+        // RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
+        //     "CAN Recv Encoder 0x80: "
+        //     "[" << std::hex << std::setw(2) << std::setfill('0')
+        //     << (int)data[0] << " " << (int)data[1] << " " 
+        //     << (int)data[2] << " " << (int)data[3] << " "
+        //     << (int)data[4] << " " << (int)data[5] << " " 
+        //     << (int)data[6] << " " << (int)data[7] << std::dec << "] | "
+        //     "Left: " << std::fixed << std::setprecision(1) << left_velocity_float/10.0 << " RPS | "
+        //     "Right: " << std::fixed << std::setprecision(1) << right_velocity_float/10.0 << " RPS");
 
         // Log to CSV
         logToCSV(left_velocity_float/10.0, right_velocity_float/10.0);
@@ -397,10 +397,10 @@ namespace carrierbot_firmware
         can_interface_->send(0x60, right_vel_data);
         can_interface_->send(0x70, left_vel_data);
 
-        // Log CAN send
-        RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
-            "CAN Send 0x60(R): " << velocity_command_.at(0) << " RPS | "
-            "0x70(L): " << velocity_command_.at(1) << " RPS");
+        // // Log CAN send
+        // RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
+        //     "CAN Send 0x60(R): " << velocity_command_.at(0) << " RPS | "
+        //     "0x70(L): " << velocity_command_.at(1) << " RPS");
     }
 
     //
