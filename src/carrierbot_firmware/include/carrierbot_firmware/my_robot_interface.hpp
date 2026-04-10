@@ -12,6 +12,8 @@
 #include <string>
 #include <mutex>
 #include <thread>
+#include <fstream>
+#include <chrono>
 
 namespace carrierbot_firmware
 {
@@ -46,6 +48,12 @@ namespace carrierbot_firmware
         void cmdVelWheelsCallback(const std::shared_ptr<const std_msgs::msg::Float64MultiArray> msg);
         void subscriptionSpinnerThread();
 
+        // Helper functions
+        void handleEncoderData(const std::vector<uint8_t> &data);
+        void sendWheelVelocities();
+        void initCSV();
+        void logToCSV(float left_encoder, float right_encoder);
+
         // Save hardware info manually (Foxy không có sẵn info_)
         hardware_interface::HardwareInfo info_;
 
@@ -65,5 +73,9 @@ namespace carrierbot_firmware
         std::shared_ptr<rclcpp::executors::SingleThreadedExecutor> executor_;
         bool stop_subscription_thread_ = false;
         rclcpp::node_interfaces::NodeBaseInterface::SharedPtr node_base_interface_;
+
+        // CSV logging
+        std::ofstream csv_file_;
+        std::chrono::system_clock::time_point start_time_;
     };
 }

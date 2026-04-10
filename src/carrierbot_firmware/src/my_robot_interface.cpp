@@ -1,6 +1,9 @@
 #include "carrierbot_firmware/my_robot_interface.hpp"
 #include <hardware_interface/types/hardware_interface_type_values.hpp>
 #include <cstring>
+#include <iomanip>
+#include <sstream>
+#include <ctime>
 
 namespace carrierbot_firmware
 {
@@ -13,6 +16,13 @@ namespace carrierbot_firmware
 
     CarrierbotInterface::~CarrierbotInterface()
     {
+        // Close CSV file
+        if (csv_file_.is_open())
+        {
+            csv_file_.close();
+            RCLCPP_INFO(rclcpp::get_logger("CarrierbotInterface"), "CSV file closed");
+        }
+
         if (can_interface_ != nullptr)
         {
             try
@@ -27,6 +37,59 @@ namespace carrierbot_firmware
             delete can_interface_;
             can_interface_ = nullptr;
         }
+    }
+
+    //
+    // Initialize CSV file for logging
+    //
+    void CarrierbotInterface::initCSV()
+    {
+        start_time_ = std::chrono::system_clock::now();
+        
+        auto time = std::chrono::system_clock::to_time_t(start_time_);
+        struct tm* timeinfo = localtime(&time);
+        
+        char buffer[100];
+        strftime(buffer, sizeof(buffer), "%Y-%m-%d_%H-%M-%S", timeinfo);
+        
+        std::ostringstream filename;
+        filename << "/home/duybuntu/carrierbot_ws/src/carrierbot_firmware/data/carrierbot_data_" 
+                 << buffer << ".csv";
+        
+        csv_file_.open(filename.str(), std::ios::app);
+        
+        if (csv_file_.is_open())
+        {
+            // Write CSV header
+            csv_file_ << "timestamp_ms,left_encoder_rps,right_encoder_rps,left_cmd_rps,right_cmd_rps\n";
+            csv_file_.flush();
+            RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"), "CSV file opened: " << filename.str());
+        }
+        else
+        {
+            RCLCPP_ERROR(rclcpp::get_logger("CarrierbotInterface"), "Failed to open CSV file");
+        }
+    }
+
+    //
+    // Log data to CSV
+    //
+    void CarrierbotInterface::logToCSV(float left_encoder, float right_encoder)
+    {
+        if (!csv_file_.is_open())
+            return;
+
+        auto now = std::chrono::system_clock::now();
+        auto elapsed = now - start_time_;
+        auto timestamp_ms = std::chrono::duration_cast<std::chrono::milliseconds>(elapsed).count();
+
+        csv_file_ << timestamp_ms << ","
+                  << std::fixed << std::setprecision(4)
+                  << left_encoder << ","
+                  << right_encoder << ","
+                  << velocity_command_.at(1) << ","
+                  << velocity_command_.at(0) << "\n";
+        csv_file_.flush();
     }
 
     //
@@ -119,6 +182,9 @@ namespace carrierbot_firmware
             {
                 can_interface_->open();
 
+                // Initialize CSV logging
+                initCSV();
+
                 // Create subscription
                 cmd_vel_wheels_sub_ = this->create_subscription<std_msgs::msg::Float64MultiArray>(
                     "/cmd_vel_wheels",
@@ -135,24 +201,9 @@ namespace carrierbot_firmware
 
                 auto callback = [this](uint16_t can_id, const std::vector<uint8_t> &data)
                 {
-                    if (can_id == 0x11 && data.size() >= 8)
+                    if (can_id == 0x80)
                     {
-                        std::lock_guard<std::mutex> lock(state_mutex_);
-
-                        auto now = rclcpp::Clock().now();
-                        double dt = (now - last_run_).seconds();
-
-                        int32_t left_velocity_raw = 0;
-                        std::memcpy(&left_velocity_raw, &data[0], sizeof(int32_t));
-                        velocity_state_.at(1) = left_velocity_raw / 100.0;
-                        position_state_.at(1) += velocity_state_.at(1) * dt;
-
-                        int32_t right_velocity_raw = 0;
-                        std::memcpy(&right_velocity_raw, &data[4], sizeof(int32_t));
-                        velocity_state_.at(0) = right_velocity_raw / 100.0;
-                        position_state_.at(0) += velocity_state_.at(0) * dt;
-
-                        last_run_ = now;
+                        handleEncoderData(data);
                     }
                 };
 
@@ -200,7 +251,7 @@ namespace carrierbot_firmware
 
         RCLCPP_INFO_STREAM(get_logger(), 
             "CMD Received: Left=" << velocity_command_.at(1) 
-            << " m/s, Right=" << velocity_command_.at(0) << " m/s");
+            << " RPS, Right=" << velocity_command_.at(0) << " RPS");
     }
 
     //
@@ -279,53 +330,87 @@ namespace carrierbot_firmware
     }
 
     //
+    // Handle encoder data from CAN 0x80
+    //
+    void CarrierbotInterface::handleEncoderData(const std::vector<uint8_t> &data)
+    {
+        if (data.size() < 8)
+            return;
+
+        std::lock_guard<std::mutex> lock(state_mutex_);
+
+        auto now = rclcpp::Clock().now();
+        double dt = (now - last_run_).seconds();
+
+        // Parse left wheel encoder (bytes 0-3) - FLOAT
+        float left_velocity_float = 0.0f;
+        std::memcpy(&left_velocity_float, &data[0], sizeof(float));
+        velocity_state_.at(1) = left_velocity_float;
+        position_state_.at(1) += velocity_state_.at(1) * dt;
+
+        // Parse right wheel encoder (bytes 4-7) - FLOAT
+        float right_velocity_float = 0.0f;
+        std::memcpy(&right_velocity_float, &data[4], sizeof(float));
+        velocity_state_.at(0) = right_velocity_float;
+        position_state_.at(0) += velocity_state_.at(0) * dt;
+
+        // Log encoder data
+        RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
+            "CAN Recv Encoder 0x80: "
+            "[" << std::hex << std::setw(2) << std::setfill('0')
+            << (int)data[0] << " " << (int)data[1] << " " 
+            << (int)data[2] << " " << (int)data[3] << " "
+            << (int)data[4] << " " << (int)data[5] << " " 
+            << (int)data[6] << " " << (int)data[7] << std::dec << "] | "
+            "Left: " << std::fixed << std::setprecision(1) << left_velocity_float/10.0 << " RPS | "
+            "Right: " << std::fixed << std::setprecision(1) << right_velocity_float/10.0 << " RPS");
+
+        // Log to CSV
+        logToCSV(left_velocity_float/10.0, right_velocity_float/10.0);
+
+        last_run_ = now;
+    }
+
+    //
+    // Send wheel velocities to CAN 0x60 and 0x70
+    //
+    void CarrierbotInterface::sendWheelVelocities()
+    {
+        if (can_interface_ == nullptr)
+            return;
+
+        std::lock_guard<std::mutex> lock(state_mutex_);
+        
+        RCLCPP_DEBUG_STREAM(rclcpp::get_logger("CarrierbotInterface"),
+            "WRITE: velocity_command_[0]=" << velocity_command_.at(0)
+            << " velocity_command_[1]=" << velocity_command_.at(1));
+        
+        std::vector<uint8_t> right_vel_data(8, 0);
+        std::vector<uint8_t> left_vel_data(8, 0);
+
+        float left_velocity = static_cast<float>(velocity_command_.at(1)) * 10.0;
+        std::memcpy(&left_vel_data[0], &left_velocity, sizeof(float));
+
+        float right_velocity = static_cast<float>(velocity_command_.at(0)) * 10.0;
+        std::memcpy(&right_vel_data[0], &right_velocity, sizeof(float));
+
+        can_interface_->send(0x60, right_vel_data);
+        can_interface_->send(0x70, left_vel_data);
+
+        // Log CAN send
+        RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
+            "CAN Send 0x60(R): " << velocity_command_.at(0) << " RPS | "
+            "0x70(L): " << velocity_command_.at(1) << " RPS");
+    }
+
+    //
     // 🔥 FOXy: write không có time, period
     //
     hardware_interface::return_type CarrierbotInterface::write()
     {
         try
         {
-            if (can_interface_ == nullptr)
-            {
-                return hardware_interface::return_type::OK;
-            }
-
-            std::lock_guard<std::mutex> lock(state_mutex_);
-            
-            RCLCPP_DEBUG_STREAM(rclcpp::get_logger("CarrierbotInterface"),
-                "WRITE: velocity_command_[0]=" << velocity_command_.at(0)
-                << " velocity_command_[1]=" << velocity_command_.at(1));
-            
-            std::vector<uint8_t> right_vel_data(8, 0);
-            std::vector<uint8_t> left_vel_data(8, 0);
-
-            int left_velocity = static_cast<int>(velocity_command_.at(1));
-            std::memcpy(&left_vel_data[0], &left_velocity, sizeof(int));
-
-            int right_velocity = static_cast<int>(velocity_command_.at(0));
-            std::memcpy(&right_vel_data[0], &right_velocity, sizeof(int));
-
-            can_interface_->send(0x40, right_vel_data);
-            can_interface_->send(0x50, left_vel_data);
-
-            // Log right wheel CAN frame
-            RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
-                "CAN Send Right: ID=0x40 | Right Vel=" << velocity_command_.at(0) << " m/s | "
-                "RightRaw=" << right_velocity << " | "
-                "Data=[" << std::hex 
-                << (int)right_vel_data[0] << " " << (int)right_vel_data[1] << " " 
-                << (int)right_vel_data[2] << " " << (int)right_vel_data[3] << " "
-                << (int)right_vel_data[4] << " " << (int)right_vel_data[5] << " " 
-                << (int)right_vel_data[6] << " " << (int)right_vel_data[7] << std::dec << "]");
-            // Log left wheel CAN frame
-            RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
-                "CAN Send Left: ID=0x50 | Left Vel=" << velocity_command_.at(1) << " m/s | "
-                "LeftRaw=" << left_velocity << " | "
-                "Data=[" << std::hex 
-                << (int)left_vel_data[0] << " " << (int)left_vel_data[1] << " " 
-                << (int)left_vel_data[2] << " " << (int)left_vel_data[3] << " "
-                << (int)left_vel_data[4] << " " << (int)left_vel_data[5] << " " 
-                << (int)left_vel_data[6] << " " << (int)left_vel_data[7] << std::dec << "]");
+            sendWheelVelocities();
         }
         catch (const std::exception &e)
         {
