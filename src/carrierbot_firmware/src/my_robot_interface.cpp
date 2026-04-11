@@ -1,5 +1,6 @@
 #include "carrierbot_firmware/my_robot_interface.hpp"
 #include <hardware_interface/types/hardware_interface_type_values.hpp>
+#include "ament_index_cpp/get_package_share_directory.hpp"
 #include <cstring>
 #include <iomanip>
 #include <sstream>
@@ -7,7 +8,6 @@
 
 namespace carrierbot_firmware
 {
-
     CarrierbotInterface::CarrierbotInterface()
         : rclcpp::Node("carrierbot_interface")
     {
@@ -53,9 +53,9 @@ namespace carrierbot_firmware
         strftime(buffer, sizeof(buffer), "%Y-%m-%d_%H-%M-%S", timeinfo);
         
         std::ostringstream filename;
-        filename << "/home/duybuntu/carrierbot_ws/src/carrierbot_firmware/data/carrierbot_data_" 
-                 << buffer << ".csv";
-        
+        std::string pkg_path = ament_index_cpp::get_package_share_directory("carrierbot_firmware");
+        filename << pkg_path << "/data/carrierbot_data_" << buffer << ".csv";
+
         csv_file_.open(filename.str(), std::ios::app);
         
         if (csv_file_.is_open())
@@ -326,6 +326,25 @@ namespace carrierbot_firmware
     hardware_interface::return_type CarrierbotInterface::read()
     {
         std::lock_guard<std::mutex> lock(state_mutex_);
+        auto now = this->get_clock()->now();
+        double dt = (now - last_run_).seconds();
+        if (dt <= 0.0 || dt > 1.0){
+            dt = 0.01;
+        }
+
+        // Convert to rad/s
+        double left_rad_s  = raw_left_rps_  / 10.0 * 2 * M_PI;
+        double right_rad_s = raw_right_rps_ / 10.0 * 2 * M_PI;
+
+        // Update velocity
+        velocity_state_[0] = left_rad_s;
+        velocity_state_[1] = right_rad_s;
+
+        // Integrate to position (rad)
+        position_state_[0] += velocity_state_[0] * dt;
+        position_state_[1] += velocity_state_[1] * dt;
+
+        last_run_ = now;
         return hardware_interface::return_type::OK;
     }
 
@@ -339,36 +358,48 @@ namespace carrierbot_firmware
 
         std::lock_guard<std::mutex> lock(state_mutex_);
 
-        auto now = rclcpp::Clock().now();
-        double dt = (now - last_run_).seconds();
+        // auto now = rclcpp::Clock().now();
+        // double dt = (now - last_run_).seconds();
 
-        // Parse left wheel encoder (bytes 0-3) - FLOAT
-        float left_velocity_float = 0.0f;
-        std::memcpy(&left_velocity_float, &data[0], sizeof(float));
-        velocity_state_.at(1) = left_velocity_float;
-        position_state_.at(1) += velocity_state_.at(1) * dt;
+        // // Parse left wheel encoder (bytes 0-3) - FLOAT
+        // float left_velocity_float = 0.0f;
+        // std::memcpy(&left_velocity_float, &data[0], sizeof(float));
+        // velocity_state_.at(1) = left_velocity_float;
+        // position_state_.at(1) += velocity_state_.at(1) * dt;
 
-        // Parse right wheel encoder (bytes 4-7) - FLOAT
-        float right_velocity_float = 0.0f;
-        std::memcpy(&right_velocity_float, &data[4], sizeof(float));
-        velocity_state_.at(0) = right_velocity_float;
-        position_state_.at(0) += velocity_state_.at(0) * dt;
+        // // Parse right wheel encoder (bytes 4-7) - FLOAT
+        // float right_velocity_float = 0.0f;
+        // std::memcpy(&right_velocity_float, &data[4], sizeof(float));
+        // velocity_state_.at(0) = right_velocity_float;
+        // position_state_.at(0) += velocity_state_.at(0) * dt;
 
-        // // Log encoder data
-        // RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
-        //     "CAN Recv Encoder 0x80: "
-        //     "[" << std::hex << std::setw(2) << std::setfill('0')
-        //     << (int)data[0] << " " << (int)data[1] << " " 
-        //     << (int)data[2] << " " << (int)data[3] << " "
-        //     << (int)data[4] << " " << (int)data[5] << " " 
-        //     << (int)data[6] << " " << (int)data[7] << std::dec << "] | "
-        //     "Left: " << std::fixed << std::setprecision(1) << left_velocity_float/10.0 << " RPS | "
-        //     "Right: " << std::fixed << std::setprecision(1) << right_velocity_float/10.0 << " RPS");
+        // left_velocity_float = left_velocity_float / 10.0 * 2*M_PI; 
+        // right_velocity_float = right_velocity_float / 10.0 * 2*M_PI;
 
-        // Log to CSV
-        logToCSV(left_velocity_float/10.0, right_velocity_float/10.0);
+        // // Publish encoder velocities
+        // carrierbot_msgs::msg::EncoderVelocity encoder_velocity_msg;
+        // encoder_velocity_msg.left_rps = left_velocity_float;
+        // encoder_velocity_msg.right_rps = right_velocity_float;
+        // encoder_velocity_pub_->publish(encoder_velocity_msg);
 
-        last_run_ = now;
+        // // // Log encoder data
+        // // RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
+        // //     "CAN Recv Encoder 0x80: "
+        // //     "[" << std::hex << std::setw(2) << std::setfill('0')
+        // //     << (int)data[0] << " " << (int)data[1] << " " 
+        // //     << (int)data[2] << " " << (int)data[3] << " "
+        // //     << (int)data[4] << " " << (int)data[5] << " " 
+        // //     << (int)data[6] << " " << (int)data[7] << std::dec << "] | "
+        // //     "Left: " << std::fixed << std::setprecision(1) << left_velocity_float/10.0 << " RPS | "
+        // //     "Right: " << std::fixed << std::setprecision(1) << right_velocity_float/10.0 << " RPS");
+
+        // // Log to CSV
+        // logToCSV(left_velocity_float, right_velocity_float);
+
+        // last_run_ = now;
+
+        std::memcpy(&raw_left_rps_,  &data[0], sizeof(float));
+        std::memcpy(&raw_right_rps_, &data[4], sizeof(float));
     }
 
     //

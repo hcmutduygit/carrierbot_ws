@@ -10,9 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+find_package(carrierbot_msgs REQUIRED)
 
 add_library(${PROJECT_NAME} SHARED
   src/my_robot_interface.cpp
@@ -27,6 +25,7 @@ ament_target_dependencies(${PROJECT_NAME}
   pluginlib
   rclcpp
   rclcpp_lifecycle
+  carrierbot_msgs
 )
 
 pluginlib_export_plugin_description_file(hardware_interface  carrierbot_interface.xml)

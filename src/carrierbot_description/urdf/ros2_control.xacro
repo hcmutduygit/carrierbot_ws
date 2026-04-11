@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
     <ros2_control name="RobotSystem" type="system">
-
         <xacro:if value="$(arg is_sim)">
             <xacro:if value="$(arg is_ignition)">
                 <hardware>
@@ -23,7 +22,6 @@
                 <param name="baud_rate">115200</param>
             </hardware>
         </xacro:unless>
-
 
         <joint name="base_right_wheel_joint">
             <command_interface name="velocity">

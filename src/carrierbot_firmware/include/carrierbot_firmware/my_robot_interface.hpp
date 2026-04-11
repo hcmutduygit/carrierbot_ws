@@ -6,6 +6,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp/executors/single_threaded_executor.hpp>
 #include <std_msgs/msg/float64_multi_array.hpp>
+#include <carrierbot_msgs/msg/encoder_velocity.hpp>
 #include "carrierbot_firmware/can_node.hpp"
 
 #include <vector>
@@ -64,10 +65,13 @@ namespace carrierbot_firmware
         std::vector<double> position_state_;
         std::vector<double> velocity_state_;
         std::mutex state_mutex_;
+        float raw_left_rps_ = 0.0f;
+        float raw_right_rps_ = 0.0f;
 
         rclcpp::Time last_run_;
         rclcpp::Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr cmd_vel_wheels_sub_;
-        
+        rclcpp::Publisher<carrierbot_msgs::msg::EncoderVelocity>::SharedPtr encoder_velocity_pub_;
+
         // Background thread for subscription processing
         std::thread subscription_thread_;
         std::shared_ptr<rclcpp::executors::SingleThreadedExecutor> executor_;

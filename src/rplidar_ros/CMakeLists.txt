@@ -80,7 +80,7 @@ ament_target_dependencies(rplidar_client
 ################################################################################
 # Install
 ################################################################################
-install(DIRECTORY launch rviz config
+install(DIRECTORY launch rviz
   DESTINATION share/${PROJECT_NAME}
 )
 
