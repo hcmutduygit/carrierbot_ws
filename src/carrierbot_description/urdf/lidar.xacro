@@ -27,7 +27,7 @@
         <origin xyz="${-base_length / 4.0} 0 ${base_height + 0.026}" rpy="0 0 0" />
     </joint>
 
-    <gazebo reference="laser_link">
+    <gazebo reference="laser">
         <sensor name="laser" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
             <visualize>true</visualize>

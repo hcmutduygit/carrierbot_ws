@@ -4,7 +4,7 @@ from launch import LaunchDescription
 from ament_index_python.packages import get_package_share_directory, get_package_share_path
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, TimerAction
 from launch.substitutions import LaunchConfiguration, Command
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
@@ -38,14 +38,19 @@ def generate_launch_description():
     controller_config = LaunchConfiguration("controller_config")
     slam_config = LaunchConfiguration("slam_config")
     
-    lidar = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(
-                get_package_share_directory("rplidar_ros"),
-                "launch",
-                "rplidar_s2_launch.py"
+    lidar = TimerAction(
+        period=2.0,
+        actions=[
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(
+                    os.path.join(
+                        get_package_share_directory("rplidar_ros"),
+                        "launch",
+                        "rplidar_s2_launch.py"
+                    )
+                ),
             )
-        ),
+        ]
     )
 
     controller = Node(
@@ -85,30 +90,38 @@ def generate_launch_description():
         output="screen"
     )
 
-    slam_toolbox = Node(
-        package="slam_toolbox",
-        executable="sync_slam_toolbox_node",
-        name="slam_toolbox",
-        output="screen",
-        parameters=[
-            slam_config,
-        ],
+    slam_toolbox = TimerAction(
+        period=5.0,
+        actions=[
+            Node(
+                package="slam_toolbox",
+                executable="sync_slam_toolbox_node",
+                name="slam_toolbox",
+                output="screen",
+                parameters=[slam_config],
+            )
+        ]
     )
 
-    rviz = Node(
-        package="rviz2",
-        executable="rviz2",
-        name="rviz2",
-        parameters=[robot_description],   
-        arguments=[
-            "-d",
-            os.path.join(
-                get_package_share_directory("carrierbot_mapping"),
-                "rviz",
-                "slam.rviz"
+    rviz = TimerAction(
+        period=6.0,
+        actions=[
+            Node(
+                package="rviz2",
+                executable="rviz2",
+                name="rviz2",
+                parameters=[robot_description],
+                arguments=[
+                    "-d",
+                    os.path.join(
+                        get_package_share_directory("carrierbot_mapping"),
+                        "rviz",
+                        "slam.rviz"
+                    )
+                ],
+                output="screen",
             )
-        ],
-        output="screen",
+        ]
     )
 
     return LaunchDescription([
