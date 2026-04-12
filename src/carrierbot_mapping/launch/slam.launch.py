@@ -91,7 +91,7 @@ def generate_launch_description():
     )
 
     slam_toolbox = TimerAction(
-        period=5.0,
+        period=4.0,
         actions=[
             Node(
                 package="slam_toolbox",
