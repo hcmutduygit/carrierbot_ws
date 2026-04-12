@@ -61,6 +61,7 @@ namespace carrierbot_firmware
         WaveshareCAN* can_interface_;
 
         std::string port_;
+        int baudrate_;
         std::vector<double> velocity_command_;
         std::vector<double> position_state_;
         std::vector<double> velocity_state_;

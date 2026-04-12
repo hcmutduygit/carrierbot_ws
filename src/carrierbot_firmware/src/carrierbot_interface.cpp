@@ -1,4 +1,4 @@
-#include "carrierbot_firmware/my_robot_interface.hpp"
+#include "carrierbot_firmware/carrierbot_interface.hpp"
 #include <hardware_interface/types/hardware_interface_type_values.hpp>
 #include "ament_index_cpp/get_package_share_directory.hpp"
 #include <cstring>
@@ -103,6 +103,7 @@ namespace carrierbot_firmware
         try
         {
             port_ = info_.hardware_parameters.at("port");
+            baudrate_ = std::stoi(info_.hardware_parameters.at("baudrate"));
         }
         catch (const std::out_of_range &)
         {
@@ -115,13 +116,11 @@ namespace carrierbot_firmware
             delete can_interface_;
         }
 
-        can_interface_ = new WaveshareCAN(port_, 2000000, 2.0);
+        can_interface_ = new WaveshareCAN(port_, baudrate_, 2.0);
 
         velocity_command_.resize(info_.joints.size(), 0.0);
         position_state_.resize(info_.joints.size(), 0.0);
         velocity_state_.resize(info_.joints.size(), 0.0);
-
-        last_run_ = rclcpp::Clock().now();
 
         return hardware_interface::return_type::OK;
     }
@@ -326,7 +325,15 @@ namespace carrierbot_firmware
     hardware_interface::return_type CarrierbotInterface::read()
     {
         std::lock_guard<std::mutex> lock(state_mutex_);
-        auto now = this->get_clock()->now();
+        rclcpp::Time now = this->get_clock()->now();
+        
+        // 👉 INIT lần đầu
+        if (last_run_.nanoseconds() == 0)
+        {
+            last_run_ = now;
+            return hardware_interface::return_type::OK;
+        }
+
         double dt = (now - last_run_).seconds();
         if (dt <= 0.0 || dt > 1.0){
             dt = 0.01;

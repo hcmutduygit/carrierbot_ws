@@ -13,7 +13,7 @@ find_package(rclcpp_lifecycle REQUIRED)
 find_package(carrierbot_msgs REQUIRED)
 
 add_library(${PROJECT_NAME} SHARED
-  src/my_robot_interface.cpp
+  src/carrierbot_interface.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE

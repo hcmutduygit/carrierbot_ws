@@ -19,7 +19,7 @@
             <hardware>
                 <plugin>carrierbot_firmware::CarrierbotInterface</plugin>
                 <param name="port">/dev/ttyUSB0</param>
-                <param name="baud_rate">115200</param>
+                <param name="baudrate">115200</param>
             </hardware>
         </xacro:unless>
 
