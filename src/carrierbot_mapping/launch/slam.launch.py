@@ -37,7 +37,7 @@ def generate_launch_description():
 
     controller_config = LaunchConfiguration("controller_config")
     slam_config = LaunchConfiguration("slam_config")
-
+    
     lidar = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
@@ -45,7 +45,7 @@ def generate_launch_description():
                 "launch",
                 "rplidar_s2_launch.py"
             )
-        )
+        ),
     )
 
     controller = Node(

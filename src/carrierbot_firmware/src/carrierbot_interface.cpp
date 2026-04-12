@@ -341,7 +341,8 @@ namespace carrierbot_firmware
 
         // Convert to rad/s
         double left_rad_s  = raw_left_rps_  / 10.0 * 2 * M_PI;
-        double right_rad_s = raw_right_rps_ / 10.0 * 2 * M_PI;
+        double right_rad_s = - raw_right_rps_ / 10.0 * 2 * M_PI;
+        // std::cout << "left_rad/s: " << left_rad_s << ", right_rad/s: " << right_rad_s << "\n";
 
         // Update velocity
         velocity_state_[0] = left_rad_s;
@@ -405,8 +406,8 @@ namespace carrierbot_firmware
 
         // last_run_ = now;
 
-        std::memcpy(&raw_left_rps_,  &data[0], sizeof(float));
-        std::memcpy(&raw_right_rps_, &data[4], sizeof(float));
+        std::memcpy(&raw_right_rps_,  &data[0], sizeof(float));
+        std::memcpy(&raw_left_rps_, &data[4], sizeof(float));
     }
 
     //

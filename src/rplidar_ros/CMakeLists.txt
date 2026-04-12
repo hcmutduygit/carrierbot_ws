@@ -18,26 +18,13 @@ if(MSVC)
   )
 endif()
 
-set(RPLIDAR_SDK_PATH "${PROJECT_SOURCE_DIR}/sdk/")
+set(RPLIDAR_SDK_PATH "./sdk/")
 
-if(APPLE)
-add_compile_definitions(_MACOS)
-FILE(GLOB RPLIDAR_SDK_SRC
-  "${RPLIDAR_SDK_PATH}/src/arch/macOS/*.cpp"
-  "${RPLIDAR_SDK_PATH}/src/dataunpacker/*.cpp"
-  "${RPLIDAR_SDK_PATH}/src/dataunpacker/unpacker/*.cpp"
-  "${RPLIDAR_SDK_PATH}/src/hal/*.cpp"
-  "${RPLIDAR_SDK_PATH}/src/*.cpp"
-)
-else()
 FILE(GLOB RPLIDAR_SDK_SRC 
   "${RPLIDAR_SDK_PATH}/src/arch/linux/*.cpp"
-  "${RPLIDAR_SDK_PATH}/src/dataunpacker/*.cpp"
-  "${RPLIDAR_SDK_PATH}/src/dataunpacker/unpacker/*.cpp"
   "${RPLIDAR_SDK_PATH}/src/hal/*.cpp"
   "${RPLIDAR_SDK_PATH}/src/*.cpp"
 )
-endif()
 
 ################################################################################
 # Find ament packages and libraries for ament and system dependencies
@@ -64,13 +51,6 @@ ament_target_dependencies(rplidar_node
   sensor_msgs
 )
 
-add_executable(rplidar_composition src/rplidar_node.cpp ${RPLIDAR_SDK_SRC})
-ament_target_dependencies(rplidar_composition
-  rclcpp
-  std_srvs
-  sensor_msgs
-)
-
 add_executable(rplidar_client src/rplidar_client.cpp)
 ament_target_dependencies(rplidar_client
   rclcpp
@@ -85,7 +65,7 @@ install(DIRECTORY launch rviz
 )
 
 install(
-  TARGETS rplidar_node rplidar_composition rplidar_client
+  TARGETS rplidar_node rplidar_client
   RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
 
