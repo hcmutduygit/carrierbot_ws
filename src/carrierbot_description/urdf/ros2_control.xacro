@@ -18,7 +18,7 @@
         <xacro:unless value="$(arg is_sim)">
             <hardware>
                 <plugin>carrierbot_firmware::CarrierbotInterface</plugin>
-                <param name="port">/dev/ttyUSB0</param>
+                <param name="port">/dev/usbcan</param>
                 <param name="baudrate">2000000</param>
             </hardware>
         </xacro:unless>
