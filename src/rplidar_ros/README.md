@@ -21,9 +21,10 @@ SLAMTEC LIDAR Tutorial: <https://github.com/robopeak/rplidar_ros/wiki>
 |RPLIDAR A3              |
 |RPLIDAR S1              |
 |RPLIDAR S2              |
-|RPLIDAR S3              |
 |RPLIDAR S2E             |
+|RPLIDAR S3              |
 |RPLIDAR T1              |
+|RPLIDAR C1              |
 
 ## How to install ROS2
 
@@ -139,10 +140,22 @@ The command for RPLIDAR S1 is :
 ros2 launch rplidar_ros view_rplidar_s1_launch.py
 ```
 
+The command for RPLIDAR S1(TCP connection) is :
+
+```bash
+ros2 launch rplidar_ros view_rplidar_s1_tcp_launch.py
+```
+
 The command for RPLIDAR S2 is :
 
 ```bash
 ros2 launch rplidar_ros view_rplidar_s2_launch.py
+```
+
+The command for RPLIDAR S2E is :
+
+```bash
+ros2 launch rplidar_ros view_rplidar_s2e_launch.py
 ```
 
 The command for RPLIDAR S3 is :
@@ -151,20 +164,16 @@ The command for RPLIDAR S3 is :
 ros2 launch rplidar_ros view_rplidar_s3_launch.py
 ```
 
-```bash
-ros2 launch rplidar_ros view_rplidar_s2e_launch.py
-```
-
 The command for RPLIDAR T1 is :
 
 ```bash
 ros2 launch rplidar_ros view_rplidar_t1_launch.py
 ```
 
-The command for RPLIDAR S1(TCP connection) is :
+The command for RPLIDAR C1 is :
 
 ```bash
-ros2 launch rplidar_ros view_rplidar_s1_tcp_launch.py
+ros2 launch rplidar_ros view_rplidar_c1_launch.py
 ```
 
 Notice: different lidar use different serial_baudrate.

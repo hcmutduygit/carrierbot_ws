@@ -54,10 +54,10 @@ def generate_launch_description():
             executable='rplidar_node',
             name='rplidar_node',
             parameters=[{'channel_type':channel_type,
-                         'serial_port': serial_port, 
-                         'serial_baudrate': serial_baudrate, 
+                         'serial_port': serial_port,
+                         'serial_baudrate': serial_baudrate,
                          'frame_id': frame_id,
-                         'inverted': inverted, 
+                         'inverted': inverted,
                          'angle_compensate': angle_compensate}],
             output='screen'),
     ])

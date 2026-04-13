@@ -7,6 +7,7 @@ source /usr/share/colcon_cd/function/colcon_cd.sh
 colcon_cd rplidar_ros
 sudo cp scripts/rplidar.rules  /etc/udev/rules.d
 echo -e "\nRestarting udev\n"
-sudo systemctl restart udev
+sudo service udev reload
+sudo service udev restart
 sudo udevadm control --reload && sudo udevadm trigger
 echo "finish"

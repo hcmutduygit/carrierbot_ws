@@ -11,6 +11,7 @@ from launch_ros.actions import Node
 
 
 def generate_launch_description():
+    channel_type =  LaunchConfiguration('channel_type', default='serial')
     serial_port = LaunchConfiguration('serial_port', default='/dev/ttyUSB0')
     serial_baudrate = LaunchConfiguration('serial_baudrate', default='1000000')
     frame_id = LaunchConfiguration('frame_id', default='laser')
@@ -59,11 +60,11 @@ def generate_launch_description():
             executable='rplidar_node',
             name='rplidar_node',
             parameters=[{'channel_type':channel_type,
-                         'serial_port': serial_port, 
-                         'serial_baudrate': serial_baudrate, 
+                         'serial_port': serial_port,
+                         'serial_baudrate': serial_baudrate,
                          'frame_id': frame_id,
-                         'inverted': inverted, 
-                         'angle_compensate': angle_compensate, 
+                         'inverted': inverted,
+                         'angle_compensate': angle_compensate,
                          'scan_mode': scan_mode}],
             output='screen'),
     ])
