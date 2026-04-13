@@ -8,11 +8,14 @@ from launch.actions import DeclareLaunchArgument
 from launch.actions import LogInfo
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
+from tf2_ros import StaticTransformBroadcaster
+from geometry_msgs.msg import TransformStamped
+import math
 
 
 def generate_launch_description():
     channel_type =  LaunchConfiguration('channel_type', default='serial')
-    serial_port = LaunchConfiguration('serial_port', default='/dev/ttyUSB0')
+    serial_port = LaunchConfiguration('serial_port', default='/dev/rplidar')
     serial_baudrate = LaunchConfiguration('serial_baudrate', default='1000000') #for s2 is 1000000
     frame_id = LaunchConfiguration('frame_id', default='laser')
     inverted = LaunchConfiguration('inverted', default='false')
@@ -66,13 +69,20 @@ def generate_launch_description():
             executable='rplidar_node',
             name='rplidar_node',
             parameters=[{'channel_type':channel_type,
-                         'serial_port': serial_port, 
-                         'serial_baudrate': serial_baudrate, 
+                         'serial_port': serial_port,
+                         'serial_baudrate': serial_baudrate,
                          'frame_id': frame_id,
-                         'inverted': inverted, 
+                         'inverted': inverted,
                          'angle_compensate': angle_compensate,
-                           'scan_mode': scan_mode
-                         }],
+                         'scan_mode': scan_mode,
+                         'qos_reliability': 0}], # 0 = Reliable (RViz default)
+            output='screen'),
+
+        Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            name='static_transform_publisher',
+            arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'laser'],
             output='screen'),
 
         Node(
