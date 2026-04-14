@@ -340,13 +340,13 @@ namespace carrierbot_firmware
         }
 
         // Convert to rad/s
-        double left_rad_s  = raw_left_rps_  / 10.0 * 2 * M_PI;
+        double left_rad_s  =  raw_left_rps_  / 10.0 * 2 * M_PI;
         double right_rad_s = - raw_right_rps_ / 10.0 * 2 * M_PI;
         // std::cout << "left_rad/s: " << left_rad_s << ", right_rad/s: " << right_rad_s << "\n";
 
         // Update velocity
-        velocity_state_[0] = left_rad_s;
-        velocity_state_[1] = right_rad_s;
+        velocity_state_[0] = right_rad_s;
+        velocity_state_[1] = left_rad_s;
 
         // Integrate to position (rad)
         position_state_[0] += velocity_state_[0] * dt;

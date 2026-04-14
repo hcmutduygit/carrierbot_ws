@@ -30,7 +30,7 @@ def generate_launch_description():
     slam_config_arg = DeclareLaunchArgument(
         "slam_config",
         default_value=os.path.join(
-            get_package_share_directory("carrierbot_mapping"), "config", "slam_toolbox.yaml"
+            get_package_share_directory("carrierbot_mapping"), "config", "mapper_params_online_async.yaml"
         ),
         description="Full path to slam yaml file to load"
     )
@@ -116,7 +116,7 @@ def generate_launch_description():
                     os.path.join(
                         get_package_share_directory("carrierbot_mapping"),
                         "rviz",
-                        "slam.rviz"
+                        "slam_toolbox.rviz"
                     )
                 ],
                 output="screen",

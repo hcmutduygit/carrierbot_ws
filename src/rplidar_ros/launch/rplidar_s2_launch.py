@@ -8,9 +8,7 @@ from launch.actions import DeclareLaunchArgument
 from launch.actions import LogInfo
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
-from tf2_ros import StaticTransformBroadcaster
-from geometry_msgs.msg import TransformStamped
-import math
+
 
 
 def generate_launch_description():
@@ -70,13 +68,6 @@ def generate_launch_description():
                          'angle_compensate': angle_compensate,
                          'scan_mode': scan_mode,
                          'qos_reliability': 0}], # 0 = Reliable (RViz default)
-            output='screen'),
-
-        Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            name='static_transform_publisher',
-            arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'laser'],
             output='screen'),
     ])
 
