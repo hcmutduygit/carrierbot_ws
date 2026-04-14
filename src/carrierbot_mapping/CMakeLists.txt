@@ -23,6 +23,13 @@ install(
   DESTINATION share/${PROJECT_NAME}
 )
 
+# Install Python scripts
+install(
+  PROGRAMS scripts/laser_filter.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME laser_filter
+)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   ament_lint_auto_find_test_dependencies()

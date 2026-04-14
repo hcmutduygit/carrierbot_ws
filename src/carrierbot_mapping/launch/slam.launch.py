@@ -90,8 +90,28 @@ def generate_launch_description():
         output="screen"
     )
 
+    laser_filter = TimerAction(
+        period=3.0,
+        actions=[
+            Node(
+                package="carrierbot_mapping",
+                executable="laser_filter",
+                name="laser_filter",
+                output="screen",
+                parameters=[{
+                    "min_range": 0.5,
+                    "max_range": 12.0,
+                }],
+                remappings=[
+                    ("scan", "/scan"),
+                    ("scan_filtered", "/scan_filtered"),
+                ]
+            )
+        ]
+    )
+
     slam_toolbox = TimerAction(
-        period=4.0,
+        period=5.0,
         actions=[
             Node(
                 package="slam_toolbox",
@@ -99,12 +119,15 @@ def generate_launch_description():
                 name="slam_toolbox",
                 output="screen",
                 parameters=[slam_config],
+                remappings=[
+                    ("scan", "/scan_filtered"),
+                ]
             )
         ]
     )
 
     rviz = TimerAction(
-        period=6.0,
+        period=7.0,
         actions=[
             Node(
                 package="rviz2",
@@ -132,6 +155,7 @@ def generate_launch_description():
         joint_state_broadcaster_spawner,
         carrierbot_controller_spawner,
         robot_state_publisher,
+        laser_filter,
         slam_toolbox,
         rviz,
     ])
