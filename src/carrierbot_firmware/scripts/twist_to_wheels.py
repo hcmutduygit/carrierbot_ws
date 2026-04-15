@@ -17,10 +17,10 @@ class TwistToWheels(Node):
         self.get_logger().info(f'Initialized twist_to_wheels node')
         self.get_logger().info(f'wheel_distance: {self.wheel_distance}')
         
-        # Subscriber to /cmd_vel (from teleop_twist_keyboard)
+        # Subscriber to /carrierbot_controller/cmd_vel_unstamped (from teleop_twist_keyboard or nav2)
         self.sub = self.create_subscription(
             Twist, 
-            '/cmd_vel', 
+            '/carrierbot_controller/cmd_vel_unstamped', 
             self.on_twist, 
             10
         )

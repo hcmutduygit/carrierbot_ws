@@ -437,9 +437,9 @@ namespace carrierbot_firmware
         can_interface_->send(0x70, left_vel_data);
 
         // // Log CAN send
-        // RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
-        //     "CAN Send 0x60(R): " << velocity_command_.at(0) << " RPS | "
-        //     "0x70(L): " << velocity_command_.at(1) << " RPS");
+        RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
+            "CAN Send 0x60(R): " << velocity_command_.at(0) << " RPS | "
+            "0x70(L): " << velocity_command_.at(1) << " RPS");
     }
 
     //
