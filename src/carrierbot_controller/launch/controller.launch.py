@@ -23,7 +23,7 @@ def generate_launch_description():
 
     use_simple_controller_arg = DeclareLaunchArgument(
         "use_simple_controller",
-        default_value="True",
+        default_value="False",
     )
 
     use_python = LaunchConfiguration("use_python")
@@ -37,6 +37,26 @@ def generate_launch_description():
     # ros2 control load_controller --controller-manager /controller_manager simple_velocity_controller
     # ros2 control set_controller_state joint_state_broadcaster active
     # ros2 control set_controller_state simple_velocity_controller active
+
+    joint_state_broadcaster_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=[
+            "joint_state_broadcaster",
+            "--controller-manager",
+            "/controller_manager",
+        ],
+    )
+
+    wheel_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["carrierbot_controller", 
+                   "--controller-manager", 
+                   "/controller_manager"
+        ],
+        condition=UnlessCondition(use_simple_controller),
+    )
 
     simple_controller = GroupAction(
         actions=[
@@ -74,6 +94,8 @@ def generate_launch_description():
         wheel_radius_arg,
         wheel_seperation_arg,
         use_simple_controller_arg,
+        joint_state_broadcaster_spawner,
+        wheel_controller_spawner,
         simple_controller,
     ])
 

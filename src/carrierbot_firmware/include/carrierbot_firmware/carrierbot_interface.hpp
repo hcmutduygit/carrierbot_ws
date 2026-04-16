@@ -16,7 +16,7 @@
 
 namespace carrierbot_firmware
 {
-    class CarrierbotInterface : public hardware_interface::SystemInterface, public rclcpp::Node
+    class CarrierbotInterface : public hardware_interface::SystemInterface
     {
     public:
         CarrierbotInterface();
@@ -55,9 +55,7 @@ namespace carrierbot_firmware
 
         // Save hardware info manually (Foxy không có sẵn info_)
         hardware_interface::HardwareInfo info_;
-
-        WaveshareCAN* can_interface_;
-
+        std::unique_ptr<WaveshareCAN> can_interface_;
         std::string port_;
         int baudrate_;
         std::vector<double> velocity_command_;
