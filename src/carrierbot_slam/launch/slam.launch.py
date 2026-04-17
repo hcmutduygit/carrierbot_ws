@@ -17,6 +17,13 @@ def generate_launch_description():
         'map_b1.yaml'
     )
 
+    use_sim_time = LaunchConfiguration("use_sim_time")
+
+    use_sim_time_arg = DeclareLaunchArgument(
+        "use_sim_time",
+        default_value="false"
+    )
+
     slam_config_arg = DeclareLaunchArgument(
         "slam_config",
         default_value=os.path.join(
@@ -39,7 +46,8 @@ def generate_launch_description():
                 parameters=[
                     slam_config, 
                     {
-                        "map_file_name": map_file
+                        "map_file_name": map_file,
+                        "use_sim_time": use_sim_time
                     }
                 ],
                 remappings=[
@@ -70,6 +78,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        use_sim_time_arg,
         slam_config_arg,
         slam_toolbox,
         rviz,

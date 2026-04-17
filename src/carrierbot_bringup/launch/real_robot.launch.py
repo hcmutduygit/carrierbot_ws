@@ -146,7 +146,7 @@ def generate_launch_description():
         hardware_interface,
         lidar,
         laser_filter,
-        TimerAction(period=3.0, actions=[controller]),
-        TimerAction(period=10.0, actions=[slam]),
-        TimerAction(period=15.0, actions=[navigation]),
+        TimerAction(period=2.0, actions=[controller]),
+        TimerAction(period=5.0, actions=[slam]),
+        TimerAction(period=20.0, actions=[navigation]),
     ])

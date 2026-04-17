@@ -6,9 +6,14 @@ from launch.conditions import IfCondition, UnlessCondition
 
 def generate_launch_description():
 
+    use_sim_time_arg = DeclareLaunchArgument(
+        "use_sim_time",
+        default_value="false",
+    )
+    
     use_python_arg = DeclareLaunchArgument(
         "use_python",
-        default_value="False",
+        default_value="false",
     )
 
     wheel_radius_arg = DeclareLaunchArgument(
@@ -23,20 +28,14 @@ def generate_launch_description():
 
     use_simple_controller_arg = DeclareLaunchArgument(
         "use_simple_controller",
-        default_value="False",
+        default_value="false",
     )
-
+        
+    use_sim_time = LaunchConfiguration("use_sim_time")
     use_python = LaunchConfiguration("use_python")
     wheel_radius = LaunchConfiguration("wheel_radius")
     wheel_seperation = LaunchConfiguration("wheel_seperation")
     use_simple_controller = LaunchConfiguration("use_simple_controller")
-
-    # NOTE: In ROS2 Foxy, spawner console scripts can't be found by ExecuteProcess
-    # Uncomment below if you can run spawners manually:
-    # ros2 control load_controller --controller-manager /controller_manager joint_state_broadcaster
-    # ros2 control load_controller --controller-manager /controller_manager simple_velocity_controller
-    # ros2 control set_controller_state joint_state_broadcaster active
-    # ros2 control set_controller_state simple_velocity_controller active
 
     joint_state_broadcaster_spawner = Node(
         package="controller_manager",
@@ -59,10 +58,8 @@ def generate_launch_description():
     )
 
     simple_controller = GroupAction(
+        condition=IfCondition(use_simple_controller),
         actions=[
-            # NOTE: simple_velocity_controller spawner skipped for Foxy compatibility
-            # Manually spawn with: ros2 control load_controller --controller-manager /controller_manager simple_velocity_controller
-
             Node(
                 package="carrierbot_controller",
                 executable="simple_controller_py",
@@ -90,6 +87,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        use_sim_time_arg,
         use_python_arg,
         wheel_radius_arg,
         wheel_seperation_arg,
