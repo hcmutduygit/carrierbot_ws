@@ -201,9 +201,9 @@ namespace carrierbot_firmware
             right_raw = raw_right_rps_;
         }
 
-        RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
-            "CAN Receive Right: " << right_raw << " RPS | "
-            " Left: "<< left_raw << " RPS");
+        // RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
+        //     "CAN Receive Right: " << right_raw << " RPS | "
+        //     " Left: "<< left_raw << " RPS");
 
         // Convert to rad/s
         double left_rad_s  = left_raw / 10.0 * 2 * M_PI;
@@ -249,10 +249,10 @@ namespace carrierbot_firmware
             can_interface_->send(0x70, left_vel_data);
             can_interface_->send(0x60, right_vel_data);
 
-        // // Log CAN send
-        RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
-            "CAN Send 0x60(R): " << right_velocity << " RPS | "
-            "0x70(L): " << left_velocity << " RPS");
+        // // // Log CAN send
+        // RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
+        //     "CAN Send 0x60(R): " << right_velocity << " RPS | "
+        //     "0x70(L): " << left_velocity << " RPS");
     }
 
     //
