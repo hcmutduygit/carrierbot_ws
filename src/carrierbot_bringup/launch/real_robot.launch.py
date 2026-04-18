@@ -133,6 +133,21 @@ def generate_launch_description():
         launch_arguments={"use_sim_time": use_sim_time}.items()
     )
 
+    rviz = Node(
+        package="rviz2",
+        executable="rviz2",
+        name="rviz2",
+        arguments=[
+            "-d",
+            os.path.join(
+                get_package_share_directory("carrierbot_bringup"),
+                    "rviz",
+                    "nav2_default_view.rviz"
+            )
+        ],
+        output="screen",
+    )
+
     return LaunchDescription([
         use_sim_time_arg,
         channel_type_arg,
@@ -147,6 +162,7 @@ def generate_launch_description():
         lidar,
         laser_filter,
         TimerAction(period=2.0, actions=[controller]),
-        TimerAction(period=5.0, actions=[slam]),
-        TimerAction(period=20.0, actions=[navigation]),
+        TimerAction(period=4.0, actions=[slam]),
+        TimerAction(period=15.0, actions=[navigation]),
+        TimerAction(period=16.0, actions=[rviz]),
     ])
