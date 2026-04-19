@@ -8,7 +8,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    lifecycle_nodes = ["controller_server", "planner_server", "recoveries_server", "bt_navigator"]
+    lifecycle_nodes = ["controller_server", "planner_server", "recoveries_server", "bt_navigator", "waypoint_follower"]
     carrierbot_navigation_pkg = get_package_share_directory("carrierbot_navigation")
     
     use_sim_time = LaunchConfiguration("use_sim_time")
@@ -75,8 +75,23 @@ def generate_launch_description():
                 "bt_navigator.yaml"),
             {
                 "use_sim_time": use_sim_time,
+                "default_bt_xml_filename": os.path.join(
+                    carrierbot_navigation_pkg,
+                    "config",
+                    "navigate_w_replanning_no_spin.xml"
+                ),
             }
         ],
+    )
+
+    nav2_waypoint_follower = Node(
+        package="nav2_waypoint_follower",
+        executable="waypoint_follower",
+        name="waypoint_follower",
+        output="screen",
+        parameters=[{
+            "use_sim_time": use_sim_time,
+        }],
     )
 
     nav2_lifecycle_manager = Node(
@@ -110,6 +125,7 @@ def generate_launch_description():
         nav2_planner_server,
         nav2_recoveries,
         nav2_bt_navigator,
+        nav2_waypoint_follower,
         nav2_lifecycle_manager,
         nav2_cmd_vel_inverter,
     ])
