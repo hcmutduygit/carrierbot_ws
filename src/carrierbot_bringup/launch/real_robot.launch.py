@@ -111,6 +111,27 @@ def generate_launch_description():
         launch_arguments={"use_sim_time": use_sim_time}.items()
     )
 
+    imu = Node(
+        package="ros-imu-bno055",
+        executable="imu_bno055_node",
+        namespace="imu",
+        name="imu_node",
+        output="screen",
+        parameters=[
+            {"device": "/dev/i2c-1"},
+            {"address": "40"},
+            {"frame_id": "imu"},
+        ]
+    )
+
+    robot_localization = Node(
+        package="robot_localization",
+        executable="ekf_node",
+        name="ekf_filter_node",
+        output="screen",
+        parameters=[os.path.join(get_package_share_directory("carrierbot_slam"), "config", "ekf.yaml")],
+    )
+
     slam = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
@@ -161,6 +182,9 @@ def generate_launch_description():
         hardware_interface,
         lidar,
         laser_filter,
+        imu,
+        robot_localization,
+
         TimerAction(period=2.0, actions=[controller]),
         TimerAction(period=4.0, actions=[slam]),
         TimerAction(period=6.0, actions=[navigation]),

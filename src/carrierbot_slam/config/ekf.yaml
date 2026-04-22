@@ -11,7 +11,7 @@ ekff_filter_node:
     world_frame: odom
 
 
-    odom0: /wheel_odometry
+    odom0: /odom
     odom0_config:
           [ false, false, false,   # x, y, z
             false, false, true,    # roll, pitch, yaw

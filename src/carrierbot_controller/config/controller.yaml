@@ -39,7 +39,7 @@ carrierbot_controller:
     base_frame_id: base_footprint
     push_limited_velocity: true
     publish_wheel_data: true
-    publish_tf: true # true for mapping, false for localization
+    publish_tf: false # true for mapping, false for localization
 
     linear: 
       x:
