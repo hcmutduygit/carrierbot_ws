@@ -53,10 +53,6 @@ def generate_launch_description():
             amcl_config,
             {"use_sim_time": use_sim_time},
         ],
-        remappings=[
-            ("/scan", "/scan_filtered"),
-            ("/odom", "/odometry/filtered"),
-        ]
     )
 
     nav2_lifecycle_manager = Node(
