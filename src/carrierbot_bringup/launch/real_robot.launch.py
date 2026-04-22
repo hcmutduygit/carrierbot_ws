@@ -112,14 +112,14 @@ def generate_launch_description():
     )
 
     imu = Node(
-        package="ros-imu-bno055",
-        executable="imu_bno055_node",
+        package="imu_bno055",
+        executable="bno055_i2c_node",
         namespace="imu",
         name="imu_node",
         output="screen",
         parameters=[
-            {"device": "/dev/i2c-1"},
-            {"address": "40"},
+            {"device": "/dev/i2c-8"},
+            {"address": 40},
             {"frame_id": "imu"},
         ]
     )
