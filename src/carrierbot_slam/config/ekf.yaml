@@ -10,66 +10,68 @@ ekf_filter_node:
     base_link_frame: base_footprint
     world_frame: odom
 
-    # Odometry (wheel encoders) - has position + heading info
+    # Odometry (wheel encoders)
     odom0: /odom
     odom0_config:
           [ true,  true,  false,    # x, y, z
-            false, false, true,     # roll, pitch, yaw - USE YAW from encoders!
-            true,  true,  false,    # vx, vy, vz
-            false, false, true,     # vroll, vpitch, vyaw
+            false, false, false,    # roll, pitch, yaw
+            false,  false,  false,    # vx, vy, vz
+            false, false, false,    # vroll, vpitch, vyaw
             false, false, false ]   # ax, ay, az
 
-    odom0_pose_covariance:  [0.01, 0.0,  0.0,  0.0, 0.0, 0.0,
-                             0.0,  0.01, 0.0,  0.0, 0.0, 0.0,
-                             0.0,  0.0,  1e6,  0.0, 0.0, 0.0,
-                             0.0,  0.0,  0.0,  1e6, 0.0, 0.0,
-                             0.0,  0.0,  0.0,  0.0, 1e6, 0.0,
-                             0.0,  0.0,  0.0,  0.0, 0.0, 0.1]
 
-    odom0_twist_covariance: [0.01, 0.0, 0.0, 0.0, 0.0, 0.0,
-                             0.0, 0.01, 0.0, 0.0, 0.0, 0.0,
-                             0.0, 0.0, 1e6, 0.0, 0.0, 0.0,
-                             0.0, 0.0, 0.0, 1e6, 0.0, 0.0,
-                             0.0, 0.0, 0.0, 0.0, 1e6, 0.0,
-                             0.0, 0.0, 0.0, 0.0, 0.0, 0.2]
 
-    # IMU (gyro angular velocity only - odometry provides better absolute heading)
+    # IMU (gyro for yaw rate, accelerometer)
     imu0: /imu/data
     imu0_config:
-          [ false, false, false,   # x, y, z
-            false, false, false,   # roll, pitch, yaw
+          [ false, false, false,  # x, y, z
+            false, false, false,  # roll, pitch, yaw
             false, false, false,   # vx, vy, vz
-            false, false, true,    # vroll, vpitch, vyaw - ONLY angular velocity
+            false, false, true,    # vroll, vpitch, vyaw
             false, false, false ]  # ax, ay, az
 
-    imu0_pose_covariance:  [1e6, 0.0, 0.0, 0.0, 0.0, 0.0,
-                            0.0, 1e6, 0.0, 0.0, 0.0, 0.0,
-                            0.0, 0.0, 1e6, 0.0, 0.0, 0.0,
-                            0.0, 0.0, 0.0, 1e6, 0.0, 0.0,
-                            0.0, 0.0, 0.0, 0.0, 1e6, 0.0,
-                            0.0, 0.0, 0.0, 0.0, 0.0, 1e6]
 
-    imu0_twist_covariance: [1e6, 0.0, 0.0, 0.0, 0.0, 0.0,
-                            0.0, 1e6, 0.0, 0.0, 0.0, 0.0,
-                            0.0, 0.0, 1e6, 0.0, 0.0, 0.0,
-                            0.0, 0.0, 0.0, 1e6, 0.0, 0.0,
-                            0.0, 0.0, 0.0, 0.0, 1e6, 0.0,
-                            0.0, 0.0, 0.0, 0.0, 0.0, 0.01]
+    # odom0_pose_covariance:  [0.1,  0.0,  0.0,  0.0, 0.0, 0.0,
+    #                          0.0,  0.1,  0.0,  0.0, 0.0, 0.0,
+    #                          0.0,  0.0,  1e6,  0.0, 0.0, 0.0,
+    #                          0.0,  0.0,  0.0,  1e6, 0.0, 0.0,
+    #                          0.0,  0.0,  0.0,  0.0, 1e6, 0.0,
+    #                          0.0,  0.0,  0.0,  0.0, 0.0, 0.1]
 
-    # Process noise covariance - lower for yaw since we trust odometry
-    process_noise_covariance: [0.05, 0.0,   0.0,   0.0,   0.0,   0.0,
-                               0.0,  0.05,  0.0,   0.0,   0.0,   0.0,
-                               0.0,  0.0,   1e6,   0.0,   0.0,   0.0,
-                               0.0,  0.0,   0.0,   1e6,   0.0,   0.0,
-                               0.0,  0.0,   0.0,   0.0,   1e6,   0.0,
-                               0.0,  0.0,   0.0,   0.0,   0.0,   0.01]
+    # odom0_twist_covariance: [0.05, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                          0.0, 0.05, 0.0, 0.0, 0.0, 0.0,
+    #                          0.0, 0.0, 1e6, 0.0, 0.0, 0.0,
+    #                          0.0, 0.0, 0.0, 1e6, 0.0, 0.0,
+    #                          0.0, 0.0, 0.0, 0.0, 1e6, 0.0,
+    #                          0.0, 0.0, 0.0, 0.0, 0.0, 0.1]
+    # imu0_pose_covariance:  [1e6, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                         0.0, 1e6, 0.0, 0.0, 0.0, 0.0,
+    #                         0.0, 0.0, 1e6, 0.0, 0.0, 0.0,
+    #                         0.0, 0.0, 0.0, 1e6, 0.0, 0.0,
+    #                         0.0, 0.0, 0.0, 0.0, 1e6, 0.0,
+    #                         0.0, 0.0, 0.0, 0.0, 0.0, 0.01]
 
-    # Initial covariance
-    initial_state: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    # imu0_twist_covariance: [1e6, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                         0.0, 1e6, 0.0, 0.0, 0.0, 0.0,
+    #                         0.0, 0.0, 1e6, 0.0, 0.0, 0.0,
+    #                         0.0, 0.0, 0.0, 1e6, 0.0, 0.0,
+    #                         0.0, 0.0, 0.0, 0.0, 1e6, 0.0,
+    #                         0.0, 0.0, 0.0, 0.0, 0.0, 0.02]
 
-    initial_estimate_covariance: [1e-9, 0.0,   0.0,   0.0,   0.0,   0.0,
-                                  0.0,  1e-9,  0.0,   0.0,   0.0,   0.0,
-                                  0.0,  0.0,   1e-9,  0.0,   0.0,   0.0,
-                                  0.0,  0.0,   0.0,   1e-9,  0.0,   0.0,
-                                  0.0,  0.0,   0.0,   0.0,   1e-9,  0.0,
-                                  0.0,  0.0,   0.0,   0.0,   0.0,   1e-9]
+    # # Process noise covariance
+    # process_noise_covariance: [0.05, 0.0,   0.0,   0.0,   0.0,   0.0,
+    #                            0.0,  0.05,  0.0,   0.0,   0.0,   0.0,
+    #                            0.0,  0.0,   1e6,   0.0,   0.0,   0.0,
+    #                            0.0,  0.0,   0.0,   1e6,   0.0,   0.0,
+    #                            0.0,  0.0,   0.0,   0.0,   1e6,   0.0,
+    #                            0.0,  0.0,   0.0,   0.0,   0.0,   0.05]
+
+    # # Initial covariance
+    # initial_state: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+    # initial_estimate_covariance: [1e-9, 0.0,   0.0,   0.0,   0.0,   0.0,
+    #                               0.0,  1e-9,  0.0,   0.0,   0.0,   0.0,
+    #                               0.0,  0.0,   1e-9,  0.0,   0.0,   0.0,
+    #                               0.0,  0.0,   0.0,   1e-9,  0.0,   0.0,
+    #                               0.0,  0.0,   0.0,   0.0,   1e-9,  0.0,
+    #                               0.0,  0.0,   0.0,   0.0,   0.0,   1e-9]

@@ -32,7 +32,7 @@ class YawLogger(Node):
         self.declare_parameter('odom_topic', '/odom')
         self.declare_parameter('imu_topic', '/imu/data')
         self.declare_parameter('ekf_topic', '/odometry/filtered')
-        self.declare_parameter('publish_rate', 5.0)
+        self.declare_parameter('publish_rate', 10.0)
 
         self.odom_yaw = None
         self.imu_yaw = None
