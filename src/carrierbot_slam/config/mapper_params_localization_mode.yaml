@@ -17,7 +17,7 @@ slam_toolbox:
     mode: localization
 
     # Load map
-    map_file_name: /home/huypi/carrierbot_ws/src/carrierbot_bringup/maps/map_b1
+    map_file_name: /home/nvidia/carrierbot_ws/src/carrierbot_bringup/maps/map_b1
     map_start_at_dock: false
 
     debug_logging: false
