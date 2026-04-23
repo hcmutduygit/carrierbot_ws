@@ -30,6 +30,7 @@ def generate_launch_description():
         get_package_share_directory("carrierbot_bringup"),
         "maps",
         "map_b1_final.yaml"
+        # "map_inside.yaml"
     ])
     
     nav2_map_server = Node(

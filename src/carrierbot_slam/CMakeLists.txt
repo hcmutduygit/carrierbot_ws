@@ -19,6 +19,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
 find_package(rclpy REQUIRED)
+find_package(nav_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 
 ament_python_install_package(${PROJECT_NAME})
@@ -31,6 +32,7 @@ install(
 # Install Python scripts
 install(PROGRAMS 
   ${PROJECT_NAME}/laser_filter.py
+  ${PROJECT_NAME}/yaw_logger.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
