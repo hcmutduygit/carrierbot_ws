@@ -5,10 +5,12 @@ from launch_ros.actions import Node
 from launch.actions import IncludeLaunchDescription, TimerAction, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
+from launch.conditions import IfCondition
 
 
 def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
+    use_amcl = LaunchConfiguration("use_amcl")
     channel_type =  LaunchConfiguration('channel_type', default='serial')
     serial_port = LaunchConfiguration('serial_port', default='/dev/rplidar')
     serial_baudrate = LaunchConfiguration('serial_baudrate', default='1000000') #for s2 is 1000000
@@ -20,6 +22,12 @@ def generate_launch_description():
     use_sim_time_arg = DeclareLaunchArgument(
         "use_sim_time",
         default_value="false"
+    )
+
+    use_amcl_arg = DeclareLaunchArgument(
+        "use_amcl",
+        default_value="true",
+        description="Whether to launch AMCL, map_server, and navigation"
     )
 
     channel_type_arg = DeclareLaunchArgument(
@@ -140,7 +148,8 @@ def generate_launch_description():
                 "slam.launch.py"
             )
         ),
-        launch_arguments={"use_sim_time": use_sim_time}.items()
+        launch_arguments={"use_sim_time": use_sim_time}.items(),
+        condition=IfCondition(use_amcl)
     )
 
     navigation = IncludeLaunchDescription(
@@ -151,7 +160,8 @@ def generate_launch_description():
                 "navigation.launch.py"
             )
         ),
-        launch_arguments={"use_sim_time": use_sim_time}.items()
+        launch_arguments={"use_sim_time": use_sim_time}.items(),
+        condition=IfCondition(use_amcl)
     )
 
     rviz = Node(
@@ -171,6 +181,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         use_sim_time_arg,
+        use_amcl_arg,
         channel_type_arg,
         serial_port_arg,
         serial_baudrate_arg,

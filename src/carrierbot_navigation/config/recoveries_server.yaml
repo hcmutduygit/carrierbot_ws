@@ -11,7 +11,7 @@ recoveries_server:
     wait:
       plugin: "nav2_recoveries/Wait"
     global_frame: odom
-    robot_base_frame: base_footprint
+    robot_base_frame: base_link
     transform_tolerance: 0.5
     use_sim_time: false
     simulate_ahead_time: 2.0
