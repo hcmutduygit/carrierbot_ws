@@ -23,13 +23,13 @@ ekf_filter_node:
 
     # IMU (gyro for yaw rate, accelerometer)
     imu0: /imu/data
-        imu0_differential: false
-        imu0_relative: false
+    imu0_differential: false
+    imu0_relative: false
     imu0_config:
           [ false, false, false,  # x, y, z
             false, false, true,   # roll, pitch, yaw
             false, false, false,   # vx, vy, vz
-          false, false, false,   # vroll, vpitch, vyaw
+            false, false, true,   # vroll, vpitch, vyaw
             false, false, false ]  # ax, ay, az
 
 
