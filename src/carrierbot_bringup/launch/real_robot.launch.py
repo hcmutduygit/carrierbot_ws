@@ -18,8 +18,8 @@ def generate_launch_description():
     inverted = LaunchConfiguration('inverted', default='false')
     angle_compensate = LaunchConfiguration('angle_compensate', default='true')
     scan_mode = LaunchConfiguration('scan_mode', default='DenseBoost')
-
-    use_sim_time_arg = DeclareLaunchArgument(
+    
+    use_sim_time_arg = DeclareLaunchArgument(   
         "use_sim_time",
         default_value="false"
     )

@@ -77,5 +77,14 @@ namespace carrierbot_firmware
         // CSV logging
         std::ofstream csv_file_;
         std::chrono::system_clock::time_point start_time_;
+        double last_left_cmd_rad_s_ = 0.0;
+        double last_right_cmd_rad_s_ = 0.0;
+        double last_left_cmd_rps_ = 0.0;
+        double last_right_cmd_rps_ = 0.0;
+        double last_left_encoder_rps_ = 0.0;
+        double last_right_encoder_rps_ = 0.0;
+        double last_left_encoder_rad_s_ = 0.0;
+        double last_right_encoder_rad_s_ = 0.0;
+        bool csv_ready_ = false;
     };
 }

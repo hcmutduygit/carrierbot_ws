@@ -33,6 +33,7 @@ install(
 install(PROGRAMS 
   ${PROJECT_NAME}/laser_filter.py
   ${PROJECT_NAME}/yaw_logger.py
+  ${PROJECT_NAME}/telemetry_logger.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
