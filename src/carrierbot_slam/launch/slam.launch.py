@@ -26,12 +26,12 @@ def generate_launch_description():
         description="Full path to amcl yaml file to load"
     )
 
-    map_path = PathJoinSubstitution([
+    map_path = os.path.join(
         get_package_share_directory("carrierbot_bringup"),
         "maps",
         "map_b1_final.yaml"
         # "map_inside.yaml"
-    ])
+    )
     
     nav2_map_server = Node(
         package="nav2_map_server",

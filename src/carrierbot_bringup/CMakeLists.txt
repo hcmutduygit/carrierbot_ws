@@ -8,11 +8,9 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 
-
 install(
   DIRECTORY launch config worlds maps rviz
   DESTINATION share/${PROJECT_NAME}
 )
-
 
 ament_package()
