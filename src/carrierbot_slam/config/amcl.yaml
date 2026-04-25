@@ -5,7 +5,7 @@ amcl:
     alpha2: 0.04
     alpha3: 0.01
     alpha4: 0.03
-    alpha5: 0.02
+    alpha5: 0.01
     base_frame_id: "base_footprint"
     beam_skip_distance: 0.5
     beam_skip_error_threshold: 0.9
