@@ -198,6 +198,6 @@ def generate_launch_description():
 
         TimerAction(period=2.0, actions=[controller]),
         TimerAction(period=4.0, actions=[slam]),
-        TimerAction(period=6.0, actions=[navigation]),
-        TimerAction(period=8.0, actions=[rviz]),
+        TimerAction(period=15.0, actions=[navigation]),
+        TimerAction(period=16.0, actions=[rviz]),
     ])
