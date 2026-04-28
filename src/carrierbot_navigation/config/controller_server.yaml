@@ -25,54 +25,82 @@ controller_server:
       stateful: True
 
     FollowPath:
-      plugin: "dwb_core::DWBLocalPlanner"
+      plugin: "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
+      desired_linear_vel: 0.5
+      max_linear_accel: 2.5
+      max_linear_decel: 2.5
+      lookahead_dist: 0.6
+      min_lookahead_dist: 0.3
+      max_lookahead_dist: 0.9
+      lookahead_time: 1.5
+      rotate_to_heading_angular_vel: 1.8
+      transform_tolerance: 0.1
+      use_velocity_scaled_lookahead_dist: false
+      min_approach_linear_velocity: 0.05
+      use_approach_linear_velocity_scaling: true
+      max_allowed_time_to_collision: 1.0
+      use_regulated_linear_velocity_scaling: true
+      use_cost_regulated_linear_velocity_scaling: false
+      regulated_linear_scaling_min_radius: 0.9
+      regulated_linear_scaling_min_speed: 0.25
+      use_rotate_to_heading: true
+      rotate_to_heading_min_angle: 0.785
+      max_angular_accel: 3.2
+      goal_dist_tol: 0.25
+      cost_scaling_dist: 0.3
+      cost_scaling_gain: 1.0
+      inflation_cost_scaling_factor: 3.0
 
-      # ===== Velocity limits =====
-      max_vel_x: 0.5
-      min_vel_x: 0.0
-      max_vel_theta: 0.5
-      min_speed_xy: 0.0
-      max_speed_xy: 0.5
-      min_speed_theta: 0.0
 
-      acc_lim_x: 1.0
-      acc_lim_theta: 1.0
+    # FollowPath:
+    #   plugin: "dwb_core::DWBLocalPlanner"
 
-      decel_lim_x: -1.0
-      decel_lim_theta: -1.0
+    #   # ===== Velocity limits =====
+    #   max_vel_x: 0.5
+    #   min_vel_x: 0.0
+    #   max_vel_theta: 0.5
+    #   min_speed_xy: 0.0
+    #   max_speed_xy: 0.5
+    #   min_speed_theta: 0.0
 
-      # ===== Sampling =====
-      vx_samples: 20
-      vtheta_samples: 20
+    #   acc_lim_x: 1.0
+    #   acc_lim_theta: 1.0
 
-      sim_time: 1.5   # giống lookahead_time
+    #   decel_lim_x: -1.0
+    #   decel_lim_theta: -1.0
 
-      # ===== Goal tolerance =====
-      xy_goal_tolerance: 0.25
-      yaw_goal_tolerance: 0.25
-      stateful: true
+    #   # ===== Sampling =====
+    #   vx_samples: 20
+    #   vtheta_samples: 20
 
-      # ===== Critics (quan trọng nhất) =====
-      critics: [
-        "RotateToGoal",
-        "Oscillation",
-        "BaseObstacle",
-        "GoalAlign",
-        "PathAlign",
-        "PathDist",
-        "GoalDist"
-      ]
+    #   sim_time: 1.5   # giống lookahead_time
 
-      # ===== Weights =====
-      PathAlign.scale: 32.0
-      GoalAlign.scale: 24.0
-      PathDist.scale: 32.0
-      GoalDist.scale: 24.0
-      BaseObstacle.scale: 0.02
+    #   # ===== Goal tolerance =====
+    #   xy_goal_tolerance: 0.25
+    #   yaw_goal_tolerance: 0.25
+    #   stateful: true
 
-      RotateToGoal.scale: 32.0
-      RotateToGoal.slowing_factor: 5.0
-      RotateToGoal.lookahead_time: 1.0
+    #   # ===== Critics (quan trọng nhất) =====
+    #   critics: [
+    #     "RotateToGoal",
+    #     "Oscillation",
+    #     "BaseObstacle",
+    #     "GoalAlign",
+    #     "PathAlign",
+    #     "PathDist",
+    #     "GoalDist"
+    #   ]
+
+    #   # ===== Weights =====
+    #   PathAlign.scale: 32.0
+    #   GoalAlign.scale: 24.0
+    #   PathDist.scale: 32.0
+    #   GoalDist.scale: 24.0
+    #   BaseObstacle.scale: 0.02
+
+    #   RotateToGoal.scale: 32.0
+    #   RotateToGoal.slowing_factor: 5.0
+    #   RotateToGoal.lookahead_time: 1.0
 
 local_costmap:
   local_costmap:
