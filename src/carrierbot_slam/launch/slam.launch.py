@@ -29,7 +29,7 @@ def generate_launch_description():
     map_path = PathJoinSubstitution([
         get_package_share_directory("carrierbot_bringup"),
         "maps",
-        "map_b1_final.yaml"
+        "carrierbot_slam.yaml"
         # "map_inside.yaml"
     ])
     

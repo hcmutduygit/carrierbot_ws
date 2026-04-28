@@ -29,7 +29,7 @@ slam_toolbox:
     transform_publish_period: 0.1 #if 0 never publishes odometry - tăng lên 10Hz để ổn định odom
     # map_update_interval: 5.0
     map_update_interval: 5.0
-    resolution: 0.05
+    resolution: 0.025
     max_laser_range: 12.0 #loại bỏ điểm quá xa
     minimum_time_interval: 0.5
     transform_timeout: 0.2

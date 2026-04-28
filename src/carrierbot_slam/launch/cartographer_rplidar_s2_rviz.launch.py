@@ -14,11 +14,11 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time')
 
     # Get the package directories
-    carrierbot_mapping_prefix = get_package_share_directory('carrierbot_mapping')
+    carrierbot_slam_prefix = get_package_share_directory('carrierbot_slam')
     rplidar_ros_prefix = get_package_share_directory('rplidar_ros')
 
     # RViz config file
-    rviz_config_file = os.path.join(carrierbot_mapping_prefix, 'rviz', 'cartographer.rviz')
+    rviz_config_file = os.path.join(carrierbot_slam_prefix, 'rviz', 'cartographer.rviz')
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -62,10 +62,10 @@ def generate_launch_description():
 
     # Get the package directories
     rplidar_ros_prefix = get_package_share_directory('rplidar_ros')
-    carrierbot_mapping_prefix = get_package_share_directory('carrierbot_mapping')
+    carrierbot_slam_prefix = get_package_share_directory('carrierbot_slam')
 
     # RViz config file
-    rviz_config_file = os.path.join(carrierbot_mapping_prefix, 'rviz', 'cartographer.rviz')
+    rviz_config_file = os.path.join(carrierbot_slam_prefix, 'rviz', 'cartographer.rviz')
 
     return LaunchDescription([
         DeclareLaunchArgument(
