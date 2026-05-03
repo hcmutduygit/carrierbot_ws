@@ -30,9 +30,6 @@ def generate_launch_description():
                 "controller_server.yaml"),
             {"use_sim_time": use_sim_time}
         ],
-        remappings=[
-            ("/cmd_vel", "/nav2/cmd_vel_raw"),
-        ],
     )
     
     nav2_planner_server = Node(
@@ -106,19 +103,6 @@ def generate_launch_description():
         ],
     )
 
-    nav2_cmd_vel_inverter = Node(
-        package="carrierbot_navigation",
-        executable="cmd_vel_angular_inverter.py",
-        name="cmd_vel_angular_inverter",
-        output="screen",
-        parameters=[{
-            "input_topic": "/nav2/cmd_vel_raw",
-            "output_topic": "/cmd_vel",
-            "invert_linear": False,
-            "invert_angular": True,
-        }],
-    )
-
     return LaunchDescription([
         use_sim_time_arg,
         nav2_controller_server,
@@ -127,5 +111,4 @@ def generate_launch_description():
         nav2_bt_navigator,
         nav2_waypoint_follower,
         nav2_lifecycle_manager,
-        nav2_cmd_vel_inverter,
     ])

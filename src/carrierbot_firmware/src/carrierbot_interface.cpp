@@ -236,8 +236,8 @@ namespace carrierbot_firmware
         // Update velocity
         {
             std::lock_guard<std::mutex> lock(state_mutex_);
-            velocity_state_[0] = right_rad_s;
-            velocity_state_[1] = left_rad_s;
+            velocity_state_[0] = left_rad_s;
+            velocity_state_[1] = right_rad_s;
         }
         publishTelemetry();
 
@@ -260,8 +260,8 @@ namespace carrierbot_firmware
             double left_cmd, right_cmd;
             {
                 std::lock_guard<std::mutex> lock(state_mutex_);
-                left_cmd  = velocity_command_[1];
-                right_cmd = velocity_command_[0];
+                left_cmd  = velocity_command_[0];
+                right_cmd = velocity_command_[1];
             }
 
             float left_velocity  = static_cast<float>(left_cmd) * 10.0 / (2 * M_PI) * (-1.0f);
