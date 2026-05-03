@@ -12,7 +12,6 @@ from rclpy.node import Node
 from ament_index_python.packages import get_package_share_directory
 from carrierbot_msgs.msg import CarrierbotTelemetry
 
-
 def make_default_csv_path():
     timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
     log_dir = '/home/nvidia/carrierbot_ws/src/carrierbot_datalog/data'
@@ -24,7 +23,7 @@ def format_value(value):
         return ''
     if isinstance(value, float) and not math.isfinite(value):
         return 'nan'
-    return f'{value:.6f}'
+    return f'{value:.4f}'
 
 
 class DataLogger(Node):
@@ -35,7 +34,7 @@ class DataLogger(Node):
         self.declare_parameter('filtered_odom_topic', '/odometry/filtered')
         self.declare_parameter('telemetry_topic', '/carrierbot/telemetry')
         self.declare_parameter('csv_path', make_default_csv_path())
-        self.declare_parameter('publish_rate', 10.0)
+        self.declare_parameter('publish_rate', 2.0)
 
         self.amcl_x = None
         self.amcl_y = None
@@ -45,14 +44,17 @@ class DataLogger(Node):
         self.filtered_wz = None
         self.left_velocity = None
         self.right_velocity = None
-        self.left_rad_s = None
-        self.right_rad_s = None
+        self.left_rps = None
+        self.right_rps = None
         self.voltage = None
+        self.relative_time = 0.0
 
         self.csv_path = os.path.expanduser(str(self.get_parameter('csv_path').value))
         csv_dir = os.path.dirname(self.csv_path)
         if csv_dir:
             os.makedirs(csv_dir, exist_ok=True)
+
+        self.get_logger().info(f'CSV path: {self.csv_path}')
 
         self.csv_file = open(self.csv_path, 'a', newline='')
         self.csv_writer = csv.writer(self.csv_file)
@@ -65,10 +67,10 @@ class DataLogger(Node):
                 'amcl_qw',
                 'filtered_vx',
                 'filtered_wz',
-                'left_velocity',
-                'right_velocity',
-                'left_rad_s',
-                'right_rad_s',
+                'left_velocity (rps)',
+                'right_velocity (rps)',
+                'left_rps',
+                'right_rps',
                 'voltage',
             ])
             self.csv_file.flush()
@@ -94,6 +96,7 @@ class DataLogger(Node):
 
         publish_rate = float(self.get_parameter('publish_rate').value)
         period = 1.0 / publish_rate if publish_rate > 0.0 else 0.1
+        self.time_increment = 1.0 / publish_rate if publish_rate > 0.0 else 0.1
         self.create_timer(period, self.write_row)
 
         self.get_logger().info(f'Data logger started, writing to {self.csv_path}')
@@ -102,6 +105,8 @@ class DataLogger(Node):
         pose = msg.pose.pose
         self.amcl_x = pose.position.x
         self.amcl_y = pose.position.y
+        self.amcl_qx = pose.orientation.x
+        self.amcl_qy = pose.orientation.y
         self.amcl_qz = pose.orientation.z
         self.amcl_qw = pose.orientation.w
 
@@ -113,14 +118,13 @@ class DataLogger(Node):
     def telemetry_callback(self, msg):
         self.left_velocity = msg.left_velocity
         self.right_velocity = msg.right_velocity
-        self.left_rad_s = msg.left_rad_s
-        self.right_rad_s = msg.right_rad_s
+        self.left_rps = msg.left_rps
+        self.right_rps = msg.right_rps
         self.voltage = msg.voltage
 
     def write_row(self):
-        current_time = self.get_clock().now().nanoseconds / 1e9
         self.csv_writer.writerow([
-            f'{current_time:.3f}',
+            f'{self.relative_time:.1f}',
             format_value(self.amcl_x),
             format_value(self.amcl_y),
             format_value(self.amcl_qz),
@@ -129,11 +133,12 @@ class DataLogger(Node):
             format_value(self.filtered_wz),
             format_value(self.left_velocity),
             format_value(self.right_velocity),
-            format_value(self.left_rad_s),
-            format_value(self.right_rad_s),
+            format_value(self.left_rps),
+            format_value(self.right_rps),
             format_value(self.voltage),
         ])
         self.csv_file.flush()
+        self.relative_time += self.time_increment
 
 
 def main(args=None):

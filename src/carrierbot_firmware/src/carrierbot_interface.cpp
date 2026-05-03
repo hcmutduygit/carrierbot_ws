@@ -221,6 +221,8 @@ namespace carrierbot_firmware
             std::lock_guard<std::mutex> lock(state_mutex_);
             left_raw = raw_left_rps_;
             right_raw = raw_right_rps_;
+            telemetry_msg_.left_rps = static_cast<float>(left_raw) / 10.0f;
+            telemetry_msg_.right_rps = static_cast<float>(right_raw) / 10.0f;
         }
 
         // RCLCPP_INFO_STREAM(rclcpp::get_logger("CarrierbotInterface"),
@@ -236,8 +238,6 @@ namespace carrierbot_firmware
             std::lock_guard<std::mutex> lock(state_mutex_);
             velocity_state_[0] = right_rad_s;
             velocity_state_[1] = left_rad_s;
-            telemetry_msg_.left_rad_s = static_cast<float>(left_rad_s);
-            telemetry_msg_.right_rad_s = static_cast<float>(right_rad_s);
         }
         publishTelemetry();
 
@@ -269,8 +269,8 @@ namespace carrierbot_firmware
             std::cout << "Commanded left_vel: " << left_velocity << " RPS, right_vel: " << right_velocity << " RPS\n";
             {
                 std::lock_guard<std::mutex> lock(state_mutex_);
-                telemetry_msg_.left_velocity = left_velocity;
-                telemetry_msg_.right_velocity = right_velocity;
+                telemetry_msg_.left_velocity = left_velocity / 10.0f;
+                telemetry_msg_.right_velocity = right_velocity / 10.0f;
             }
             publishTelemetry();
 
