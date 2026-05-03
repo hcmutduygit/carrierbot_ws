@@ -140,6 +140,13 @@ def generate_launch_description():
         parameters=[os.path.join(get_package_share_directory("carrierbot_slam"), "config", "ekf.yaml")],
     )
 
+    datalogger = Node(
+        package="carrierbot_datalog",
+        executable="datalog_logger.py",
+        name="datalog_logger",
+        output="screen",
+    )
+
     slam = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
@@ -195,6 +202,7 @@ def generate_launch_description():
         laser_filter,
         imu,
         robot_localization,
+        datalogger,
 
         TimerAction(period=2.0, actions=[controller]),
         TimerAction(period=4.0, actions=[slam]),

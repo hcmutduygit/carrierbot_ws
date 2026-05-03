@@ -123,6 +123,10 @@ namespace carrierbot_firmware
                 {
                     handleEncoderData(data);
                 }
+                else if (can_id == 0x85)
+                {
+                    handleVoltageData(data);
+                }
             };
             can_interface_->start_receive_loop(callback);
         }
@@ -171,6 +175,18 @@ namespace carrierbot_firmware
         std::lock_guard<std::mutex> lock(state_mutex_);
         std::memcpy(&raw_right_rps_,  &data[0], sizeof(float));
         std::memcpy(&raw_left_rps_, &data[4], sizeof(float));
+    }
+    //
+    // Handle voltage data from CAN 0x85
+    //
+    void CarrierbotInterface::handleVoltageData(const std::vector<uint8_t> &data)
+    {
+        if (data.size() < 8)
+            return;
+
+        std::lock_guard<std::mutex> lock(state_mutex_);
+        std::memcpy(&voltage,  &data[0], sizeof(float));
+        std::cout << "Battery Voltage: " << voltage << " V\n";
     }
 
     //

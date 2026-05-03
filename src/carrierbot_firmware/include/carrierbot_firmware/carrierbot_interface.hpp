@@ -49,6 +49,8 @@ namespace carrierbot_firmware
 
         // Helper functions
         void handleEncoderData(const std::vector<uint8_t> &data);
+        void handleVoltageData(const std::vector<uint8_t> &data);
+
         void sendWheelVelocities();
         void initCSV();
         void logToCSV(float left_encoder, float right_encoder);
@@ -64,7 +66,7 @@ namespace carrierbot_firmware
         std::mutex state_mutex_;
         float raw_left_rps_ = 0.0f;
         float raw_right_rps_ = 0.0f;
-
+        float voltage = 0.0f;
         rclcpp::Time last_run_;
         rclcpp::Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr cmd_vel_wheels_sub_;
 
