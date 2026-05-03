@@ -30,9 +30,6 @@ def generate_launch_description():
                 "controller_server.yaml"),
             {"use_sim_time": use_sim_time}
         ],
-        remappings=[
-            ("/cmd_vel", "/nav2/cmd_vel_raw"),
-        ],
     )
     
     nav2_planner_server = Node(
