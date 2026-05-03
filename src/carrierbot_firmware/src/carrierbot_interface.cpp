@@ -49,6 +49,8 @@ namespace carrierbot_firmware
         }
 
         can_interface_ = std::make_unique<WaveshareCAN>(port_, baudrate_, 2.0);
+        ros_node_ = std::make_shared<rclcpp::Node>("carrierbot_interface");
+        telemetry_pub_ = ros_node_->create_publisher<carrierbot_msgs::msg::CarrierbotTelemetry>("/carrierbot/telemetry", 10);
         velocity_command_.resize(info_.joints.size(), 0.0); 
         position_state_.resize(info_.joints.size(), 0.0);
         velocity_state_.resize(info_.joints.size(), 0.0);
@@ -184,8 +186,12 @@ namespace carrierbot_firmware
         if (data.size() < 8)
             return;
 
-        std::lock_guard<std::mutex> lock(state_mutex_);
-        std::memcpy(&voltage,  &data[0], sizeof(float));
+        {
+            std::lock_guard<std::mutex> lock(state_mutex_);
+            std::memcpy(&voltage,  &data[0], sizeof(float));
+            telemetry_msg_.voltage = voltage;
+        }
+        publishTelemetry();
         std::cout << "Battery Voltage: " << voltage << " V\n";
     }
 
@@ -226,8 +232,14 @@ namespace carrierbot_firmware
         double right_rad_s = -right_raw / 10.0 * 2 * M_PI;
 
         // Update velocity
-        velocity_state_[0] = right_rad_s;
-        velocity_state_[1] = left_rad_s;
+        {
+            std::lock_guard<std::mutex> lock(state_mutex_);
+            velocity_state_[0] = right_rad_s;
+            velocity_state_[1] = left_rad_s;
+            telemetry_msg_.left_rad_s = static_cast<float>(left_rad_s);
+            telemetry_msg_.right_rad_s = static_cast<float>(right_rad_s);
+        }
+        publishTelemetry();
 
         // Integrate to position (rad)
         position_state_[0] += velocity_state_[0] * dt;
@@ -255,6 +267,12 @@ namespace carrierbot_firmware
             float left_velocity  = static_cast<float>(left_cmd) * 10.0 / (2 * M_PI) * (-1.0f);
             float right_velocity = static_cast<float>(right_cmd) * 10.0 / (2 * M_PI); 
             std::cout << "Commanded left_vel: " << left_velocity << " RPS, right_vel: " << right_velocity << " RPS\n";
+            {
+                std::lock_guard<std::mutex> lock(state_mutex_);
+                telemetry_msg_.left_velocity = left_velocity;
+                telemetry_msg_.right_velocity = right_velocity;
+            }
+            publishTelemetry();
 
             std::vector<uint8_t> left_vel_data(8, 0);
             std::vector<uint8_t> right_vel_data(8, 0);
@@ -301,6 +319,16 @@ namespace carrierbot_firmware
     hardware_interface::status CarrierbotInterface::get_status() const
     {
         return hardware_interface::status::STARTED;
+    }
+
+    void CarrierbotInterface::publishTelemetry()
+    {
+        if (!telemetry_pub_)
+        {
+            return;
+        }
+
+        telemetry_pub_->publish(telemetry_msg_);
     }
 
 } // namespace carrierbot_firmware

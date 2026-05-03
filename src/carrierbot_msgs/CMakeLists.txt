@@ -19,6 +19,9 @@ endif()
 # Generate messages
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/CanFrame.msg"
+  "msg/CarrierbotTelemetry.msg"
 )
+
+ament_export_dependencies(rosidl_default_runtime)
 
 ament_package()

@@ -10,16 +10,12 @@ from geometry_msgs.msg import PoseWithCovarianceStamped
 from nav_msgs.msg import Odometry
 from rclpy.node import Node
 from ament_index_python.packages import get_package_share_directory
+from carrierbot_msgs.msg import CarrierbotTelemetry
 
 
 def make_default_csv_path():
     timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    try:
-        package_share_dir = get_package_share_directory('carrierbot_datalog')
-        log_dir = os.path.join(package_share_dir, 'data')
-    except Exception:
-        package_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-        log_dir = os.path.join(package_root, 'data')
+    log_dir = '/home/nvidia/carrierbot_ws/src/carrierbot_datalog/data'
     return os.path.join(log_dir, f'amcl_odom_log_{timestamp}.csv')
 
 
@@ -37,6 +33,7 @@ class DataLogger(Node):
 
         self.declare_parameter('amcl_topic', '/amcl_pose')
         self.declare_parameter('filtered_odom_topic', '/odometry/filtered')
+        self.declare_parameter('telemetry_topic', '/carrierbot/telemetry')
         self.declare_parameter('csv_path', make_default_csv_path())
         self.declare_parameter('publish_rate', 10.0)
 
@@ -44,9 +41,13 @@ class DataLogger(Node):
         self.amcl_y = None
         self.amcl_qz = None
         self.amcl_qw = None
-        self.amcl_stamp = None
         self.filtered_vx = None
         self.filtered_wz = None
+        self.left_velocity = None
+        self.right_velocity = None
+        self.left_rad_s = None
+        self.right_rad_s = None
+        self.voltage = None
 
         self.csv_path = os.path.expanduser(str(self.get_parameter('csv_path').value))
         csv_dir = os.path.dirname(self.csv_path)
@@ -64,6 +65,11 @@ class DataLogger(Node):
                 'amcl_qw',
                 'filtered_vx',
                 'filtered_wz',
+                'left_velocity',
+                'right_velocity',
+                'left_rad_s',
+                'right_rad_s',
+                'voltage',
             ])
             self.csv_file.flush()
 
@@ -79,6 +85,16 @@ class DataLogger(Node):
             self.filtered_odom_callback,
             10,
         )
+        self.create_subscription(
+            CarrierbotTelemetry,
+            self.get_parameter('telemetry_topic').value,
+            self.telemetry_callback,
+            10,
+        )
+
+        publish_rate = float(self.get_parameter('publish_rate').value)
+        period = 1.0 / publish_rate if publish_rate > 0.0 else 0.1
+        self.create_timer(period, self.write_row)
 
         self.get_logger().info(f'Data logger started, writing to {self.csv_path}')
 
@@ -88,19 +104,21 @@ class DataLogger(Node):
         self.amcl_y = pose.position.y
         self.amcl_qz = pose.orientation.z
         self.amcl_qw = pose.orientation.w
-        self.amcl_stamp = msg.header.stamp
-        self.write_row()
 
     def filtered_odom_callback(self, msg):
         twist = msg.twist.twist
         self.filtered_vx = twist.linear.x
         self.filtered_wz = twist.angular.z
 
-    def write_row(self):
-        if self.amcl_stamp is None:
-            return
+    def telemetry_callback(self, msg):
+        self.left_velocity = msg.left_velocity
+        self.right_velocity = msg.right_velocity
+        self.left_rad_s = msg.left_rad_s
+        self.right_rad_s = msg.right_rad_s
+        self.voltage = msg.voltage
 
-        current_time = self.amcl_stamp.sec + (self.amcl_stamp.nanosec / 1e9)
+    def write_row(self):
+        current_time = self.get_clock().now().nanoseconds / 1e9
         self.csv_writer.writerow([
             f'{current_time:.3f}',
             format_value(self.amcl_x),
@@ -109,6 +127,11 @@ class DataLogger(Node):
             format_value(self.amcl_qw),
             format_value(self.filtered_vx),
             format_value(self.filtered_wz),
+            format_value(self.left_velocity),
+            format_value(self.right_velocity),
+            format_value(self.left_rad_s),
+            format_value(self.right_rad_s),
+            format_value(self.voltage),
         ])
         self.csv_file.flush()
 

@@ -6,6 +6,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp/executors/single_threaded_executor.hpp>
 #include <std_msgs/msg/float64_multi_array.hpp>
+#include <carrierbot_msgs/msg/carrierbot_telemetry.hpp>
 #include "carrierbot_firmware/can_node.hpp"
 #include <vector>
 #include <string>
@@ -50,6 +51,7 @@ namespace carrierbot_firmware
         // Helper functions
         void handleEncoderData(const std::vector<uint8_t> &data);
         void handleVoltageData(const std::vector<uint8_t> &data);
+        void publishTelemetry();
 
         void sendWheelVelocities();
         void initCSV();
@@ -63,10 +65,13 @@ namespace carrierbot_firmware
         std::vector<double> velocity_command_;
         std::vector<double> position_state_;
         std::vector<double> velocity_state_;
+        carrierbot_msgs::msg::CarrierbotTelemetry telemetry_msg_;
         std::mutex state_mutex_;
         float raw_left_rps_ = 0.0f;
         float raw_right_rps_ = 0.0f;
         float voltage = 0.0f;
+        rclcpp::Node::SharedPtr ros_node_;
+        rclcpp::Publisher<carrierbot_msgs::msg::CarrierbotTelemetry>::SharedPtr telemetry_pub_;
         rclcpp::Time last_run_;
         rclcpp::Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr cmd_vel_wheels_sub_;
 
