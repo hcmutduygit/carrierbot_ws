@@ -1,10 +1,9 @@
 import os
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, TimerAction
+from launch.actions import IncludeLaunchDescription, TimerAction, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import PathJoinSubstitution, Command
+from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.actions import Node
-from launch_ros.substitutions import FindPackageShare
 from ament_index_python.packages import get_package_share_directory
 
 
@@ -25,22 +24,27 @@ def generate_launch_description():
     urdf_path = os.path.join(my_robot_description_dir, "urdf", "my_robot.urdf.xacro")
     rviz_config_path = os.path.join(my_robot_description_dir, "rviz", "urdf_config.rviz")
     gazebo_config_path = os.path.join(my_robot_bringup_dir, "config", "gazebo_bridge.yaml")
-    world_path = os.path.join(my_robot_bringup_dir, "worlds", "test_world.sdf")
-    ros2_control_config_path = os.path.join(robot_controller_dir, "config", "ros2_control.yaml")
-    # World selection: comment/uncomment to switch
-    use_empty_world = True  # Set to True for empty world, False for test_world.sdf
-    
-    if use_empty_world:
-        gz_world_args = 'empty.sdf -r'
-    else:
-        gz_world_args = f'{world_path} -r'
+    default_gz_args = 'empty.sdf -r'
+    gz_args = LaunchConfiguration("gz_args")
+
+    gz_args_arg = DeclareLaunchArgument(
+        "gz_args",
+        default_value=default_gz_args,
+        description="Arguments forwarded to ros_gz_sim (e.g. '<world_path> -r' or 'empty.sdf -r')",
+    )
     
     # Robot State Publisher
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
         parameters=[{
-            'robot_description': Command(['xacro ', urdf_path, ' is_ignition:=', is_ignition])
+            'robot_description': Command([
+                'xacro ',
+                urdf_path,
+                ' is_ignition:=',
+                is_ignition,
+                ' is_sim:=true',
+            ])
         }]
     )
     
@@ -50,7 +54,7 @@ def generate_launch_description():
             os.path.join(ros_gz_sim_dir, "launch", "gz_sim.launch.py")
         ),
         launch_arguments={
-            'gz_args': gz_world_args
+            'gz_args': gz_args
         }.items()
     )
     
@@ -65,7 +69,7 @@ def generate_launch_description():
     ros_gz_bridge_node = Node(
         package="ros_gz_bridge",
         executable="parameter_bridge",
-        arguments=[gazebo_config_path]
+        parameters=[{"config_file": gazebo_config_path}]
     )
 
     # RViz2
@@ -90,10 +94,11 @@ def generate_launch_description():
     )
     
     return LaunchDescription([
+        gz_args_arg,
         robot_state_publisher_node,
         gazebo_sim,
         spawn_robot_node,
-        ros_gz_bridge_node,
+        ros_gz_bridge_node, 
         rviz_node,
         delayed_controller_launch,
     ])

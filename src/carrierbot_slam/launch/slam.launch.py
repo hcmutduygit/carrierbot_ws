@@ -9,6 +9,7 @@ from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
     amcl_config = LaunchConfiguration("amcl_config")
+    map_yaml = LaunchConfiguration("map")
     lifecycle_nodes = ["map_server", "amcl"]
 
     use_sim_time_arg = DeclareLaunchArgument(
@@ -26,12 +27,15 @@ def generate_launch_description():
         description="Full path to amcl yaml file to load"
     )
 
-    map_path = PathJoinSubstitution([
-        get_package_share_directory("carrierbot_bringup"),
-        "maps",
-        # "carrierbot_slam.yaml"
-        "lab_map.yaml"
-    ])
+    map_arg = DeclareLaunchArgument(
+        "map",
+        default_value=PathJoinSubstitution([
+            get_package_share_directory("carrierbot_bringup"),
+            "maps",
+            "lab_map.yaml"
+        ]),
+        description="Full path to map yaml file to load",
+    )
     
     nav2_map_server = Node(
         package="nav2_map_server",
@@ -39,7 +43,7 @@ def generate_launch_description():
         name="map_server",
         output="screen",
         parameters=[
-            {"yaml_filename": map_path},
+            {"yaml_filename": map_yaml},
             {"use_sim_time": use_sim_time}
         ],
     )
@@ -71,6 +75,7 @@ def generate_launch_description():
     return LaunchDescription([
         use_sim_time_arg,
         amcl_config_arg,
+        map_arg,
         nav2_map_server,
         nav2_amcl,
         nav2_lifecycle_manager,

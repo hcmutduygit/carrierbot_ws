@@ -1,16 +1,21 @@
 <?xml version="1.0"?>
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Khai báo tham số mặc định là true cho giả lập -->
+    <xacro:arg name="is_sim" default="true"/>
+    <xacro:arg name="is_ignition" default="false"/>
+
     <ros2_control name="RobotSystem" type="system">
         <xacro:if value="$(arg is_sim)">
             <xacro:if value="$(arg is_ignition)">
                 <hardware>
-                <plugin>ign_ros2_control/IgnitionSystem</plugin> 
+                    <plugin>ign_ros2_control/IgnitionSystem</plugin> 
                 </hardware>
             </xacro:if>
 
             <xacro:unless value="$(arg is_ignition)">
                 <hardware> 
-                <plugin>gz_ros2_control/GazeboSimSystem</plugin> 
+                    <plugin>gz_ros2_control/GazeboSimSystem</plugin> 
                 </hardware>
             </xacro:unless>
         </xacro:if>

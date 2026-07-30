@@ -24,13 +24,6 @@ ament_target_dependencies(simple_controller
   ${Eigen3_LIBRARIES}
 )
 
-add_executable(cmd_vel_relay src/cmd_vel_relay.cpp)
-
-ament_target_dependencies(cmd_vel_relay
-  rclcpp
-  std_msgs
-)
-
 install(
   DIRECTORY include
   DESTINATION share/${PROJECT_NAME}
@@ -38,7 +31,6 @@ install(
 
 install(TARGETS 
   simple_controller
-  cmd_vel_relay
   DESTINATION lib/${PROJECT_NAME}
 )
 

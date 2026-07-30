@@ -15,14 +15,14 @@
 
     <!-- Include the Gazebo world file -->
     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
-        <arg name="gz_args" value="$(find-pkg-share my_robot_bringup)/worlds/test_world.sdf -r" />
+        <arg name="gz_args" value="$(find-pkg-share carrierbot_bringup)/worlds/test_world.sdf -r" />
         <!-- <arg name="gz_args" value="empty.sdf -r" /> -->
     </include>
 
     <!-- Add slam_toolbox -->
     <!-- <include file="$(find-pkg-share slam_toolbox)/launch/online_async_launch.py">
         <arg name="params_file"
-            value="$(find-pkg-share my_robot_bringup)/config/mapper_params_online_async.yaml" />
+            value="$(find-pkg-share carrierbot_bringup)/config/mapper_params_online_async.yaml" />
         <arg name="use_sim_time" value="true" />
     </include> -->
     

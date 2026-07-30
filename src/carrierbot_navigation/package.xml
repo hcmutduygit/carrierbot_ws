@@ -4,7 +4,7 @@
   <name>carrierbot_navigation</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="quangduy160204@gmail.com">duybuntu</maintainer>
+  <maintainer email="quangduy160204@gmail.com">duydq8</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
@@ -13,10 +13,12 @@
   <exec_depend>geometry_msgs</exec_depend>
 
   <exec_depend>ros2launch</exec_depend>
+  <exec_depend>carrierbot_bringup</exec_depend>
+  <exec_depend>carrierbot_slam</exec_depend>
   <exec_depend>nav2_controller</exec_depend>
   <exec_depend>nav2_lifecycle_manager</exec_depend>
   <exec_depend>nav2_planner</exec_depend>
-  <exec_depend>nav2_recoveries</exec_depend>
+  <exec_depend>nav2_behaviors</exec_depend>
   <exec_depend>nav2_bt_navigator</exec_depend>
   <exec_depend>nav2_waypoint_follower</exec_depend>
 

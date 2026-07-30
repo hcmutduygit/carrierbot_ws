@@ -39,7 +39,7 @@ def generate_launch_description():
 
     joint_state_broadcaster_spawner = Node(
         package="controller_manager",
-        executable="spawner.py",
+        executable="spawner",
         arguments=[
             "joint_state_broadcaster",
             "--controller-manager",
@@ -49,7 +49,7 @@ def generate_launch_description():
 
     wheel_controller_spawner = Node(
         package="controller_manager",
-        executable="spawner.py",
+        executable="spawner",
         arguments=["carrierbot_controller", 
                    "--controller-manager", 
                    "/controller_manager"
@@ -96,5 +96,4 @@ def generate_launch_description():
         wheel_controller_spawner,
         simple_controller,
     ])
-
 
